@@ -1,7 +1,12 @@
+body{
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    min-height:100vh;
+}
+
 header{
     width:100%;
     box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.2);
-
 }
 
 .header-items{
@@ -23,4 +28,17 @@ header{
 
 .logo{
     width:12.5%;
+}
+
+.bodyContainer{
+    display:grid;
+    grid-template-columns: 12.5% auto;
+}
+
+.sidebar{
+    background-color: yellow;
+}
+
+.mainContainer{
+    background-color: green;
 }
