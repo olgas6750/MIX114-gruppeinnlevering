@@ -16,6 +16,7 @@ header{
     font-family:"Open Sans", Helvetica, sans-serif;
     justify-content: space-between;
     padding: 10px 10px 10px 10px;
+    margin-right:40px;
 }
 
 .header-right{
@@ -36,9 +37,59 @@ header{
 }
 
 .sidebar{
-    background-color: yellow;
+    background-color: #B3DACB;
+    max-width:200px;
 }
 
-.mainContainer{
-    background-color: green;
+.sidebarList>*{
+    font-family:"Open Sans", Helvetica, sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    line-height: 200%;
+    padding:20px 20px 20px 20px;
+    list-style:none;
+
+}
+
+footer{
+    height:150px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.footerContent{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-left:12.5%;
+    margin-right:12.5%;
+    align-items:center;
+}
+
+.footerContentLeft{
+    display:flex;
+    flex-direction:row;
+    
+}
+
+.footerContentLeft>*{  
+    padding-top:15px;
+    font-family:"Open Sans", Helvetica, sans-serif;
+    font-size:14px;
+    color:white;
+    list-style:none;
+}
+
+.footerContentRight{
+    display:flex;
+    flex-direction:column;
+}
+
+.footerContentRight>*{  
+    padding-top:15px;
+    font-family:"Open Sans", Helvetica, sans-serif;
+    font-size:14px;
+    color:white;
+}
+.footerContentRight img{
+    width:70%;
 }
