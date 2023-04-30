@@ -92,6 +92,121 @@ footer {
      width: 70%;
 }
 
-/* Her begynner Delivery - page 1 */
+/* ------------------- Her begynner Delivery - page 1 ---------------------- */
+.mainContainer-delivery1 {
+     height: 100%;
+}
 
-/* Her stanser Delivery - page 1 */
+.delivery1-column-grid {
+     display: grid;
+     grid-template-columns: 35% 65%;
+}
+
+.delivery1-column-left {
+     border-right: 1px solid rgba(0, 0, 0, 0.25);
+     width: auto;
+
+     /* Bacground for skille, skal bort */
+}
+
+.delivery1-column-right {
+     background-color: gainsboro;
+     height: 150px;
+     /* Bacground for skille, skal bort */
+}
+
+/* Here starts the topbar */
+.delivery1-topbar {
+     grid-column: 1 / span 3; /* Topbar spans both columns*/
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-left: 8vh;
+     padding-right: 8vh;
+     height: 15vh;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.delivery1-topbar-sender-receiver {
+     margin-left: 30vh;
+     display: flex;
+     gap: 5vh;
+}
+
+.delivery1-topbar-buttons {
+     display: flex;
+     align-items: center;
+     gap: 3vh;
+}
+
+.delivery1-accept {
+     width: 30vh;
+     height: 7vh;
+     border-radius: 20px;
+     background-color: rgba(84, 140, 248, 0.9);
+     color: white;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.delivery1-decline {
+     width: 15vh;
+     height: 7vh;
+     border-radius: 20px;
+     background-color: rgba(252, 110, 81, 0.6);
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.delivery1-accept:hover {
+     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.35);
+     text-decoration: underline;
+}
+
+.delivery1-decline:hover {
+     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.35);
+     text-decoration: underline;
+}
+
+/* Here ends the Topbar */
+
+/* Here starts the left-side column  */
+.columnleft-row-grid {
+     display: grid;
+     grid-template-rows: auto auto auto auto auto;
+     row-gap: 4vh;
+     width: auto;
+}
+
+.delivery1-request-container {
+     height: 15vh;
+     width: 90%;
+     border: 2px solid rgb(253, 220, 130);
+     border-radius: 10px;
+     box-sizing: border-box;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.delivery1-accepted-container {
+     height: 15vh;
+     width: 90%;
+     border: 2px solid rgb(0, 132, 80);
+     border-radius: 10px;
+     box-sizing: border-box;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.delivery1-declined-container {
+     height: 15vh;
+     width: 90%;
+     border: 2px solid rgba(252, 110, 81, 1);
+     border-radius: 10px;
+     box-sizing: border-box;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.columnright-row-grid {
+}
+
+/*------------- Her stanser Delivery - page 1 ------------- */
