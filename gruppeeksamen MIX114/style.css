@@ -2,6 +2,31 @@ html *{
     font-family:"Open Sans", Helvetica, sans-serif;
 }
 
+h1{
+    font-size:4em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h2{
+    font-size:3em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h3{
+    font-size:2.625em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h4{
+    font-size:2.125em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h5{
+    font-size:1.5em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h6{
+    font-size:1em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+
 body{
     display:grid;
     grid-template-rows: auto 1fr auto;
@@ -9,7 +34,7 @@ body{
 }
 
 header{
-    width:100%;
+    height:auto;
     box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.2);
     z-index: 9999;
 }
@@ -30,19 +55,24 @@ header{
     gap:40px;
 }
 
+.about{
+    font-size:calc(12px+1vw);
+}
+
+.profileDropdown
+
 .logo img{
-    width:100%;
+    width:15vw;
 }
 
 .bodyContainer{
-    display:grid;
-    grid-template-columns: auto auto;
+    display:flex;
+    flex-direction:row;
 }
 
 .sidebar{
     background-color: #B3DACB;
-    width:12.5%;
-    min-width:150px;
+    width: 170px;
 }
 
 .sidebarList>*{
@@ -54,6 +84,11 @@ header{
 
 }
 
+.mainContainer{
+    padding:10px 10px 10px 10px;
+    width:100%;
+}
+
 footer{
     height:150px;
     background-color: rgba(0,0,0,0.5);
@@ -63,8 +98,8 @@ footer{
     display:flex;
     flex-direction:row;
     justify-content: space-between;
-    margin-left:12.5%;
-    margin-right:12.5%;
+    margin-left:10%;
+    margin-right:10%;
     align-items:center;
 }
 
