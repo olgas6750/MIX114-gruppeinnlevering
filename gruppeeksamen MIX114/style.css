@@ -73,6 +73,7 @@ header{
     background-color: #008450;
     border-radius: 50%;
     display: inline-block;
+    margin: 3px;
     margin-bottom: 15px;
 }
 
@@ -82,6 +83,7 @@ header{
     background-color: #008450;
     border-radius: 50%;
     display: inline-block;
+    margin: 3px;
 }
 .dot2 { /* denne er for de grå små dottene*/
     height: 10px;
@@ -89,6 +91,7 @@ header{
     background-color: #C0C0C0;
     border-radius: 50%;
     display: inline-block;
+    margin: 3px;
     margin-bottom: 15px;
 }
 
@@ -98,6 +101,7 @@ header{
     background-color: #C0C0C0;
     border-radius: 50%;
     display: inline-block;
+    margin: 3px;
 }
 
 .venstreSide{
