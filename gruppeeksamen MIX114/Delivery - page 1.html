@@ -18,6 +18,11 @@
                href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
           />
      </head>
+     <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     />
+
      <body>
           <header>
                <div class="header-items">
@@ -128,35 +133,129 @@
                                              <div
                                                   class="delivery1-delivery-infotext"
                                              >
-                                                  <span>Title</span>
-                                                  <h5>Pick-up:</h5>
-                                                  <h5>Delivery distance:</h5>
-                                                  <h6>Order</h6>
+                                                  <span
+                                                       id="delivery1-delivery-title"
+                                                       >TITLE</span
+                                                  >
+                                                  <h6>
+                                                       Pick-up:<span>js</span>
+                                                  </h6>
+                                                  <h6>
+                                                       Delivery distance:<span
+                                                            >js</span
+                                                       >
+                                                  </h6>
+                                                  <h6>Order:<span>js</span></h6>
                                              </div>
                                              <div
                                                   class="delivery1-indication-request"
                                              >
-                                                  <img src="" />
+                                                  <span
+                                                       class="material-icons delivery1-questionmark"
+                                                  >
+                                                       question_mark
+                                                  </span>
                                              </div>
                                         </div>
                                    </div>
                                    <div class="delivery1-request-container">
-                                        <div
-                                             class="delivery1-ReqAccDec-body"
-                                        ></div>
-                                        <span>Request content</span>
+                                        <div class="delivery1-ReqAccDec-body">
+                                             <img class="delivery1-delivery-img"
+                                             src="./images/profilepicture.png"
+                                             alt="picture of ?" " />
+                                             <div
+                                                  class="delivery1-delivery-infotext"
+                                             >
+                                                  <span
+                                                       id="delivery1-delivery-title"
+                                                       >TITLE</span
+                                                  >
+                                                  <h6>
+                                                       Pick-up:<span>js</span>
+                                                  </h6>
+                                                  <h6>
+                                                       Delivery distance:<span
+                                                            >js</span
+                                                       >
+                                                  </h6>
+                                                  <h6>Order:<span>js</span></h6>
+                                             </div>
+                                             <div
+                                                  class="delivery1-indication-request"
+                                             >
+                                                  <span
+                                                       class="material-icons delivery1-questionmark"
+                                                  >
+                                                       question_mark
+                                                  </span>
+                                             </div>
+                                        </div>
                                    </div>
                                    <div class="delivery1-accepted-container">
-                                        <div
-                                             class="delivery1-ReqAccDec-body"
-                                        ></div>
-                                        <span>Request content</span>
+                                        <div class="delivery1-ReqAccDec-body">
+                                             <img class="delivery1-delivery-img"
+                                             src="./images/profilepicture.png"
+                                             alt="picture of ?" " />
+                                             <div
+                                                  class="delivery1-delivery-infotext"
+                                             >
+                                                  <span
+                                                       id="delivery1-delivery-title"
+                                                       >TITLE</span
+                                                  >
+                                                  <h6>
+                                                       Pick-up:<span>js</span>
+                                                  </h6>
+                                                  <h6>
+                                                       Delivery distance:<span
+                                                            >js</span
+                                                       >
+                                                  </h6>
+                                                  <h6>Order:<span>js</span></h6>
+                                             </div>
+                                             <div
+                                                  class="delivery1-indication-accept"
+                                             >
+                                                  <span
+                                                       class="material-icons delivery1-questionmark"
+                                                  >
+                                                       question_mark
+                                                  </span>
+                                             </div>
+                                        </div>
                                    </div>
                                    <div class="delivery1-declined-container">
-                                        <div
-                                             class="delivery1-ReqAccDec-body"
-                                        ></div>
-                                        <span>Request content</span>
+                                        <div class="delivery1-ReqAccDec-body">
+                                             <img class="delivery1-delivery-img"
+                                             src="./images/profilepicture.png"
+                                             alt="picture of ?" " />
+                                             <div
+                                                  class="delivery1-delivery-infotext"
+                                             >
+                                                  <span
+                                                       id="delivery1-delivery-title"
+                                                       >TITLE</span
+                                                  >
+                                                  <h6>
+                                                       Pick-up:<span>js</span>
+                                                  </h6>
+                                                  <h6>
+                                                       Delivery distance:<span
+                                                            >js</span
+                                                       >
+                                                  </h6>
+                                                  <h6>Order:<span>js</span></h6>
+                                             </div>
+                                             <div
+                                                  class="delivery1-indication-decline"
+                                             >
+                                                  <span
+                                                       class="material-icons delivery1-questionmark"
+                                                  >
+                                                       question_mark
+                                                  </span>
+                                             </div>
+                                        </div>
                                    </div>
                               </div>
                          </div>
@@ -195,23 +294,30 @@
                     <div class="footerContentRight">
                          <img src="images/socials.svg" />
                          <label for="form1">Sign up for the newsletter!</label>
-                         <div class="input-group">
-                              <div class="form-outline">
-                                   <input
-                                        type="search"
-                                        id="form1"
-                                        class="form-control"
-                                        placeholder="Email"
-                                   />
+                         <div class="input-group input-group-sm mb-3">
+                              <input
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="Email"
+                                   aria-label="Email"
+                                   aria-describedby="basic-addon2"
+                              />
+                              <div class="input-group-append">
+                                   <button
+                                        class="btn btn-secondary"
+                                        type="button"
+                                        style="
+                                             color: white;
+                                             border: 1px solid rgb(91, 91, 91);
+                                        "
+                                   >
+                                        Sign up
+                                   </button>
                               </div>
-                              <button type="button" class="btn btn-primary">
-                                   Sign up
-                              </button>
                          </div>
                     </div>
                </div>
           </footer>
-
           <script type="text/javascript" src="script.js"></script>
           <script
                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
