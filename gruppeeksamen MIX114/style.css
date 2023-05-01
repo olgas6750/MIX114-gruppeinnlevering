@@ -65,10 +65,23 @@ header{
 .venstreSide{
     margin: 15px;
     margin-left: 35px;
+    margin-top: 40px;
     margin-bottom: 250px;
 }
 .venstreSide #textBoks{
     margin-left: 15px;
+}
+
+.venstreSide h3{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.venstreSide p{
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 300;
 }
 
 .venstreSide input{
