@@ -51,6 +51,48 @@ header{
 
 }
 
+.progressDelen{
+    border-bottom: ridge;
+    padding-top: 24px;
+    padding-bottom: 8px;
+}
+.progressDelen h3{
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 45px;
+}
+
+.venstreSide{
+    margin: 15px;
+    margin-left: 35px;
+    margin-bottom: 250px;
+}
+.venstreSide #textBoks{
+    margin-left: 15px;
+}
+
+.venstreSide input{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 8px;
+    text-shadow: none;
+    margin: 15px;
+    width: 230px;
+}
+
+input[type="text"]{
+    font-size: 14px;
+}
+input[type="number"]{
+    font-size: 14px;
+}
+textarea[type="text"]{
+    font-size: 14px;
+}
+input[type="email"]{
+    font-size: 14px;
+}
+
 footer{
     height:150px;
     background-color: rgba(0,0,0,0.5);
