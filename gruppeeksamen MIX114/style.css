@@ -140,7 +140,7 @@ header{
 
 .beggeFormsene{ /* felles diven for hele forms delen*/
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
 }
 
 .venstreSide{ /* dette er for den venstre siden av formen*/
@@ -148,7 +148,6 @@ header{
     margin: 15px;
     margin-left: 35px;
     margin-top: 40px;
-    margin-bottom: 250px;
 }
 
 .venstreSide #textBoks{
@@ -184,11 +183,9 @@ header{
 /* HØYRE SIDEN*/
 .høyreSide{ /* dette er for den venstre siden av formen*/
     width: 95%;
-    grid-column-start: 2;
     margin: 15px;
     margin-left: 35px;
     margin-top: 40px;
-    margin-bottom: 250px;
 }
 
 .høyreSide #textBoks{
