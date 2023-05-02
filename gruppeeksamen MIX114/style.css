@@ -53,8 +53,8 @@ header{
 
 .progressDelen{
     border-bottom: ridge;
-    padding-top: 20px;
-    padding-bottom: 4px;
+    padding-top: 18px;
+    padding-bottom: 1px;
     display: flex;
 }
 .progressDelen h3{
@@ -135,7 +135,7 @@ header{
     width: 230px;
 }
 
-input[type="text"]{
+input[type="text"]{ /* dette er for å definere størrelsen på teksten innenfor boksene + alle de neddenfor*/
     font-size: 14px;
 }
 input[type="number"]{
