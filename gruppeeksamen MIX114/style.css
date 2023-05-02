@@ -127,6 +127,7 @@ footer {
 }
 
 /* ------------------- Her begynner Delivery - page 1 ---------------------- */
+/* Here starts the main structure */
 .mainContainer-delivery1 {
      height: 100%;
      width: 100%;
@@ -140,15 +141,17 @@ footer {
 .delivery1-column-left {
      border-right: 1px solid rgba(0, 0, 0, 0.25);
      width: auto;
+     height: auto;
 
      /* Bacground for skille, skal bort */
 }
 
 .delivery1-column-right {
-     background-color: gainsboro;
-     height: 150px;
+     width: auto;
+     height: auto;
      /* Bacground for skille, skal bort */
 }
+/* Here stops the main structure */
 
 /* Here starts the topbar */
 .delivery1-topbar {
@@ -175,8 +178,8 @@ footer {
 }
 
 .delivery1-accept {
-     width: 30vh;
-     height: 7vh;
+     width: 20vh;
+     height: 4em;
      border-radius: 20px;
      background-color: rgba(84, 140, 248, 0.9);
      color: white;
@@ -185,8 +188,8 @@ footer {
 }
 
 .delivery1-decline {
-     width: 15vh;
-     height: 7vh;
+     width: 10vh;
+     height: 4em;
      border-radius: 20px;
      background-color: rgba(252, 110, 81, 0.6);
      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -203,15 +206,15 @@ footer {
      text-decoration: underline;
 }
 
-/* Here ends the Topbar */
+/* Here stops the Topbar */
 
 /* Here starts the left-side column  */
 .columnleft-row-grid {
      display: grid;
      grid-template-rows: auto auto auto auto auto;
-     row-gap: 3vh;
+     /* row-gap: 3vh; */
      width: auto;
-     margin-top: 4vh;
+     /* margin-top: 4px; */
      overflow: scroll;
 }
 
@@ -219,17 +222,18 @@ footer {
      height: 17vh;
      width: 90%;
      border: 2px solid rgb(253, 220, 130);
+     margin-top: 5%;
      border-radius: 10px;
-     box-sizing: border-box;
+     /* box-sizing: border-box; */
      margin-left: auto;
      margin-right: auto;
-     max-width: 600px;
 }
 
 .delivery1-accepted-container {
      height: 17vh;
      width: 90%;
      border: 2px solid rgb(0, 132, 80);
+     margin-top: 5%;
      border-radius: 10px;
      box-sizing: border-box;
      margin-left: auto;
@@ -240,6 +244,7 @@ footer {
      height: 17vh;
      width: 90%;
      border: 2px solid rgba(252, 110, 81, 1);
+     margin-top: 5%;
      border-radius: 10px;
      box-sizing: border-box;
      margin-left: auto;
@@ -296,16 +301,6 @@ footer {
      font-size: 1.2em;
 }
 
-@media (max-width: 750px) or (max-height: 580px) {
-     .delivery1-delivery-infotext h6 {
-          display: none;
-     }
-     #delivery1-delivery-title {
-          font-size: 1.5em;
-          margin-top: 25%;
-          margin-left: 10%;
-     }
-}
 /* This will cut out infotext section and position the title when minimizing the page */
 /* This changes the size of the icon. Since default settings are applied to google icon class material-icons a new class
 is set and !important is used to override */
@@ -351,11 +346,130 @@ is set and !important is used to override */
      margin-right: auto;
 }
 
+.delivery1-check {
+     font-size: 16px !important;
+     color: white;
+     margin-left: 3.5px;
+     margin-top: 3.5px;
+     margin-right: auto;
+}
+
+.delivery1-exit {
+     font-size: 16px !important;
+     color: white;
+     margin-left: 3.5px;
+     margin-top: 3.5px;
+     margin-right: auto;
+}
+/* Here stops left side column */
+
+/* Here starts right side column */
 .columnright-row-grid {
+     display: grid;
+     grid-template-rows: auto auto;
+     justify-content: center;
+     width: auto;
+     height: auto;
+     align-items: center;
+}
+
+.delivery1-order-info-body {
+     width: auto;
+     height: 35vh;
+     border: 1px solid rgba(0, 0, 0, 0.25);
+     margin-top: 5%;
+     border-radius: 20px;
+}
+
+.delivery1-order-calendar-body {
+     width: 90vh;
+     height: 45vh;
+     border: 1px solid rgba(0, 0, 0, 0.25);
+     margin-top: 5%;
+     border-radius: 20px;
+}
+
+.delivery1-order-info-columns {
+     display: grid;
+     grid-template-columns: 50% 50%;
+     height: 100%;
+}
+
+.delivery1-order-column-general {
+     border-right: 2px solid rgba(0, 0, 0, 0.5);
+     margin-left: 3%;
+     padding-right: 10%;
+     padding-left: 5%;
+     display: flex;
+     justify-content: space-between;
+     overflow: auto;
+}
+
+.delivery1-infobox-1 {
+     margin-top: 10%;
+}
+
+.delivery1-infobox-2 {
+     margin-top: 10%;
+}
+
+.delivery1-infobox-1-2-element {
+     /* padding-top: 20%; */
+     padding-top: 3vh;
+}
+
+.delivery1-order-column-items {
+     margin-right: 3%;
+     height: 100%;
+     overflow: auto;
+     /* display: flex;
+     justify-content: space-between; */
+}
+
+.delivery1-order-items-title {
+     display: flex;
+     justify-content: space-between;
+     padding-left: 13%;
+     padding-right: 8%;
+     padding-top: 3%;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.delivery1-items-info {
+     display: flex;
+     justify-content: space-between;
+     padding-right: 7%;
+     margin-top: 3%;
+}
+
+.delivery1-items-info img {
+     width: 3.5vh;
+     height: 2.8vh;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+     border-radius: 10px;
+}
+
+#delivery1-item-title-Qty {
+     margin-left: auto;
+     margin-right: auto;
+     padding-left: 5%;
+}
+/* Here stops right side column */
+
+/* AMEDIA for scale */
+@media (max-width: 500px) or (max-height: 580px) {
+     .delivery1-delivery-infotext h6 {
+          display: none;
+     }
+     #delivery1-delivery-title {
+          font-size: 1.5em;
+          margin-top: 25%;
+          margin-left: 10%;
+     }
+     .delivery1-order-info-body {
+     }
 }
 
 /*------------- Her stanser Delivery - page 1 ------------- */
 
-::-webkit-scrollbar {
-     display: none;
-}
+/* Hide the horizontal scrollbar */
