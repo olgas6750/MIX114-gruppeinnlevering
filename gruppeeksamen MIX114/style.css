@@ -113,7 +113,7 @@ header{
 .venstreSide #textBoks{
     margin-left: 15px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 1vh;
 }
 
 .venstreSide h3{
@@ -129,9 +129,9 @@ header{
 }
 
 .venstreSide input{
-    border-radius: 5px;
+    border-radius: 1vh;
     border: 1px solid black;
-    padding: 8px;
+    padding: 1%;
     text-shadow: none;
     margin: 15px;
     width: 230px;
