@@ -100,36 +100,36 @@ header{
 }
 
 .dot { /* denne er for de grønne små dottene*/
-    height: 10px;
-    width: 10px;
+    height: 1.5vh;
+    width: 1.5vh;
     background-color: #008450;
     border-radius: 50%;
     display: inline-block;
-    margin: 3px;
-    margin-bottom: 5%;
+    margin: 0.5vh;
+    margin-bottom: 3.5%;
 }
 
 .dot1 { /* denne er for de grønne større dottene*/
-    height: 40px;
-    width: 40px;
+    height: 4.5vh;
+    width: 4.5vh;
     background-color: #008450;
     border-radius: 50%;
     display: inline-block;
     margin: 3px;
 }
 .dot2 { /* denne er for de grå små dottene*/
-    height: 10px;
-    width: 10px;
+    height: 1.5vh;
+    width: 1.5vh;
     background-color: #C0C0C0;
     border-radius: 50%;
     display: inline-block;
-    margin: 3px;
-    margin-bottom: 5%;
+    margin: 0.5vh;
+    margin-bottom: 3.5%;
 }
 
 .dot3 { /* denne er for de store grå dottene*/
-    height: 40px;
-    width: 40px;
+    height: 4.5vh;
+    width: 4.5vh;
     background-color: #C0C0C0;
     border-radius: 50%;
     display: inline-block;
@@ -144,7 +144,7 @@ header{
 }
 
 .venstreSide{ /* dette er for den venstre siden av formen*/
-    width: 100%;
+    width: 95%;
     margin: 15px;
     margin-left: 35px;
     margin-top: 40px;
@@ -173,6 +173,46 @@ header{
 }
 
 .venstreSide input{
+    border-radius: 0.5vh;
+    border: 1px solid black;
+    padding: 2%;
+    text-shadow: none;
+    margin: 2vh;
+    width: 30vh;
+}
+
+/* HØYRE SIDEN*/
+.høyreSide{ /* dette er for den venstre siden av formen*/
+    width: 95%;
+    grid-column-start: 2;
+    margin: 15px;
+    margin-left: 35px;
+    margin-top: 40px;
+    margin-bottom: 250px;
+}
+
+.høyreSide #textBoks{
+    margin: 2vh;
+    border: 1px solid black;
+    border-radius: 0.5vh;
+    padding: 2%;
+}
+
+.høyreSide h6{ /* overskriften til Pickup adress*/
+    font-size:1.1em;
+    margin-left: 0.6em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+
+.høyreSide p{ /* underoverskriften*/
+    font-size: 0.8em;
+    margin-left: 0.9em;
+    font-weight: 300;
+    font-family:Manrope, Helvetica, sans-serif;
+    color: #35465B;
+}
+
+.høyreSide input{
     border-radius: 0.5vh;
     border: 1px solid black;
     padding: 2%;
