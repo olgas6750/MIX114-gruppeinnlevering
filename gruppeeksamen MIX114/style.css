@@ -1,3 +1,31 @@
+html *{
+    font-family:"Open Sans", Helvetica, sans-serif;
+}
+h1{
+    font-size:4em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h2{
+    font-size:3em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h3{
+    font-size:2.625em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h4{
+    font-size:2.125em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h5{
+    font-size:1.5em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+h6{
+    font-size:1em;
+    font-family:Manrope, Helvetica, sans-serif;
+}
+
 body{
     display:grid;
     grid-template-rows: auto 1fr auto;
@@ -5,50 +33,50 @@ body{
 }
 
 header{
-    width:100%;
+    height:auto;
     box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
 }
 
 .header-items{
     display:flex;
     flex-direction:row;
     align-items:center;
-    font-family:"Open Sans", Helvetica, sans-serif;
     justify-content: space-between;
     padding: 10px 10px 10px 10px;
     margin-right:40px;
 }
-
 .header-right{
     display:flex;
     flex-direction:row;
     align-items:center;
-    font-family:"Open Sans", Helvetica, sans-serif;
     gap:40px;
 }
+.about{
+    font-size:1.5em;
+}
 
-.logo{
-    width:12.5%;
+.profileDropdown
+.logo img{
+    width:15vw;
 }
 
 .bodyContainer{
-    display:grid;
-    grid-template-columns: 12.5% auto;
+    display:flex;
+    flex-direction:row;
 }
 
 .sidebar{
     background-color: #B3DACB;
-    max-width:200px;
+    width: 170px;
 }
 
 .sidebarList>*{
-    font-family:"Open Sans", Helvetica, sans-serif;
     font-size:16px;
     font-weight:bold;
     line-height: 200%;
     padding:20px 20px 20px 20px;
     list-style:none;
-
 }
 
 .progressDelen{
