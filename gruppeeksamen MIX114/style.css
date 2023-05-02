@@ -112,6 +112,8 @@ header{
 }
 .venstreSide #textBoks{
     margin-left: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .venstreSide h3{
