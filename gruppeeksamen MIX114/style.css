@@ -251,6 +251,8 @@ input[type="email"]{
     border-radius: 0.5vh;
 }
 
+/* her slutter defineringen av størrelse på teksten */
+
 .knapperVidere .button1{
     background-color: #FC6E51;
 }
