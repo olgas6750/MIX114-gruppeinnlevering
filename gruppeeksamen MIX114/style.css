@@ -135,7 +135,13 @@ header{
     margin: 3px;
 }
 
+.form{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 .venstreSide{ /* dette er for den venstre siden av formen*/
+    width: 49%;
     margin: 15px;
     margin-left: 35px;
     margin-top: 40px;
