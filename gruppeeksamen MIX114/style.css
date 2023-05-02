@@ -90,12 +90,10 @@ header{
     padding-bottom: 1px;
     display: flex;
 }
-.progressDelen h3{
-    font-size: 24px;
-    font-weight: bold;
+.progressDelen h4{
     padding-left: 45px;
-    margin-top: 10px;
 }
+
 .dottene{
     margin-left: 80px;
     margin-bottom: 0px;
@@ -107,7 +105,7 @@ header{
     border-radius: 50%;
     display: inline-block;
     margin: 3px;
-    margin-bottom: 15px;
+    margin-bottom: 5%;
 }
 
 .dot1 { /* denne er for de grønne større dottene*/
@@ -125,7 +123,7 @@ header{
     border-radius: 50%;
     display: inline-block;
     margin: 3px;
-    margin-bottom: 15px;
+    margin-bottom: 5%;
 }
 
 .dot3 { /* denne er for de store grå dottene*/
@@ -137,7 +135,7 @@ header{
     margin: 3px;
 }
 
-.venstreSide{
+.venstreSide{ /* dette er for den venstre siden av formen*/
     margin: 15px;
     margin-left: 35px;
     margin-top: 40px;
