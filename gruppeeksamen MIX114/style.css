@@ -79,6 +79,11 @@ header{
     list-style:none;
 }
 
+.mainContainer{
+    padding:10px 10px 10px 10px;
+    width:100%;
+}
+
 .progressDelen{
     border-bottom: ridge;
     padding-top: 18px;
