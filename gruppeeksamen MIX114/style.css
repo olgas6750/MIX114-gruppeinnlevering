@@ -151,7 +151,7 @@ input[type="email"]{
 }
 
 footer{
-    height:150px;
+    height:170px;
     background-color: rgba(0,0,0,0.5);
 }
 
@@ -159,8 +159,8 @@ footer{
     display:flex;
     flex-direction:row;
     justify-content: space-between;
-    margin-left:12.5%;
-    margin-right:12.5%;
+    margin-left:10%;
+    margin-right:10%;
     align-items:center;
 }
 
@@ -172,7 +172,6 @@ footer{
 
 .footerContentLeft>*{  
     padding-top:15px;
-    font-family:"Open Sans", Helvetica, sans-serif;
     font-size:14px;
     color:white;
     list-style:none;
@@ -185,7 +184,6 @@ footer{
 
 .footerContentRight>*{  
     padding-top:15px;
-    font-family:"Open Sans", Helvetica, sans-serif;
     font-size:14px;
     color:white;
 }
