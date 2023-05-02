@@ -110,6 +110,7 @@ header{
 }
 
 .dot1 { /* denne er for de grønne større dottene*/
+    position: relative;
     height: 4.5vh;
     width: 4.5vh;
     background-color: #008450;
@@ -128,12 +129,27 @@ header{
 }
 
 .dot3 { /* denne er for de store grå dottene*/
+    position: relative;
     height: 4.5vh;
     width: 4.5vh;
     background-color: #C0C0C0;
     border-radius: 50%;
     display: inline-block;
     margin: 3px;
+}
+
+.ikonFarge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.material-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* her slutter progress delen mtp dottene*/
@@ -229,6 +245,14 @@ textarea[type="text"]{
 }
 input[type="email"]{
     font-size: 0.7em;
+}
+
+.knapperVidere button{
+    border-radius: 0.5vh;
+}
+
+.knapperVidere .button1{
+    background-color: #FC6E51;
 }
 
 /* her slutter min del på en måte*/
