@@ -247,14 +247,32 @@ input[type="email"]{
     font-size: 0.7em;
 }
 
+/* her slutter defineringen av størrelse på teksten */
+
+.knapperVidere{
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+}
 .knapperVidere button{
     border-radius: 0.5vh;
 }
 
-/* her slutter defineringen av størrelse på teksten */
-
 .knapperVidere .button1{
-    background-color: #FC6E51;
+    background-color: #FEC5B9;
+    border-color: #FC6E51;
+    font-size: 0.8em;
+    font-family:Manrope, Helvetica, sans-serif;
+    width: 15%;
+    height: 3em;
+}
+
+.knapperVidere .button2{
+    background-color: #99CEB9;
+    border-color: #008450;
+    font-size: 0.8em;
+    font-family:Manrope, Helvetica, sans-serif;
+    width: 15%;
 }
 
 /* her slutter min del på en måte*/
