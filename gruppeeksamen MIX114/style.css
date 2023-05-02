@@ -252,10 +252,11 @@ input[type="email"]{
 .knapperVidere{
     display: flex;
     justify-content: center;
-    margin: 2em;
+    margin-bottom: 3em;
 }
 .knapperVidere button{
-    border-radius: 0.5vh;
+    border-radius: 1.5vh;
+    margin: 1em;
 }
 
 .knapperVidere .button1{
@@ -263,7 +264,7 @@ input[type="email"]{
     border-color: #FC6E51;
     font-size: 0.8em;
     font-family:Manrope, Helvetica, sans-serif;
-    width: 15%;
+    width: 12%;
     height: 3em;
 }
 
@@ -272,7 +273,8 @@ input[type="email"]{
     border-color: #008450;
     font-size: 0.8em;
     font-family:Manrope, Helvetica, sans-serif;
-    width: 15%;
+    width: 12%;
+    height: 3em;
 }
 
 /* her slutter min del på en måte*/
