@@ -5,26 +5,32 @@ html *{
 h1{
     font-size:4em;
     font-family:Manrope, Helvetica, sans-serif;
+    font-weight:bolder;
 }
 h2{
     font-size:3em;
     font-family:Manrope, Helvetica, sans-serif;
+    font-weight:bolder;
 }
 h3{
     font-size:2.625em;
     font-family:Manrope, Helvetica, sans-serif;
+    font-weight:bolder;
 }
 h4{
     font-size:2.125em;
     font-family:Manrope, Helvetica, sans-serif;
+    font-weight:bold;
 }
 h5{
     font-size:1.5em;
     font-family:Manrope, Helvetica, sans-serif;
+    font-weight:bold;
 }
 h6{
     font-size:1em;
     font-family:Manrope, Helvetica, sans-serif;
+    font-weight:bold;
 }
 
 body{
@@ -85,7 +91,6 @@ header{
 }
 
 .mainContainer{
-    padding:10px 10px 10px 10px;
     width:100%;
 }
 
@@ -128,4 +133,57 @@ footer{
 }
 .footerContentRight img{
     width:70%;
+}
+
+/*style specific for add order*/
+
+.addOrderContainer{
+    height:100%;
+    width:100%;
+    display:grid;
+    grid-template-columns: 12.5% 87.5%;
+    grid-template-rows: 12.5% 87.5%;
+}
+
+.addOrderHeader{
+    grid-column: 1/3;
+    grid-row: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-top:10px;
+}
+
+.addOrderHeader>*{
+    margin-left:40px;
+}
+
+.addOrderSidebar{
+    grid-column: 1;
+    grid-row:2;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.addOrderPackageView{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.addOrderSidebar ul{
+    padding:5%;
+    list-style:none;
+}
+
+.addOrderSidebar ul >*{
+    padding:0;
+    border-radius:6px;
+    border: 0.5px solid #423D3D
+}
+
+.addPackageButton{
+    border: none;
+    background-color: #5364FF;
+    color:white;
+    border: 0.5px solid #FFFFFF;
 }
