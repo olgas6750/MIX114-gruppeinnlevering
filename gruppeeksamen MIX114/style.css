@@ -137,6 +137,13 @@ header{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+/*Dottene er ferdig her*/
+
+.registrertPakke{
+    border: 1px solid black;
+    border-radius: 1em;
+    margin: 3rem;
+}
 
 footer{
     height:170px;
