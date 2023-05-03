@@ -1,7 +1,6 @@
 html *{
     font-family:"Open Sans", Helvetica, sans-serif;
 }
-
 h1{
     font-size:4em;
     font-family:Manrope, Helvetica, sans-serif;
@@ -26,19 +25,16 @@ h6{
     font-size:1em;
     font-family:Manrope, Helvetica, sans-serif;
 }
-
 body{
     display:grid;
     grid-template-rows: auto 1fr auto;
     min-height:100vh;
 }
-
 header{
     height:auto;
     box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.2);
     z-index: 9999;
 }
-
 .header-items{
     display:flex;
     flex-direction:row;
@@ -47,53 +43,42 @@ header{
     padding: 10px 10px 10px 10px;
     margin-right:40px;
 }
-
 .header-right{
     display:flex;
     flex-direction:row;
     align-items:center;
     gap:40px;
 }
-
 .about{
     font-size:1.5em;
 }
-
 .profileDropdown
-
 .logo img{
     width:15vw;
 }
-
 .bodyContainer{
     display:flex;
     flex-direction:row;
 }
-
 .sidebar{
     background-color: #B3DACB;
     width: 170px;
 }
-
 .sidebarList>*{
     font-size:16px;
     font-weight:bold;
     line-height: 200%;
     padding:20px 20px 20px 20px;
     list-style:none;
-
 }
-
 .mainContainer{
     padding:10px 10px 10px 10px;
     width:100%;
 }
-
 footer{
     height:170px;
     background-color: rgba(0,0,0,0.5);
 }
-
 .footerContent{
     display:flex;
     flex-direction:row;
@@ -102,25 +87,21 @@ footer{
     margin-right:10%;
     align-items:center;
 }
-
 .footerContentLeft{
     display:flex;
     flex-direction:row;
     
 }
-
 .footerContentLeft>*{  
     padding-top:15px;
     font-size:14px;
     color:white;
     list-style:none;
 }
-
 .footerContentRight{
     display:flex;
     flex-direction:column;
 }
-
 .footerContentRight>*{  
     padding-top:15px;
     font-size:14px;
@@ -128,65 +109,4 @@ footer{
 }
 .footerContentRight img{
     width:70%;
-}
-
-.progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc */
-    border-bottom: ridge;
-    padding-top: 1vh;
-    display: flex;
-}
-.progressDelen h4{
-    padding-left: 5vh;
-}
-.dottene{
-    margin-left: 10vh;
-    margin-bottom: 0px;
-}
-.dot { /* denne er for de grønne små dottene*/
-    height: 1.5vh;
-    width: 1.5vh;
-    background-color: #008450;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0.5vh;
-    margin-bottom: 3.5%;
-}
-.dot1 { /* denne er for de grønne større dottene*/
-    position: relative;
-    height: 4.5vh;
-    width: 4.5vh;
-    background-color: #008450;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 3px;
-}
-.dot2 { /* denne er for de grå små dottene*/
-    height: 1.5vh;
-    width: 1.5vh;
-    background-color: #C0C0C0;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0.5vh;
-    margin-bottom: 3.5%;
-}
-.dot3 { /* denne er for de store grå dottene*/
-    position: relative;
-    height: 4.5vh;
-    width: 4.5vh;
-    background-color: #C0C0C0;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 3px;
-}
-.ikonFarge {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
-}
-.material-icons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
