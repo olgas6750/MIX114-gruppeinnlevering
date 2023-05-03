@@ -143,6 +143,21 @@ header{
     border: 1px solid black;
     border-radius: 1em;
     margin: 3rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.infoVenstre h2{
+    padding-top: 2em;
+    padding: 1em;
+}
+.registrertPakke h6{
+    padding: 1em;
+}
+
+.bildeHøyre img{
+    position: relative;
+    width: 99%;
 }
 
 footer{
