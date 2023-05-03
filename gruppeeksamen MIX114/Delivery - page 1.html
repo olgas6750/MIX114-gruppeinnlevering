@@ -22,6 +22,13 @@
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
      />
+     <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous"
+     />
+     <!-- Bootstrap link under for delivery1 modal,  -->
 
      <body>
           <header>
@@ -95,14 +102,14 @@
                          <!-- Divides into two columns -->
                          <div class="delivery1-topbar">
                               <!-- Topbar with title, recipicant, sender etc. -->
-                              <span>REQUESTS</span>
+                              <h3>REQUESTS</h3>
                               <div class="delivery1-topbar-sender-receiver">
                                    <div>
-                                        <h5>Sender</h5>
+                                        <h5>Sender:</h5>
                                         <span>Javascriptinfo</span>
                                    </div>
                                    <div>
-                                        <h5>Receiver</h5>
+                                        <h5>Receiver:</h5>
                                         <span>Javascriptinfo</span>
                                    </div>
                               </div>
@@ -111,13 +118,19 @@
                                         class="delivery1-accept"
                                         type="submit"
                                    >
-                                        ACCEPT ORDER
+                                        <span
+                                             class="delivery1-buttons-AccDec-writing"
+                                             >ACCEPT ORDER</span
+                                        >
                                    </button>
                                    <button
                                         class="delivery1-decline"
                                         onclick="?"
                                    >
-                                        DECLINE
+                                        <span
+                                             class="delivery1-buttons-AccDec-writing"
+                                             >DECLINE</span
+                                        >
                                    </button>
                               </div>
                          </div>
@@ -125,11 +138,19 @@
                          <div class="delivery1-column-left">
                               <!-- Left column -->
                               <div class="columnleft-row-grid">
-                                   <div class="delivery1-request-container">
+                                   <!-- Bootstrap toggle button -->
+                                   <button
+                                        type="button"
+                                        class="btn delivery1-request-container"
+                                        data-bs-toggle="button"
+                                        aria-pressed="true"
+                                   >
                                         <div class="delivery1-ReqAccDec-body">
-                                             <img class="delivery1-delivery-img"
-                                             src="./images/profilepicture.png"
-                                             alt="picture of ?" " />
+                                             <img
+                                                  class="delivery1-delivery-img"
+                                                  src="./images/profilepicture.png"
+                                                  alt="picture of ?"
+                                             />
                                              <div
                                                   class="delivery1-delivery-infotext"
                                              >
@@ -157,13 +178,20 @@
                                                   </span>
                                              </div>
                                         </div>
-                                   </div>
+                                   </button>
                                    <!-- Request square -->
-                                   <div class="delivery1-request-container">
+                                   <button
+                                        type="button"
+                                        class="btn delivery1-request-container"
+                                        data-bs-toggle="button"
+                                        aria-pressed="true"
+                                   >
                                         <div class="delivery1-ReqAccDec-body">
-                                             <img class="delivery1-delivery-img"
-                                             src="./images/profilepicture.png"
-                                             alt="picture of ?" " />
+                                             <img
+                                                  class="delivery1-delivery-img"
+                                                  src="./images/profilepicture.png"
+                                                  alt="picture of ?"
+                                             />
                                              <div
                                                   class="delivery1-delivery-infotext"
                                              >
@@ -191,13 +219,20 @@
                                                   </span>
                                              </div>
                                         </div>
-                                   </div>
+                                   </button>
                                    <!-- Accepted square -->
-                                   <div class="delivery1-accepted-container">
+                                   <button
+                                        type="button"
+                                        class="btn delivery1-accepted-container"
+                                        data-bs-toggle="button"
+                                        aria-pressed="true"
+                                   >
                                         <div class="delivery1-ReqAccDec-body">
-                                             <img class="delivery1-delivery-img"
-                                             src="./images/profilepicture.png"
-                                             alt="picture of ?" " />
+                                             <img
+                                                  class="delivery1-delivery-img"
+                                                  src="./images/profilepicture.png"
+                                                  alt="picture of ?"
+                                             />
                                              <div
                                                   class="delivery1-delivery-infotext"
                                              >
@@ -221,17 +256,24 @@
                                                   <span
                                                        class="material-icons delivery1-check"
                                                   >
-                                                       done
+                                                       check
                                                   </span>
                                              </div>
                                         </div>
-                                   </div>
+                                   </button>
                                    <!-- Declined square -->
-                                   <div class="delivery1-declined-container">
+                                   <button
+                                        type="button"
+                                        class="btn delivery1-declined-container"
+                                        data-bs-toggle="button"
+                                        aria-pressed="true"
+                                   >
                                         <div class="delivery1-ReqAccDec-body">
-                                             <img class="delivery1-delivery-img"
-                                             src="./images/profilepicture.png"
-                                             alt="picture of ?" " />
+                                             <img
+                                                  class="delivery1-delivery-img"
+                                                  src="./images/profilepicture.png"
+                                                  alt="picture of ?"
+                                             />
                                              <div
                                                   class="delivery1-delivery-infotext"
                                              >
@@ -259,7 +301,7 @@
                                                   </span>
                                              </div>
                                         </div>
-                                   </div>
+                                   </button>
                               </div>
                          </div>
                          <!-- Right column -->
@@ -336,11 +378,9 @@
                                                                  Order number:
                                                             </h5>
                                                             <span
-                                                                 >Javascript
-                                                                 Javascript ->
-                                                                 Javascript ->
-                                                                 Javascript ->
-                                                                 -></span
+                                                                 >Tjødnali 34,
+                                                                 6856
+                                                                 Sogndal</span
                                                             >
                                                        </div>
                                                   </div>
@@ -360,7 +400,9 @@
                                                        <h6>Weight</h6>
                                                   </div>
                                                   <!-- The DIV under represent each item in the delivery -->
-                                                  <div>
+                                                  <div
+                                                       class="delivery1-items-OLlist"
+                                                  >
                                                        <ol>
                                                             <li
                                                                  class="delivery1-items-info"
@@ -368,7 +410,126 @@
                                                                  <span>
                                                                       <img
                                                                            src="./images/profilepicture.png"
-                                                                           width="30"
+                                                                           alt="picture of delivery item"
+                                                                      />
+                                                                      <span
+                                                                           >Name</span
+                                                                      >
+                                                                 </span>
+                                                                 <span>10</span>
+                                                                 <span
+                                                                      >10g</span
+                                                                 >
+                                                            </li>
+                                                            <li
+                                                                 class="delivery1-items-info"
+                                                            >
+                                                                 <span>
+                                                                      <img
+                                                                           src="./images/profilepicture.png"
+                                                                           alt="picture of delivery item"
+                                                                      />
+                                                                      <span
+                                                                           >Name</span
+                                                                      >
+                                                                 </span>
+                                                                 <span>10</span>
+                                                                 <span
+                                                                      >10g</span
+                                                                 >
+                                                            </li>
+                                                            <li
+                                                                 class="delivery1-items-info"
+                                                            >
+                                                                 <span>
+                                                                      <img
+                                                                           src="./images/profilepicture.png"
+                                                                           alt="picture of delivery item"
+                                                                      />
+                                                                      <span
+                                                                           >Name</span
+                                                                      >
+                                                                 </span>
+                                                                 <span>10</span>
+                                                                 <span
+                                                                      >10g</span
+                                                                 >
+                                                            </li>
+                                                            <li
+                                                                 class="delivery1-items-info"
+                                                            >
+                                                                 <span>
+                                                                      <img
+                                                                           src="./images/profilepicture.png"
+                                                                           alt="picture of delivery item"
+                                                                      />
+                                                                      <span
+                                                                           >Name</span
+                                                                      >
+                                                                 </span>
+                                                                 <span>10</span>
+                                                                 <span
+                                                                      >10g</span
+                                                                 >
+                                                            </li>
+                                                            <li
+                                                                 class="delivery1-items-info"
+                                                            >
+                                                                 <span>
+                                                                      <img
+                                                                           src="./images/profilepicture.png"
+                                                                           alt="picture of delivery item"
+                                                                      />
+                                                                      <span
+                                                                           >Name</span
+                                                                      >
+                                                                 </span>
+                                                                 <span>10</span>
+                                                                 <span
+                                                                      >10g</span
+                                                                 >
+                                                            </li>
+                                                            <li
+                                                                 class="delivery1-items-info"
+                                                            >
+                                                                 <span>
+                                                                      <img
+                                                                           src="./images/profilepicture.png"
+                                                                           alt="picture of delivery item"
+                                                                      />
+                                                                      <span
+                                                                           >Name</span
+                                                                      >
+                                                                 </span>
+                                                                 <span>10</span>
+                                                                 <span
+                                                                      >10g</span
+                                                                 >
+                                                            </li>
+                                                            <li
+                                                                 class="delivery1-items-info"
+                                                            >
+                                                                 <span>
+                                                                      <img
+                                                                           src="./images/profilepicture.png"
+                                                                           alt="picture of delivery item"
+                                                                      />
+                                                                      <span
+                                                                           >Name</span
+                                                                      >
+                                                                 </span>
+                                                                 <span>10</span>
+                                                                 <span
+                                                                      >10g</span
+                                                                 >
+                                                            </li>
+                                                            <li
+                                                                 class="delivery1-items-info"
+                                                            >
+                                                                 <span>
+                                                                      <img
+                                                                           src="./images/profilepicture.png"
+                                                                           alt="picture of delivery item"
                                                                       />
                                                                       <span
                                                                            >Name</span
@@ -386,7 +547,176 @@
                                    </div>
                                    <!-- Here ends the delivery info container -->
                                    <div class="delivery1-order-calendar-body">
-                                        <p>fds</p>
+                                        <div class="delivery1-celandar-modal">
+                                             <!-- Button trigger modal from Bootstrap starts here -->
+                                             <button
+                                                  type="button"
+                                                  class="btn btn-primary"
+                                                  data-toggle="modal"
+                                                  data-target="#exampleModalCenter"
+                                             >
+                                                  Pop-up from calendar
+                                             </button>
+
+                                             <!-- Modal -->
+                                             <div
+                                                  class="modal fade"
+                                                  id="exampleModalCenter"
+                                                  tabindex="-1"
+                                                  role="dialog"
+                                                  aria-labelledby="exampleModalCenterTitle"
+                                                  aria-hidden="true"
+                                             >
+                                                  <div
+                                                       class="modal-dialog modal-dialog-centered"
+                                                       role="document"
+                                                  >
+                                                       <div
+                                                            class="modal-content"
+                                                       >
+                                                            <div
+                                                                 class="modal-header"
+                                                            >
+                                                                 <img
+                                                                      src="./images/profilepicture.png"
+                                                                 />
+                                                                 <div
+                                                                      class="delivery1-modal-infosection"
+                                                                 >
+                                                                      <span
+                                                                           class="delivery1-modal-header-info"
+                                                                           id="delivery1-delivery-title"
+                                                                           >Delivery
+                                                                           title</span
+                                                                      >
+
+                                                                      <span
+                                                                           class="delivery1-modal-header-info"
+                                                                           >Delivery
+                                                                           distance</span
+                                                                      >
+                                                                      <span
+                                                                           class="delivery1-modal-indication"
+                                                                      >
+                                                                      </span>
+                                                                 </div>
+
+                                                                 <button
+                                                                      type="button"
+                                                                      class="btn btn-primary delivery1-btn-primary"
+                                                                 >
+                                                                      <span
+                                                                           class="material-icons delivery1-exit"
+                                                                      >
+                                                                           near_me
+                                                                      </span>
+                                                                      Track
+                                                                 </button>
+                                                            </div>
+                                                            <div
+                                                                 class="modal-body"
+                                                            >
+                                                                 <div
+                                                                      class="delivery1-order-column-general"
+                                                                 >
+                                                                      <div
+                                                                           class="delivery1-infobox-1"
+                                                                      >
+                                                                           <div
+                                                                                class="delivery1-infobox-1-2-element"
+                                                                           >
+                                                                                <h5>
+                                                                                     Order
+                                                                                     date:
+                                                                                </h5>
+                                                                                <span
+                                                                                     >Javascript
+                                                                                     -></span
+                                                                                >
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery1-infobox-1-2-element"
+                                                                           >
+                                                                                <h5>
+                                                                                     Pick-up:
+                                                                                </h5>
+                                                                                <span
+                                                                                     >Javascript
+                                                                                     -></span
+                                                                                >
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery1-infobox-1-2-element"
+                                                                           >
+                                                                                <h5>
+                                                                                     Comment:
+                                                                                </h5>
+                                                                                <span
+                                                                                     >Javascript
+                                                                                     -></span
+                                                                                >
+                                                                           </div>
+                                                                      </div>
+                                                                      <div
+                                                                           class="delivery1-infobox-2"
+                                                                      >
+                                                                           <div
+                                                                                class="delivery1-infobox-1-2-element"
+                                                                           >
+                                                                                <h5>
+                                                                                     Delivery:
+                                                                                </h5>
+                                                                                <span
+                                                                                     >Javascript
+                                                                                     -></span
+                                                                                >
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery1-infobox-1-2-element"
+                                                                           >
+                                                                                <h5>
+                                                                                     Delivery
+                                                                                     adress:
+                                                                                </h5>
+                                                                                <span
+                                                                                     >Javascript
+                                                                                     -></span
+                                                                                >
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery1-infobox-1-2-element"
+                                                                           >
+                                                                                <h5>
+                                                                                     Order
+                                                                                     number:
+                                                                                </h5>
+                                                                                <span
+                                                                                     >Tjødnali
+                                                                                     34,
+                                                                                     6856
+                                                                                     Sogndal</span
+                                                                                >
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                            <div
+                                                                 class="modal-footer"
+                                                            >
+                                                                 <button
+                                                                      type="button"
+                                                                      class="btn btn-secondary"
+                                                                      data-dismiss="modal"
+                                                                 >
+                                                                      Close
+                                                                 </button>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <!-- Button trigger modal from Bootstrap ends here -->
+                                        </div>
                                    </div>
                               </div>
                          </div>
@@ -457,6 +787,11 @@
           <script
                src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+               crossorigin="anonymous"
+          ></script>
+          <script
+               src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+               integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
                crossorigin="anonymous"
           ></script>
      </body>

@@ -142,6 +142,8 @@ footer {
      border-right: 1px solid rgba(0, 0, 0, 0.25);
      width: auto;
      height: auto;
+     max-height: 100vh;
+     overflow: auto;
 
      /* Bacground for skille, skal bort */
 }
@@ -166,9 +168,9 @@ footer {
 }
 
 .delivery1-topbar-sender-receiver {
-     margin-left: 30vh;
+     margin-left: 10vh;
      display: flex;
-     gap: 5vh;
+     gap: 10vh;
 }
 
 .delivery1-topbar-buttons {
@@ -182,9 +184,11 @@ footer {
      height: 4em;
      border-radius: 20px;
      background-color: rgba(84, 140, 248, 0.9);
+     font-size: 0.9em;
      color: white;
      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
      border: none;
+     overflow: hidden;
 }
 
 .delivery1-decline {
@@ -192,8 +196,16 @@ footer {
      height: 4em;
      border-radius: 20px;
      background-color: rgba(252, 110, 81, 0.6);
+     font-size: 0.9em;
      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
      border: none;
+     overflow: hidden;
+}
+
+@media (max-width: 500px) or (max-height: 580px) {
+     .delivery1-buttons-AccDec-writing {
+          font-size: 0.7em;
+     }
 }
 
 .delivery1-accept:hover {
@@ -214,56 +226,75 @@ footer {
      grid-template-rows: auto auto auto auto auto;
      /* row-gap: 3vh; */
      width: auto;
+     padding-bottom: 5px;
      /* margin-top: 4px; */
      overflow: scroll;
 }
 
 .delivery1-request-container {
-     height: 17vh;
-     width: 90%;
-     border: 2px solid rgb(253, 220, 130);
-     margin-top: 5%;
-     border-radius: 10px;
+     height: 17vh !important;
+     width: 90% !important;
+     border: 2px solid rgb(253, 220, 130) !important;
+     margin-top: 5% !important;
+     border-radius: 10px !important;
      /* box-sizing: border-box; */
-     margin-left: auto;
-     margin-right: auto;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     text-align: left !important;
 }
 
 .delivery1-accepted-container {
-     height: 17vh;
-     width: 90%;
-     border: 2px solid rgb(0, 132, 80);
-     margin-top: 5%;
-     border-radius: 10px;
-     box-sizing: border-box;
-     margin-left: auto;
-     margin-right: auto;
+     height: 17vh !important;
+     width: 90% !important;
+     border: 2px solid rgb(0, 132, 80) !important;
+     margin-top: 5% !important;
+     border-radius: 10px !important;
+     box-sizing: border-box !important;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     text-align: left !important;
 }
 
 .delivery1-declined-container {
-     height: 17vh;
-     width: 90%;
-     border: 2px solid rgba(252, 110, 81, 1);
-     margin-top: 5%;
-     border-radius: 10px;
-     box-sizing: border-box;
-     margin-left: auto;
-     margin-right: auto;
+     height: 17vh !important;
+     width: 90% !important;
+     border: 2px solid rgba(252, 110, 81, 1) !important;
+     margin-top: 5% !important;
+     border-radius: 10px !important;
+     box-sizing: border-box !important;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     text-align: left !important;
+}
+
+.delivery1-request-container.active {
+     outline: 3px solid rgb(253, 220, 130) !important;
+     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4) !important;
+}
+
+.delivery1-accepted-container.active {
+     outline: 3px solid rgb(0, 132, 80) !important;
+     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4) !important;
+}
+
+.delivery1-declined-container.active {
+     outline: 3px solid rgba(252, 110, 81, 1) !important;
+     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4) !important;
 }
 
 .delivery1-request-container:hover {
-     outline: 2px solid rgb(253, 220, 130);
-     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
+     outline: 2px solid rgb(253, 220, 130) !important;
+     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2) !important;
 }
 
 .delivery1-accepted-container:hover {
-     outline: 2px solid rgb(0, 132, 80);
-     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
+     outline: 2px solid rgb(0, 132, 80) !important;
+     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2) !important;
 }
 
 .delivery1-declined-container:hover {
-     outline: 2px solid rgba(252, 110, 81, 1);
-     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
+     outline: 2px solid rgba(252, 110, 81, 1) !important;
+     box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2) !important;
 }
 
 .delivery1-ReqAccDec-body {
@@ -301,18 +332,13 @@ footer {
      font-size: 1.2em;
 }
 
-/* This will cut out infotext section and position the title when minimizing the page */
-/* This changes the size of the icon. Since default settings are applied to google icon class material-icons a new class
-is set and !important is used to override */
-
 .delivery1-indication-request {
      background-color: rgb(253, 220, 130);
      border-radius: 100px;
      width: 1.5em;
      height: 1.5em;
-     margin-top: 2%;
-     margin-right: 2%;
-     /* margin-left: 60px; */
+     margin-top: 1%;
+     margin-right: 1%;
      align-items: center;
 }
 
@@ -332,8 +358,8 @@ is set and !important is used to override */
      border-radius: 100px;
      width: 1.5em;
      height: 1.5em;
-     margin-top: 2%;
-     margin-right: 2%;
+     margin-top: 1% !important;
+     margin-right: 1% !important;
      /* margin-left: 60px; */
      align-items: center;
 }
@@ -364,6 +390,8 @@ is set and !important is used to override */
 /* Here stops left side column */
 
 /* Here starts right side column */
+
+/* Here is the information square */
 .columnright-row-grid {
      display: grid;
      grid-template-rows: auto auto;
@@ -375,15 +403,7 @@ is set and !important is used to override */
 
 .delivery1-order-info-body {
      width: auto;
-     height: 35vh;
-     border: 1px solid rgba(0, 0, 0, 0.25);
-     margin-top: 5%;
-     border-radius: 20px;
-}
-
-.delivery1-order-calendar-body {
-     width: 90vh;
-     height: 45vh;
+     height: 40vh;
      border: 1px solid rgba(0, 0, 0, 0.25);
      margin-top: 5%;
      border-radius: 20px;
@@ -396,64 +416,183 @@ is set and !important is used to override */
 }
 
 .delivery1-order-column-general {
-     border-right: 2px solid rgba(0, 0, 0, 0.5);
-     margin-left: 3%;
+     margin-left: 1%;
      padding-right: 10%;
-     padding-left: 5%;
      display: flex;
-     justify-content: space-between;
+     flex-direction: row;
      overflow: auto;
 }
 
-.delivery1-infobox-1 {
-     margin-top: 10%;
+.delivery1-infobox-1,
+.delivery1-infobox-2 {
+     display: flex;
+     flex-direction: column;
 }
 
-.delivery1-infobox-2 {
-     margin-top: 10%;
+.delivery1-order-column-general h5 {
+     margin: 0;
+     margin-right: 1rem;
+}
+
+.delivery1-order-column-general span {
+     flex-grow: 1;
+     text-align: right;
 }
 
 .delivery1-infobox-1-2-element {
      /* padding-top: 20%; */
-     padding-top: 3vh;
+     /* padding-top: 3vh; */
+     flex: 1; /* Each column takes up an equal amount of space */
+     padding: 1rem; /*; Add some padding around the content */
+     min-width: 24vh; /* Minimum width for each column */
+     box-sizing: border-box;
 }
 
 .delivery1-order-column-items {
-     margin-right: 3%;
      height: 100%;
      overflow: auto;
-     /* display: flex;
-     justify-content: space-between; */
+     border-left: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 .delivery1-order-items-title {
      display: flex;
      justify-content: space-between;
-     padding-left: 13%;
-     padding-right: 8%;
+     padding-left: 10%;
+     padding-right: 10%;
      padding-top: 3%;
      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.delivery1-items-OLlist ol {
+     padding-left: 2%;
 }
 
 .delivery1-items-info {
      display: flex;
      justify-content: space-between;
-     padding-right: 7%;
-     margin-top: 3%;
+     padding-right: 15%;
+     padding-top: 1%;
+     border-bottom: 0.5px dotted rgba(0, 0, 0, 0.2);
+     padding-bottom: 1%;
 }
 
 .delivery1-items-info img {
-     width: 3.5vh;
-     height: 2.8vh;
+     width: 4.3vh;
+     height: 4vh;
      border: 1px solid rgba(0, 0, 0, 0.5);
      border-radius: 10px;
 }
 
 #delivery1-item-title-Qty {
-     margin-left: auto;
-     margin-right: auto;
      padding-left: 5%;
 }
+
+/* Here stops the information square */
+/* Here starts the calendar square */
+.delivery1-order-calendar-body {
+     width: 90vh;
+     height: 40vh;
+     border: 1px solid rgba(0, 0, 0, 0.25);
+     margin-top: 5%;
+     border-radius: 20px;
+
+     text-align: center;
+}
+/* Here starts calendar modal */
+.modal {
+     background-color: rgba(150, 150, 150, 0.5);
+
+     /* Custom modal styles */
+}
+
+.modal-dialog {
+     /* width: 20vh !important; */
+     max-width: 80vh !important;
+}
+
+.modal-content {
+     /* width: 1000px;
+     max-width: 1000px; */
+}
+
+.modal-header {
+}
+
+.modal-header img {
+     width: 15vh;
+     height: auto;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+     border-radius: 10px;
+}
+
+.delivery1-btn-primary {
+     background-color: transparent !important;
+     border: 1px solid rgba(0, 132, 80, 0.5) !important;
+     border-radius: 30px !important;
+     width: 25%;
+     height: 20%;
+     color: black !important;
+}
+
+.delivery1-btn-primary:hover {
+     background-color: transparent !important;
+     border: 2px solid rgba(0, 132, 80, 0.7) !important;
+     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+     border-radius: 30px !important;
+     width: 25%;
+     height: 20%;
+     color: black !important;
+     font-size: 1.1em;
+}
+
+.delivery1-modal-header-info {
+     line-height: 200%;
+     display: flex;
+     align-items: center;
+     margin-left: 5%;
+}
+
+.delivery1-modal-indication {
+     display: inline-flex;
+     background-color: rgba(94, 199, 142, 1);
+     width: 3vh;
+     height: 3vh;
+     border-radius: 100%;
+     margin-left: 5%;
+     margin-top: 5%;
+}
+
+#delivery1-delivery-title {
+     font-size: 1.5em;
+     font-weight: 600;
+}
+
+.delivery1-modal-infosection {
+     display: flex;
+     flex-direction: column;
+     text-align: left;
+     padding-right: 30%;
+     width: 80%;
+}
+
+.close {
+     /* Custom close button styles */
+}
+
+.modal-body {
+     margin-left: auto;
+     margin-right: auto;
+     text-align: left;
+     border: none;
+}
+
+.modal-footer {
+     /* Custom modal footer styles */
+}
+
+/* Here stops calendar modal */
+
+/* Here stops the calendar square */
 /* Here stops right side column */
 
 /* AMEDIA for scale */
@@ -470,6 +609,14 @@ is set and !important is used to override */
      }
 }
 
+/* This will cut out infotext section and position the title when minimizing the page */
+/* This changes the size of the icon. Since default settings are applied to google icon class material-icons a new class
+is set and !important is used to override */
+
 /*------------- Her stanser Delivery - page 1 ------------- */
 
 /* Hide the horizontal scrollbar */
+
+::-webkit-scrollbar {
+     display: none;
+}
