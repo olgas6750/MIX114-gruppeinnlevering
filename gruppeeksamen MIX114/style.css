@@ -129,3 +129,64 @@ footer{
 .footerContentRight img{
     width:70%;
 }
+
+.progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc */
+    border-bottom: ridge;
+    padding-top: 1vh;
+    display: flex;
+}
+.progressDelen h4{
+    padding-left: 5vh;
+}
+.dottene{
+    margin-left: 10vh;
+    margin-bottom: 0px;
+}
+.dot { /* denne er for de grønne små dottene*/
+    height: 1.5vh;
+    width: 1.5vh;
+    background-color: #008450;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.5vh;
+    margin-bottom: 3.5%;
+}
+.dot1 { /* denne er for de grønne større dottene*/
+    position: relative;
+    height: 4.5vh;
+    width: 4.5vh;
+    background-color: #008450;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 3px;
+}
+.dot2 { /* denne er for de grå små dottene*/
+    height: 1.5vh;
+    width: 1.5vh;
+    background-color: #C0C0C0;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.5vh;
+    margin-bottom: 3.5%;
+}
+.dot3 { /* denne er for de store grå dottene*/
+    position: relative;
+    height: 4.5vh;
+    width: 4.5vh;
+    background-color: #C0C0C0;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 3px;
+}
+.ikonFarge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+.material-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
