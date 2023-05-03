@@ -141,10 +141,13 @@ header{
 
 .registrertPakke{
     border: 1px solid black;
+    border-color: #D7D7D7;
     border-radius: 1em;
     margin: 3rem;
     display: grid;
     grid-template-columns: 50% 50%;
+    height: 28rem;
+    padding: 1rem;
 }
 
 .infoVenstre h2{
@@ -155,9 +158,20 @@ header{
     padding: 1em;
 }
 
-.bildeHøyre img{
-    position: relative;
-    width: 99%;
+.registrertPakke button{
+    border-radius: 1vh;
+    height: 2rem;
+    border: none;
+    background-color: #B3DACB;
+}
+
+.bildeHøyre {
+    grid-area: 1 / 2 / 3 / 3; /* This positions the element in the second column and spans two rows */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 6em;
+    padding-top: 2em;
 }
 
 footer{
