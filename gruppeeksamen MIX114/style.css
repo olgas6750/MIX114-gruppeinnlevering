@@ -627,11 +627,51 @@ is set and !important is used to override */
 /*------------- Her stanser Delivery - page 1 ------------- */
 
 /* Hide the horizontal scrollbar */
-
 ::-webkit-scrollbar {
      display: none;
 }
 
 /* Here starts delivery page 2 */
+/* Note that css for topbar and left-side column is the same as for delivery page 1, only difference is right side colunm */
+/* Modal Styles */
+/* Modal Styles */
+.modal {
+     opacity: 0;
+     transition: opacity 0.3s ease;
+}
+
+.modal.show {
+     opacity: 1;
+}
+
+.modal.fade .modal-dialog {
+     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+     animation: slideOutRight 0.6s forwards;
+}
+
+.modal.show .modal-dialog {
+     animation: slideInRightBounce 0.6s forwards;
+}
+
+@keyframes slideInRightBounce {
+     0% {
+          transform: translateX(100%);
+     }
+     50% {
+          transform: translateX(-10%);
+     }
+     100% {
+          transform: translateX(0);
+     }
+}
+
+@keyframes slideOutRight {
+     0% {
+          transform: translateX(0);
+     }
+     100% {
+          transform: translateX(100%);
+     }
+}
 
 /* Here ends delivery page 2 */

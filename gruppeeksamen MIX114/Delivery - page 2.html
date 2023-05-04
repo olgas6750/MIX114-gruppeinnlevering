@@ -103,36 +103,7 @@
                          <div class="delivery1-topbar">
                               <!-- Topbar with title, recipicant, sender etc. -->
                               <h3>REQUESTS</h3>
-                              <div class="delivery1-topbar-sender-receiver">
-                                   <div>
-                                        <h5>Sender:</h5>
-                                        <span>Javascriptinfo</span>
-                                   </div>
-                                   <div>
-                                        <h5>Receiver:</h5>
-                                        <span>Javascriptinfo</span>
-                                   </div>
-                              </div>
-                              <div class="delivery1-topbar-buttons">
-                                   <button
-                                        class="delivery1-accept"
-                                        type="submit"
-                                   >
-                                        <span
-                                             class="delivery1-buttons-AccDec-writing"
-                                             >ACCEPT ORDER</span
-                                        >
-                                   </button>
-                                   <button
-                                        class="delivery1-decline"
-                                        onclick="?"
-                                   >
-                                        <span
-                                             class="delivery1-buttons-AccDec-writing"
-                                             >DECLINE</span
-                                        >
-                                   </button>
-                              </div>
+                              <span>Delivery date</span>
                          </div>
 
                          <div class="delivery1-column-left">
@@ -140,11 +111,17 @@
                               <div class="columnleft-row-grid">
                                    <!-- Bootstrap toggle button -->
                                    <!-- Request square -->
-                                   <button
+                                   <!-- <button
                                         type="button"
                                         class="btn delivery1-accepted-container"
                                         data-bs-toggle="button"
                                         aria-pressed="true"
+                                   > -->
+                                   <button
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalCenter"
+                                        class="btn delivery1-accepted-container"
                                    >
                                         <div class="delivery1-ReqAccDec-body">
                                              <img
@@ -180,172 +157,55 @@
                                              </div>
                                         </div>
                                    </button>
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
+                                   <!-- MODAL STARTS HERE -->
+                                   <div
+                                        class="modal fade"
+                                        id="exampleModalCenter"
+                                        tabindex="-1"
+                                        role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle"
+                                        aria-hidden="true"
                                    >
-                                        <div class="delivery1-ReqAccDec-body">
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
+                                        <div
+                                             class="modal-dialog modal-dialog-centered"
+                                             role="document"
+                                        >
+                                             <div class="modal-content">
+                                                  <div class="modal-header">
+                                                       <h5
+                                                            class="modal-title"
+                                                            id="exampleModalLongTitle"
                                                        >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-accept"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-check"
-                                                  >
-                                                       check
-                                                  </span>
+                                                            Modal title
+                                                       </h5>
+                                                       <!-- <button
+                                                            type="button"
+                                                            class="close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                       >
+                                                            <span
+                                                                 aria-hidden="true"
+                                                                 >&times;</span
+                                                            >
+                                                       </button> -->
+                                                  </div>
+                                                  <div class="modal-body">
+                                                       Maps
+                                                  </div>
+                                                  <div
+                                                       class="modal-footer"
+                                                  ></div>
                                              </div>
                                         </div>
-                                   </button>
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
-                                   >
-                                        <div class="delivery1-ReqAccDec-body">
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-accept"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-check"
-                                                  >
-                                                       check
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
-                                   >
-                                        <div class="delivery1-ReqAccDec-body">
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-accept"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-check"
-                                                  >
-                                                       check
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
-                                   >
-                                        <div class="delivery1-ReqAccDec-body">
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-accept"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-check"
-                                                  >
-                                                       check
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
+                                   </div>
+                                   <!-- MODAL ENDS HERE -->
                               </div>
                          </div>
                          <!-- Right column -->
                          <div class="delivery1-column-right">
-                              <div class="columnright-row-grid">
-                                   <!--here comes the delivery info container  -->
+                              <div class="columnright-map-grid">
+                                   <!--here comes the google maps API container  -->
                               </div>
                          </div>
                     </div>
