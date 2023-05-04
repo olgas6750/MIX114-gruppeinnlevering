@@ -381,10 +381,9 @@ footer {
 }
 
 .delivery1-exit {
-     font-size: 16px !important;
-     color: white;
-     margin-left: 3.5px;
-     margin-top: 3.5px;
+     font-size: 16px;
+     color: rgb(255, 255, 255);
+     margin-left: auto;
      margin-right: auto;
 }
 /* Here stops left side column */
@@ -532,6 +531,15 @@ footer {
      width: 25%;
      height: 20%;
      color: black !important;
+     display: flex !important;
+     align-items: center !important;
+}
+
+.delivery1-nearMe {
+     color: black;
+     font-size: 16px !important;
+     margin-left: 15%;
+     margin-right: 2%;
 }
 
 .delivery1-btn-primary:hover {
