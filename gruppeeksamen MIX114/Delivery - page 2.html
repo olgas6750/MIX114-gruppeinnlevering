@@ -103,17 +103,46 @@
                          <div class="delivery1-topbar">
                               <!-- Topbar with title, recipicant, sender etc. -->
                               <h3>REQUESTS</h3>
+                              <div class="delivery1-topbar-sender-receiver">
+                                   <div>
+                                        <h5>Sender:</h5>
+                                        <span>Javascriptinfo</span>
+                                   </div>
+                                   <div>
+                                        <h5>Receiver:</h5>
+                                        <span>Javascriptinfo</span>
+                                   </div>
+                              </div>
+                              <div class="delivery1-topbar-buttons">
+                                   <button
+                                        class="delivery1-accept"
+                                        type="submit"
+                                   >
+                                        <span
+                                             class="delivery1-buttons-AccDec-writing"
+                                             >ACCEPT ORDER</span
+                                        >
+                                   </button>
+                                   <button
+                                        class="delivery1-decline"
+                                        onclick="?"
+                                   >
+                                        <span
+                                             class="delivery1-buttons-AccDec-writing"
+                                             >DECLINE</span
+                                        >
+                                   </button>
+                              </div>
                          </div>
 
                          <div class="delivery1-column-left">
                               <!-- Left column -->
                               <div class="columnleft-row-grid">
                                    <!-- Bootstrap toggle button -->
-
-                                   <!-- Accepted square -->
+                                   <!-- Request square -->
                                    <button
                                         type="button"
-                                        class="btn delivery1-accepted-container"
+                                        class="btn delivery1-request-container"
                                         data-bs-toggle="button"
                                         aria-pressed="true"
                                    >
@@ -141,61 +170,24 @@
                                                   <h6>Order:<span>js</span></h6>
                                              </div>
                                              <div
-                                                  class="delivery1-indication-accept"
+                                                  class="delivery1-indication-request"
                                              >
                                                   <span
-                                                       class="material-icons delivery1-check"
+                                                       class="material-icons delivery1-questionmark"
                                                   >
-                                                       check
+                                                       question_mark
                                                   </span>
                                              </div>
                                         </div>
                                    </button>
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
-                                   >
-                                        <div class="delivery1-ReqAccDec-body">
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-accept"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-check"
-                                                  >
-                                                       check
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
-                                   <!-- Declined square -->
                               </div>
                          </div>
                          <!-- Right column -->
-                         <div class="delivery1-column-right"></div>
+                         <div class="delivery1-column-right">
+                              <div class="columnright-row-grid">
+                                   <!--here comes the delivery info container  -->
+                              </div>
+                         </div>
                     </div>
                </div>
           </div>
@@ -272,5 +264,3 @@
           ></script>
      </body>
 </html>
-
-<!-- Delivery 2 -->
