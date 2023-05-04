@@ -136,6 +136,8 @@ footer {
 .delivery1-column-grid {
      display: grid;
      grid-template-columns: 35% 65%;
+     height: 100%;
+     width: 100%;
 }
 
 .delivery1-column-left {
