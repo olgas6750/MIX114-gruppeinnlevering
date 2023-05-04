@@ -141,16 +141,15 @@ footer {
 }
 
 .delivery1-column-left {
-     border-right: 1px solid rgba(0, 0, 0, 0.25);
      width: auto;
-     height: 74vh;
-
-     overflow: auto;
+     height: 92vh;
+     overflow: scroll;
 
      /* Bacground for skille, skal bort */
 }
 
 .delivery1-column-right {
+     border-left: 1px solid rgba(0, 0, 0, 0.25);
      width: 100%;
      height: 100%;
      /* Bacground for skille, skal bort */
@@ -229,6 +228,7 @@ footer {
      grid-template-rows: auto auto auto auto auto;
      /* row-gap: 3vh; */
      width: auto;
+
      padding-bottom: 5px;
      /* margin-top: 4px; */
      overflow: scroll;
