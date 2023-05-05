@@ -182,7 +182,7 @@ footer{
     width:auto;
 }
 
-.addPackageButton button {
+.addPackageButton {
     background-color: #5364FF;
     color:white;
     font-family: Helvetica;
