@@ -116,7 +116,8 @@
                               <div class="delivery1-topbar-buttons">
                                    <button
                                         class="delivery1-accept"
-                                        type="submit"
+                                        id="delivery1-acceptButton"
+                                        type="button"
                                    >
                                         <span
                                              class="delivery1-buttons-AccDec-writing"
@@ -125,7 +126,8 @@
                                    </button>
                                    <button
                                         class="delivery1-decline"
-                                        onclick="?"
+                                        id="delivery1-declineButton"
+                                        type="button"
                                    >
                                         <span
                                              class="delivery1-buttons-AccDec-writing"
@@ -139,13 +141,18 @@
                               <!-- Left column -->
                               <div class="columnleft-row-grid">
                                    <!-- Bootstrap toggle button -->
+                                   <!-- Request -->
                                    <button
                                         type="button"
                                         class="btn delivery1-request-container"
+                                        id="delivery1-request-toggle-button"
                                         data-bs-toggle="button"
-                                        aria-pressed="true"
+                                        aria-pressed="false"
                                    >
-                                        <div class="delivery1-ReqAccDec-body">
+                                        <div
+                                             class="delivery1-ReqAccDec-body"
+                                             id="delivery1-requestButton-body"
+                                        >
                                              <img
                                                   class="delivery1-delivery-img"
                                                   src="./images/profilepicture.png"
@@ -170,6 +177,7 @@
                                              </div>
                                              <div
                                                   class="delivery1-indication-request"
+                                                  id="delivery1-indicationRequest"
                                              >
                                                   <span
                                                        class="material-icons delivery1-questionmark"
@@ -179,55 +187,19 @@
                                              </div>
                                         </div>
                                    </button>
-                                   <!-- Request square -->
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-request-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
-                                   >
-                                        <div class="delivery1-ReqAccDec-body">
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-request"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-questionmark"
-                                                  >
-                                                       question_mark
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
+
                                    <!-- Accepted square -->
                                    <button
                                         type="button"
                                         class="btn delivery1-accepted-container"
+                                        id="delivery1-accept-toggle-button"
                                         data-bs-toggle="button"
-                                        aria-pressed="true"
+                                        aria-pressed="false"
                                    >
-                                        <div class="delivery1-ReqAccDec-body">
+                                        <div
+                                             class="delivery1-ReqAccDec-body"
+                                             id="delivery1-acceptedButton-body"
+                                        >
                                              <img
                                                   class="delivery1-delivery-img"
                                                   src="./images/profilepicture.png"
@@ -252,6 +224,7 @@
                                              </div>
                                              <div
                                                   class="delivery1-indication-accept"
+                                                  id="delivery1-indicationAccept"
                                              >
                                                   <span
                                                        class="material-icons delivery1-check"
@@ -261,54 +234,19 @@
                                              </div>
                                         </div>
                                    </button>
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
-                                   >
-                                        <div class="delivery1-ReqAccDec-body">
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-accept"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-check"
-                                                  >
-                                                       check
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
+
                                    <!-- Declined square -->
                                    <button
                                         type="button"
                                         class="btn delivery1-declined-container"
+                                        id="delivery1-decline-toggle-button"
                                         data-bs-toggle="button"
-                                        aria-pressed="true"
+                                        aria-pressed="false"
                                    >
-                                        <div class="delivery1-ReqAccDec-body">
+                                        <div
+                                             class="delivery1-ReqAccDec-body"
+                                             id="delivery1-declinedButton-body"
+                                        >
                                              <img
                                                   class="delivery1-delivery-img"
                                                   src="./images/profilepicture.png"
@@ -333,6 +271,7 @@
                                              </div>
                                              <div
                                                   class="delivery1-indication-decline"
+                                                  id="delivery1-indicationDecline"
                                              >
                                                   <span
                                                        class="material-icons delivery1-exit"
@@ -813,7 +752,10 @@
                     </div>
                </div>
           </footer>
-          <script type="text/javascript" src="script.js"></script>
+          <script
+               type="text/javascript"
+               src="./JS Delivery - page 1.js"
+          ></script>
           <script
                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
