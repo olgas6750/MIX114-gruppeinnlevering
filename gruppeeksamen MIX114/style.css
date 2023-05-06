@@ -633,8 +633,8 @@ is set and !important is used to override */
 
 /* Here starts delivery page 2 */
 /* Note that css for topbar and left-side column is the same as for delivery page 1, only difference is right side colunm */
-/* Modal Styles */
-/* Modal Styles */
+
+/* CSS for modal starts here */
 .modal {
      opacity: 0;
      transition: opacity 0.3s ease;
@@ -647,10 +647,37 @@ is set and !important is used to override */
 .modal.fade .modal-dialog {
      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
      animation: slideOutRight 0.6s forwards;
+     width: 80% !important; /* Adjust the width as desired */
+     max-width: 100% !important; /* Ensure the modal doesn't exceed the viewport width */
+     height: 300px !important;
+     max-height: 300px; /* Adjust the height as desired, or use a specific value like 500px */
+
+     justify-content: center;
+     margin-top: 90px;
+     margin-bottom: 10%;
 }
 
 .modal.show .modal-dialog {
      animation: slideInRightBounce 0.6s forwards;
+}
+
+.modal-content {
+     height: 300px !important;
+     width: 100%;
+     border-radius: 50px;
+     outline: 5px black solid;
+}
+
+.modal-body {
+     overflow: scroll;
+     max-width: 100%;
+}
+
+.delivery1-modal-block4 {
+     height: 80vh;
+     flex-direction: column;
+     display: flex;
+     background-color: azure;
 }
 
 @keyframes slideInRightBounce {
@@ -673,5 +700,117 @@ is set and !important is used to override */
           transform: translateX(100%);
      }
 }
+
+#map {
+     width: 100%;
+     height: auto;
+}
+
+.div-block {
+     grid-column-gap: 16px;
+     grid-row-gap: 16px;
+     grid-template-rows: auto auto;
+     grid-template-columns: 1fr 1fr;
+     grid-auto-columns: 1fr;
+     display: grid;
+}
+
+.div-block-2 {
+     grid-column-gap: 16px;
+     grid-row-gap: 16px;
+     grid-template-rows: auto;
+     grid-template-columns: 1fr 1fr;
+     grid-auto-columns: 1fr;
+     display: grid;
+}
+
+.div-block-3 {
+     display: flex;
+}
+
+.image {
+     max-width: 50%;
+     object-fit: none;
+}
+
+.heading {
+     align-items: center;
+     margin-bottom: 20px;
+     display: flex;
+}
+
+.div-block-4 {
+     height: 500px;
+     flex-direction: column;
+     display: flex;
+}
+
+.image-2 {
+     width: 253px;
+     height: 60px;
+}
+
+.image-3 {
+     max-width: 75%;
+     margin-top: 11px;
+     margin-bottom: 11px;
+}
+
+.heading-2 {
+     margin-top: 10px;
+     margin-bottom: 5px;
+}
+
+.progress-div {
+     grid-column-gap: 16px;
+     grid-row-gap: 16px;
+     grid-template-rows: auto;
+     grid-template-columns: 1fr 1fr;
+     grid-auto-columns: 1fr;
+     display: grid;
+}
+
+.image-4 {
+     width: 10%;
+     margin-left: 10px;
+     margin-right: 10px;
+}
+
+.text-log {
+     padding-top: 10px;
+     padding-bottom: 10px;
+     font-style: normal;
+}
+
+.progressbar {
+     margin-left: 0;
+     display: block;
+}
+
+.progresstext {
+     margin-left: -200px;
+}
+
+.progresssvg {
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+#w-node-_7d3f42eb-f478-ca2e-1bb4-2588fb951749-e8366478 {
+     grid-area: span 1 / span 1 / span 1 / span 1;
+     align-self: auto;
+     justify-self: auto;
+}
+
+#w-node-_5107a752-4540-7d24-4c53-1643e521c3bc-e8366478,
+#w-node-_26c98ac7-4e38-6cab-7006-996b8bfb269b-e8366478,
+#w-node-_3f25c5e3-5d9f-6f7a-7e06-907376bb3adc-e8366478,
+#w-node-_7de942da-d249-75ec-1859-7bb15796ed3f-e8366478,
+#w-node-_57badb52-ee1f-0c7d-e915-6aea383cc670-e8366478,
+#w-node-_532af957-6fae-f8ba-f7d1-c835d640c037-e8366478,
+#w-node-a0fdc1a5-84b7-827f-af9f-f814d6e6fbd4-e8366478 {
+     grid-area: span 1 / span 1 / span 1 / span 1;
+}
+/* CSS for modal ends here */
 
 /* Here ends delivery page 2 */
