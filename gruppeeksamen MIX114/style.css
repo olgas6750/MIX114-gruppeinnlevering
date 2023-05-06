@@ -512,14 +512,6 @@ footer {
      max-width: 80vh !important;
 }
 
-.modal-content {
-     /* width: 1000px;
-     max-width: 1000px; */
-}
-
-.modal-header {
-}
-
 .modal-header img {
      width: 15vh;
      height: auto;
@@ -598,7 +590,17 @@ footer {
 }
 
 .modal-footer {
-     /* Custom modal footer styles */
+     height: 8% !important;
+     display: flex;
+     align-items: center !important;
+     padding: 0 !important;
+}
+
+.modal-footer button {
+     height: 80% !important;
+     width: auto !important;
+     margin-right: 5%;
+     border-radius: 15px;
 }
 
 /* Here stops calendar modal */
@@ -649,11 +651,10 @@ is set and !important is used to override */
      animation: slideOutRight 0.6s forwards;
      width: 80% !important; /* Adjust the width as desired */
      max-width: 100% !important; /* Ensure the modal doesn't exceed the viewport width */
-     height: 300px !important;
+     height: auto !important;
      max-height: 300px; /* Adjust the height as desired, or use a specific value like 500px */
-
      justify-content: center;
-     margin-top: 90px;
+     margin-top: 70px;
      margin-bottom: 10%;
 }
 
@@ -662,7 +663,7 @@ is set and !important is used to override */
 }
 
 .modal-content {
-     height: 300px !important;
+     height: 85vh !important;
      width: 100%;
      border-radius: 50px;
      outline: 5px black solid;
@@ -675,9 +676,8 @@ is set and !important is used to override */
 
 .delivery1-modal-block4 {
      height: 80vh;
-     flex-direction: column;
-     display: flex;
-     background-color: azure;
+     display: grid;
+     grid-template-rows: auto auto auto auto auto auto auto;
 }
 
 @keyframes slideInRightBounce {
