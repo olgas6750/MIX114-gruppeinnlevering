@@ -174,18 +174,20 @@
                                                   <div class="modal-body">
                                                        <div class="w-container">
                                                             <div
-                                                                 class="div-block"
+                                                                 class="delivery2-modal-gridlayout"
                                                             >
                                                                  <div
                                                                       id="w-node-_7d3f42eb-f478-ca2e-1bb4-2588fb951749-e8366478"
-                                                                      class="div-block-3"
+                                                                      class="delivery2-modal-title-block"
                                                                  >
                                                                       <h2
                                                                            class="heading"
                                                                       >
-                                                                           ORDER
-                                                                           6969123
+                                                                           ORDER:
                                                                       </h2>
+                                                                      <span
+                                                                           >JS</span
+                                                                      >
                                                                  </div>
                                                                  <div
                                                                       id="w-node-_5107a752-4540-7d24-4c53-1643e521c3bc-e8366478"
@@ -198,7 +200,7 @@
                                                                            <h3>
                                                                                 Sender
                                                                            </h3>
-                                                                           <div>
+                                                                           <span>
                                                                                 Company
                                                                                 name:
                                                                                 Amy´s
@@ -207,7 +209,7 @@
                                                                                 42,
                                                                                 3182
                                                                                 Horten
-                                                                           </div>
+                                                                           </span>
                                                                       </div>
                                                                       <div
                                                                            id="w-node-_3f25c5e3-5d9f-6f7a-7e06-907376bb3adc-e8366478"
@@ -216,7 +218,8 @@
                                                                            <h3>
                                                                                 Recipiant
                                                                            </h3>
-                                                                           <div>
+
+                                                                           <span>
                                                                                 Name:
                                                                                 Julia
                                                                                 Greenswood<br />Address:
@@ -224,12 +227,12 @@
                                                                                 Street,
                                                                                 6969
                                                                                 Sogndal
-                                                                           </div>
+                                                                           </span>
                                                                       </div>
                                                                  </div>
                                                                  <div
                                                                       id="w-node-_7de942da-d249-75ec-1859-7bb15796ed3f-e8366478"
-                                                                      class="delivery1-modal-block4"
+                                                                      class="delivery2-modal-block4"
                                                                  >
                                                                       <div>
                                                                            <h5>
@@ -259,67 +262,206 @@
                                                                                 >
                                                                            </div>
                                                                       </div>
-                                                                      <!-- Here starts the tracking update section -->
+                                                                      <!-- !!!!!!!!Here starts the tracking update section!!!!!!! -->
                                                                       <div
-                                                                           class="delivery2-schedule"
+                                                                           class="delivery2-picked-up"
                                                                       >
-                                                                           <span
-                                                                                >JS
-                                                                                info</span
+                                                                           <div
+                                                                                class="custom-checkbox-container"
                                                                            >
-                                                                           <h5>
-                                                                                Picked-up
-                                                                           </h5>
-                                                                      </div>
-                                                                      <div
-                                                                           class="text-log"
-                                                                      >
-                                                                           <span
-                                                                                >JS
-                                                                                info</span
-                                                                           >
-                                                                           <h5>
-                                                                                On-route
-                                                                           </h5>
-                                                                      </div>
-                                                                      <div
-                                                                           class="text-log"
-                                                                      >
-                                                                           <span
-                                                                                >JS
-                                                                                info</span
-                                                                           >
-                                                                           <h5>
-                                                                                Delayed:<span
-                                                                                     >input?</span
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
                                                                                 >
-                                                                           </h5>
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-pickedUp-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     Picked-up
+                                                                                </h5>
+                                                                           </div>
                                                                       </div>
                                                                       <div
-                                                                           class="text-log"
+                                                                           class="delivery2-on-route"
                                                                       >
-                                                                           <span
-                                                                                >JS
-                                                                                info</span
+                                                                           <div
+                                                                                class="custom-checkbox-container"
                                                                            >
-                                                                           <h5>
-                                                                                Arrived
-                                                                                at
-                                                                                delivery
-                                                                                adress
-                                                                           </h5>
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
+                                                                                >
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-onRoute-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     On-route
+                                                                                </h5>
+                                                                           </div>
                                                                       </div>
                                                                       <div
-                                                                           class="text-log"
+                                                                           class="delivery2-delayed"
                                                                       >
-                                                                           <span
-                                                                                >JS
-                                                                                info</span
+                                                                           <div
+                                                                                class="form-check-input-delay"
                                                                            >
-                                                                           <h5>
-                                                                                Delivery
-                                                                                confirmed
-                                                                           </h5>
+                                                                                <span
+                                                                                     class="material-icons delivery2-progress-icon"
+                                                                                     id="iconSpan"
+                                                                                >
+                                                                                     check
+                                                                                </span>
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text-"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-delayed-lastUpdate"
+                                                                                >
+                                                                                </span>
+                                                                                <h5>
+                                                                                     Delayed:<span
+                                                                                          id="delivery2-modal-delay-selected"
+                                                                                     >
+                                                                                     </span>
+                                                                                </h5>
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-delay-set"
+                                                                           >
+                                                                                <!-- Bootstrap dropdown menu -->
+                                                                                <button
+                                                                                     class="btn btn-primary delivery2-dropdown-toggle"
+                                                                                     type="button"
+                                                                                     id="dropdownMenuButton"
+                                                                                     data-bs-toggle="dropdown"
+                                                                                     aria-expanded="false"
+                                                                                >
+                                                                                     Time
+                                                                                     <span
+                                                                                          class="material-icons"
+                                                                                          >arrow_drop_down</span
+                                                                                     >
+                                                                                </button>
+                                                                                <ul
+                                                                                     class="dropdown-menu"
+                                                                                     aria-labelledby="dropdownMenuButton"
+                                                                                     id="dropdownMenu"
+                                                                                >
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="1"
+                                                                                               >1
+                                                                                               Hour</a
+                                                                                          >
+                                                                                     </li>
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="6"
+                                                                                               >6
+                                                                                               Hour</a
+                                                                                          >
+                                                                                     </li>
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="12"
+                                                                                               >12
+                                                                                               Hour</a
+                                                                                          >
+                                                                                     </li>
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="24"
+                                                                                               >1
+                                                                                               Day</a
+                                                                                          >
+                                                                                     </li>
+                                                                                </ul>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div
+                                                                           class="delivery2-arrived"
+                                                                      >
+                                                                           <div
+                                                                                class="custom-checkbox-container"
+                                                                           >
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
+                                                                                >
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-arrived-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     Arrived
+                                                                                     at
+                                                                                     delivery
+                                                                                     adress
+                                                                                </h5>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div
+                                                                           class="delivery2-delivery-confirmed"
+                                                                      >
+                                                                           <div
+                                                                                class="custom-checkbox-container"
+                                                                           >
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
+                                                                                >
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-confirmed-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     Delivery
+                                                                                     confirmed
+                                                                                </h5>
+                                                                           </div>
                                                                       </div>
                                                                  </div>
                                                                  <div
