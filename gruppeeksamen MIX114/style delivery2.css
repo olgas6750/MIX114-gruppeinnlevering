@@ -512,14 +512,6 @@ footer {
      max-width: 80vh !important;
 }
 
-.modal-content {
-     /* width: 1000px;
-     max-width: 1000px; */
-}
-
-.modal-header {
-}
-
 .modal-header img {
      width: 15vh;
      height: auto;
@@ -586,10 +578,6 @@ footer {
      width: 80%;
 }
 
-.close {
-     /* Custom close button styles */
-}
-
 .modal-body {
      margin-left: auto;
      margin-right: auto;
@@ -597,9 +585,26 @@ footer {
      border: none;
 }
 
-.modal-footer {
-     /* Custom modal footer styles */
+/* !!!!!!!!!!!!!!!!!FEIL  */
+.delivery2-modal-footer {
+     height: 8% !important;
+     display: flex;
+     align-items: center !important;
+     padding: 0 !important;
 }
+
+.delivery2-modal-footer button {
+     background: #a0d2be;
+     border-radius: 20px;
+     margin-right: 5vh;
+     height: 80% !important;
+     width: 12vh !important;
+}
+
+.delivery2-modal-footer button:hover {
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* FEIL!!!!!!! */
 
 /* Here stops calendar modal */
 
@@ -627,7 +632,6 @@ is set and !important is used to override */
 /*------------- Her stanser Delivery - page 1 ------------- */
 
 /* Hide the horizontal scrollbar */
-
 ::-webkit-scrollbar {
      display: none;
 }
