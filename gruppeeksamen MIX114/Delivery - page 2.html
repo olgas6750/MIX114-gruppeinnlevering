@@ -2,7 +2,7 @@
 <html>
      <head>
           <meta charset="UTF-8" />
-          <link rel="stylesheet" href="style.css" />
+          <link rel="stylesheet" href="style2.css" />
           <link
                rel="stylesheet"
                href="https://fonts.googleapis.com/css?family=Open Sans|Manrope"
@@ -102,104 +102,28 @@
                          <!-- Divides into two columns -->
                          <div class="delivery1-topbar">
                               <!-- Topbar with title, recipicant, sender etc. -->
-                              <h3>REQUESTS</h3>
-                              <div class="delivery1-topbar-sender-receiver">
-                                   <div>
-                                        <h5>Sender:</h5>
-                                        <span>Javascriptinfo</span>
-                                   </div>
-                                   <div>
-                                        <h5>Receiver:</h5>
-                                        <span>Javascriptinfo</span>
-                                   </div>
-                              </div>
-                              <div class="delivery1-topbar-buttons">
-                                   <button
-                                        class="delivery1-accept"
-                                        id="delivery1-acceptButton"
-                                        type="button"
-                                   >
-                                        <span
-                                             class="delivery1-buttons-AccDec-writing"
-                                             >ACCEPT ORDER</span
-                                        >
-                                   </button>
-                                   <button
-                                        class="delivery1-decline"
-                                        id="delivery1-declineButton"
-                                        type="button"
-                                   >
-                                        <span
-                                             class="delivery1-buttons-AccDec-writing"
-                                             >DECLINE</span
-                                        >
-                                   </button>
-                              </div>
+                              <h3>MY DELIVERIES</h3>
+                              <span>Delivery date</span>
                          </div>
 
                          <div class="delivery1-column-left">
                               <!-- Left column -->
                               <div class="columnleft-row-grid">
                                    <!-- Bootstrap toggle button -->
-                                   <!-- Request -->
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-request-container"
-                                        id="delivery1-request-toggle-button"
-                                        data-bs-toggle="button"
-                                        aria-pressed="false"
-                                   >
-                                        <div
-                                             class="delivery1-ReqAccDec-body"
-                                             id="delivery1-requestButton-body"
-                                        >
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-request"
-                                                  id="delivery1-indicationRequest"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-questionmark"
-                                                  >
-                                                       question_mark
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
-
-                                   <!-- Accepted square -->
-                                   <button
+                                   <!-- Request square -->
+                                   <!-- <button
                                         type="button"
                                         class="btn delivery1-accepted-container"
-                                        id="delivery1-accept-toggle-button"
                                         data-bs-toggle="button"
-                                        aria-pressed="false"
+                                        aria-pressed="true"
+                                   > -->
+                                   <button
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalCenter"
+                                        class="btn delivery1-accepted-container"
                                    >
-                                        <div
-                                             class="delivery1-ReqAccDec-body"
-                                             id="delivery1-acceptedButton-body"
-                                        >
+                                        <div class="delivery1-ReqAccDec-body">
                                              <img
                                                   class="delivery1-delivery-img"
                                                   src="./images/profilepicture.png"
@@ -224,7 +148,6 @@
                                              </div>
                                              <div
                                                   class="delivery1-indication-accept"
-                                                  id="delivery1-indicationAccept"
                                              >
                                                   <span
                                                        class="material-icons delivery1-check"
@@ -234,30 +157,315 @@
                                              </div>
                                         </div>
                                    </button>
-
-                                   <!-- Declined square -->
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-declined-container"
-                                        id="delivery1-decline-toggle-button"
-                                        data-bs-toggle="button"
-                                        aria-pressed="false"
+                                   <!-- MODAL STARTS HERE -->
+                                   <div
+                                        class="modal fade"
+                                        id="exampleModalCenter"
+                                        tabindex="-1"
+                                        role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle"
+                                        aria-hidden="true"
                                    >
                                         <div
-                                             class="delivery1-ReqAccDec-body"
-                                             id="delivery1-declinedButton-body"
+                                             class="modal-dialog modal-dialog-centered"
+                                             role="document"
                                         >
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
+                                             <div class="modal-content">
+                                                  <div class="modal-body">
+                                                       <div class="w-container">
+                                                            <div
+                                                                 class="delivery2-modal-gridlayout"
+                                                            >
+                                                                 <div
+                                                                      class="delivery2-modal-title-block"
+                                                                 >
+                                                                      <h2>
+                                                                           ORDER:
+                                                                      </h2>
+                                                                      <span
+                                                                           >JS</span
+                                                                      >
+                                                                 </div>
+                                                                 <div
+                                                                      class="delivery2-modal-block-sendRec"
+                                                                 >
+                                                                      <div
+                                                                           id="w-node-_26c98ac7-4e38-6cab-7006-996b8bfb269b-e8366478"
+                                                                           class="sender"
+                                                                      >
+                                                                           <h4>
+                                                                                Sender
+                                                                           </h4>
+                                                                           <span
+                                                                                class="delivery2-modal-sendRec-text"
+                                                                                >JSname</span
+                                                                           >
+                                                                           <span
+                                                                                class="delivery2-modal-sendRec-text"
+                                                                                >JSadress</span
+                                                                           >
+                                                                      </div>
+                                                                      <div
+                                                                           id="w-node-_3f25c5e3-5d9f-6f7a-7e06-907376bb3adc-e8366478"
+                                                                           class="recipiant"
+                                                                      >
+                                                                           <h4>
+                                                                                Recipiant
+                                                                           </h4>
+
+                                                                           <span
+                                                                                class="delivery2-modal-sendRec-text"
+                                                                                >JSname</span
+                                                                           >
+                                                                           <span
+                                                                                class="delivery2-modal-sendRec-text"
+                                                                                >JSadress</span
+                                                                           >
+                                                                      </div>
+                                                                 </div>
+                                                                 <div
+                                                                      id="w-node-_7de942da-d249-75ec-1859-7bb15796ed3f-e8366478"
+                                                                      class="delivery2-modal-block-progress"
+                                                                 >
+                                                                      <div>
+                                                                           <h5>
+                                                                                Info
+                                                                                from
+                                                                                the
+                                                                                buyer:
+                                                                           </h5>
+                                                                           <span
+                                                                                >JS
+                                                                                info</span
+                                                                           >
+                                                                      </div>
+                                                                      <div>
+                                                                           <h5
+                                                                                class="heading-2"
+                                                                           >
+                                                                                Tracking
+                                                                                Log
+                                                                           </h5>
+                                                                           <div>
+                                                                                Estimated
+                                                                                Delivery:
+                                                                                <span
+                                                                                     >Js
+                                                                                     info</span
+                                                                                >
+                                                                           </div>
+                                                                      </div>
+                                                                      <!-- !!!!!!!!Here starts the tracking update section!!!!!!! -->
+                                                                      <div
+                                                                           class="delivery2-picked-up"
+                                                                      >
+                                                                           <div
+                                                                                class="custom-checkbox-container"
+                                                                           >
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
+                                                                                >
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-pickedUp-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     Picked-up
+                                                                                </h5>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div
+                                                                           class="delivery2-on-route"
+                                                                      >
+                                                                           <div
+                                                                                class="custom-checkbox-container"
+                                                                           >
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
+                                                                                >
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-onRoute-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     On-route
+                                                                                </h5>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div
+                                                                           class="delivery2-delayed"
+                                                                      >
+                                                                           <div
+                                                                                class="form-check-input-delay"
+                                                                           >
+                                                                                <span
+                                                                                     class="material-icons delivery2-progress-icon"
+                                                                                     id="iconSpan"
+                                                                                >
+                                                                                     check
+                                                                                </span>
+                                                                           </div>
+
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text-"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-delayed-lastUpdate"
+                                                                                >
+                                                                                </span>
+                                                                                <h5>
+                                                                                     Delayed:<span
+                                                                                          id="delivery2-modal-delay-selected"
+                                                                                     >
+                                                                                     </span>
+                                                                                </h5>
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-delay-set"
+                                                                           >
+                                                                                <!-- Bootstrap dropdown menu -->
+                                                                                <button
+                                                                                     class="btn btn-primary delivery2-dropdown-toggle"
+                                                                                     type="button"
+                                                                                     id="dropdownMenuButton"
+                                                                                     data-bs-toggle="dropdown"
+                                                                                     aria-expanded="false"
+                                                                                >
+                                                                                     Time
+                                                                                     <span
+                                                                                          class="material-icons"
+                                                                                          >arrow_drop_down</span
+                                                                                     >
+                                                                                </button>
+                                                                                <ul
+                                                                                     class="dropdown-menu"
+                                                                                     aria-labelledby="dropdownMenuButton"
+                                                                                     id="dropdownMenu"
+                                                                                >
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="1"
+                                                                                               >1
+                                                                                               Hour</a
+                                                                                          >
+                                                                                     </li>
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="6"
+                                                                                               >6
+                                                                                               Hour</a
+                                                                                          >
+                                                                                     </li>
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="12"
+                                                                                               >12
+                                                                                               Hour</a
+                                                                                          >
+                                                                                     </li>
+                                                                                     <li>
+                                                                                          <a
+                                                                                               class="dropdown-item"
+                                                                                               data-delay-hours="24"
+                                                                                               >1
+                                                                                               Day</a
+                                                                                          >
+                                                                                     </li>
+                                                                                </ul>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div
+                                                                           class="delivery2-arrived"
+                                                                      >
+                                                                           <div
+                                                                                class="custom-checkbox-container"
+                                                                           >
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
+                                                                                >
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-arrived-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     Arrived
+                                                                                     at
+                                                                                     delivery
+                                                                                     adress
+                                                                                </h5>
+                                                                           </div>
+                                                                      </div>
+                                                                      <div
+                                                                           class="delivery2-delivery-confirmed"
+                                                                      >
+                                                                           <div
+                                                                                class="custom-checkbox-container"
+                                                                           >
+                                                                                <input
+                                                                                     class="form-check-input"
+                                                                                     type="checkbox"
+                                                                                     id="toggleBtn"
+                                                                                />
+                                                                                <span
+                                                                                     class="material-icons custom-checkbox-icon"
+                                                                                     >check</span
+                                                                                >
+                                                                           </div>
+                                                                           <div
+                                                                                class="delivery2-deliveryUpdate-text"
+                                                                           >
+                                                                                <span
+                                                                                     id="delivery2-modal-confirmed-lastUpdate"
+                                                                                ></span>
+                                                                                <h5>
+                                                                                     Delivery
+                                                                                     confirmed
+                                                                                </h5>
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                                 <div
+                                                                      class="delivery2-modal-block-maps"
+                                                                      id="delivery2-modal-map"
+                                                                 ></div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div
+                                                       class="delivery2-modal-footer"
                                                   >
                                                        <button
                                                             type="button"
@@ -265,18 +473,9 @@
                                                             data-bs-dismiss="modal"
                                                             aria-label="Close"
                                                        >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-decline"
-                                                  id="delivery1-indicationDecline"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-exit"
-                                                  >
-                                                       close
-                                                  </span>
+                                                            DONE
+                                                       </button>
+                                                  </div>
                                              </div>
                                         </div>
                                    </div>
@@ -347,7 +546,17 @@
           </footer>
           <script
                type="text/javascript"
-               src="./JS Delivery - page 1.js"
+               src="./JS Delivery - page 2.js"
+          ></script>
+          <script
+               src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=64538440d8aa83759a366477"
+               type="text/javascript"
+               integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+               crossorigin="anonymous"
+          ></script>
+          <script
+               async
+               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3NIExDqZncKaZzcRJ6pvlTDww82RCGIQ&callback=initMap"
           ></script>
           <script
                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
