@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sendOrder2Style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Open Sans|Manrope"
@@ -19,8 +19,8 @@
     />
 
     <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
   </head>
   <body>
@@ -151,79 +151,87 @@
         <div class="progressDelen">
           <h4>SEND ORDER</h4>
           <div class="dottene">
-          <span class="dot1">
-            <span class="material-icons ikonFarge">
-              straighten
-              </span>
-          </span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot1">
-            <span class="material-icons ikonFarge">
-              edit_note
-              </span>
-          </span>
-          <span class="dot2"></span>
-          <span class="dot2"></span>
-          <span class="dot2"></span>
-          <span class="dot3">
-            <span class="material-icons ikonFarge">
-              local_shipping
-              </span>
-          </span>
-          <span class="dot2"></span>
-          <span class="dot2"></span>
-          <span class="dot2"></span>
-          <span class="dot3">
-            <span class="material-icons ikonFarge">
-              done_outline
-              </span>
-          </span>
+            <span class="dot1">
+              <span class="material-icons ikonFarge"> straighten </span>
+            </span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot1">
+              <span class="material-icons ikonFarge"> edit_note </span>
+            </span>
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+            <span class="dot3">
+              <span class="material-icons ikonFarge"> local_shipping </span>
+            </span>
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+            <span class="dot3">
+              <span class="material-icons ikonFarge"> done_outline </span>
+            </span>
           </div>
         </div>
-<!--Skal vi lage javascrip til at dersom man mangler å fylle ut et felt så blir det rødt?  vi kan føle på det-->
+        <!--Skal vi lage javascrip til at dersom man mangler å fylle ut et felt så blir det rødt?  vi kan føle på det-->
         <form>
           <div class="beggeFormsene">
-
-            <div class="venstreSide"> 
-              <h6>Pickup adress</h6> 
+            <div class="venstreSide">
+              <h6>Pickup adress</h6>
               <p>Fields are required unless specified</p>
-              <input type="text" placeholder="First name">
-              <input type="text" placeholder="Last name"> <br>
-              <input type="email" placeholder="Email">
-              <input type="number" placeholder="Phone number"> <br>
-              <input type="text" style="width: 65vh;" placeholder="Address"> <br>
-              <input type="text" style="width: 65vh;" placeholder="Street"> <br>
-              <input type="number" placeholder="Zip code"> 
-              <input type="text" placeholder="country"> <br>
-              <textarea id="textBoks" type="text" style="width: 65vh;" placeholder="Additional notes for the delivery driver... (optional)"></textarea>
+              <input type="text" placeholder="First name" />
+              <input type="text" placeholder="Last name" /> <br />
+              <input type="email" placeholder="Email" />
+              <input type="number" placeholder="Phone number" /> <br />
+              <input type="text" style="width: 65vh" placeholder="Address" />
+              <br />
+              <input type="text" style="width: 65vh" placeholder="Street" />
+              <br />
+              <input type="number" placeholder="Zip code" />
+              <input type="text" placeholder="country" /> <br />
+              <textarea
+                id="textBoks"
+                type="text"
+                style="width: 65vh"
+                placeholder="Additional notes for the delivery driver... (optional)"
+              ></textarea>
             </div>
 
-            <div class="høyreSide"> 
-              <h6>Delivery adress</h6> 
+            <div class="høyreSide">
+              <h6>Delivery adress</h6>
               <p>Fields are required unless specified</p>
-              <input type="text" placeholder="First name">
-              <input type="text" placeholder="Last name"> <br>
-              <input type="email" placeholder="Email">
-              <input type="number" placeholder="Phone number"> <br>
-              <input type="text" style="width: 65vh;" placeholder="Address"> <br>
-              <input type="text" style="width: 65vh;" placeholder="Street"> <br>
-              <input type="number" placeholder="Zip code"> 
-              <input type="text" placeholder="country"> <br>
-              <textarea id="textBoks" type="text" style="width: 65vh;" placeholder="Additional notes for the delivery driver... (optional)"></textarea>
+              <input type="text" placeholder="First name" />
+              <input type="text" placeholder="Last name" /> <br />
+              <input type="email" placeholder="Email" />
+              <input type="number" placeholder="Phone number" /> <br />
+              <input type="text" style="width: 65vh" placeholder="Address" />
+              <br />
+              <input type="text" style="width: 65vh" placeholder="Street" />
+              <br />
+              <input type="number" placeholder="Zip code" />
+              <input type="text" placeholder="country" /> <br />
+              <textarea
+                id="textBoks"
+                type="text"
+                style="width: 65vh"
+                placeholder="Additional notes for the delivery driver... (optional)"
+              ></textarea>
             </div>
-
           </div>
         </form>
 
         <div class="knapperVidere">
-          <button class="button1" type="button" value="close" onclick="close()">Close</button> <!--Her skal det kanskje være javascript mtp knappe?-->
-          <button class="button2" type="button" value="next" onclick="next()">Next</button> <!--Her skal det kanskje være javascript mtp knappe?-->
+          <button class="button1" type="button" value="close" onclick="close()">
+            Close
+          </button>
+          <!--Her skal det kanskje være javascript mtp knappe?-->
+          <button class="button2" type="button" value="next" onclick="next()">
+            Next
+          </button>
+          <!--Her skal det kanskje være javascript mtp knappe?-->
         </div>
-
       </div>
-        
     </div>
 
     <footer>
@@ -268,7 +276,6 @@
                 Sign up
               </button>
             </div>
-
           </div>
         </div>
       </div>
