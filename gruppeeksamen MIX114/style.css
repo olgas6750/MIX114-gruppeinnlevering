@@ -89,6 +89,14 @@ header{
     width:100%;
 }
 
+.progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc */
+    border-bottom: ridge;
+    padding-top: 1vh;
+    display: flex;
+}
+.progressDelen h4{
+    padding-left: 5vh;
+}
 
 #calendar {
     max-width: 60%;
