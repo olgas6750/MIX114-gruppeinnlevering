@@ -110,6 +110,10 @@ header{
     border-radius: 2vh;
 }
 
+.fc table{
+    border-radius: 3vh;
+}
+
 footer{
     height:170px;
     background-color: rgba(0,0,0,0.5);
