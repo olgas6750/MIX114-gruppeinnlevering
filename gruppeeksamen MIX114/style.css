@@ -101,7 +101,7 @@ header{
 #calendar {
     padding-top: 5vh;
     padding-bottom: 5vh;
-    max-width: 65%;
+    max-width: 70%;
     margin: 0 auto;
 }
 
@@ -110,8 +110,8 @@ header{
     border-radius: 2vh;
 }
 
-.fc table{
-    border-radius: 3vh;
+.fc table{ /* dette her skal være for å definere hele kalenderen sin border*/
+    border-radius: 2vh;
 }
 
 footer{
