@@ -1,5 +1,7 @@
-let orders = {};
+
+
 let packageNumber = 0;
+
 
 function addPackage(){
     packageNumber++;
@@ -98,3 +100,21 @@ function addPackage(){
     }
 
 };
+
+function collectData(){
+    let order = {};
+    for(let i = 0; i<packageNumber; i++){
+        let formName = "packageForm"+(i+1);
+
+        //let currentForm = document.querySelector(formName);
+        let formData = new FormData(formName);
+        let currentPackage = {};
+        
+        formData.forEach((value, key) =>{
+            currentPackage[key] = value;
+        });
+
+        order[package][i] = currentPackage;
+    }
+    console.log(order);
+}

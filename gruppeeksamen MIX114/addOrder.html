@@ -76,8 +76,9 @@
       <div class="sidebar">
         <div class="sidebarList">
           <ul>
-            <li>
-              <svg
+            <a href="./Delivery - page 1.html">
+              <li class="sidebar-list-items"">
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -88,12 +89,13 @@
                 <path
                   d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"
                 />
-              </svg>
-              Overview
-            </li>
+              </svg>Overview
+              </li>
+            </a>
             <li><hr /></li>
-            <li>
-              <svg
+            <a href="./addOrder.html">
+              <li class="sidebar-list-items" id="general-chosen-page-background">
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -104,11 +106,12 @@
                 <path
                   d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"
                 />
-              </svg>
-              Send order
-            </li>
-            <li>
-              <svg
+              </svg>Send order
+              </li></a
+            >
+            <a href="https://www.facebook.com/tuva.vold.3">
+              <li class="sidebar-list-items">
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -119,11 +122,12 @@
                 <path
                   d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"
                 />
-              </svg>
-              Support
-            </li>
-            <li>
-              <svg
+              </svg>Support
+              </li></a
+            >
+            <a>
+              <li class="sidebar-list-items">
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -140,9 +144,9 @@
                 <path
                   d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"
                 />
-              </svg>
-              History
-            </li>
+              </svg>History
+              </li></a
+            >
           </ul>
         </div>
       </div>
@@ -181,6 +185,13 @@
             <div id="sideBarPackageList" class="list-group"></div>
             <button class="addPackageButton" onclick="addPackage()">
               + Add package
+            </button>
+            <hr>
+            <button
+              class="continueButton"
+              onclick="collectData()"
+            >
+              Continue
             </button>
           </div>
           <!-- ------------------------------------Add order img --------------------------------------->

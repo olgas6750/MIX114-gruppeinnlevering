@@ -90,6 +90,43 @@ header{
 
 }
 
+.sidebarList > * {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 300%;
+    padding: 30px 5px 10px 10px;
+    list-style: none;
+    font-size: 0.8em;
+}
+
+.sidebar-list-items {
+    display: flex;
+    align-items: center;
+    gap: 4%;
+}
+
+.sidebarList a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebarList a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebarList li:hover {
+    background-color: rgba(0, 132, 80, 0.3);
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+#general-chosen-page-background {
+     background-color: rgba(0, 132, 80, 0.3);
+     border-radius: 10px;
+     padding-left: 5px;
+}
+
 .mainContainer{
     width:100%;
 }
@@ -163,11 +200,16 @@ footer{
     grid-column: 1;
     grid-row:2;
     border-right: 1px solid rgba(0, 0, 0, 0.25);
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:5%;
 }
 
 .addOrderPackageView{
     grid-column: 2;
     grid-row: 2;
+    margin-left:20px;
+    margin-top:20px;
 }
 
 .addOrderSidebar ul{
@@ -176,10 +218,8 @@ footer{
 }
 
 .addOrderPackageView img {
-    margin-left: -5%;
-    margin-bottom: -20%;
-    height:105%;
-    width:auto;
+    margin-bottom: 10%;
+    width:80%;
 }
 
 .addPackageButton {
@@ -189,6 +229,7 @@ footer{
     padding:8%;
     border:none;
     border-radius: 10px;
+    margin-bottom:5px;
 }
 
 .viewPackageButton{
@@ -202,8 +243,14 @@ footer{
     font-size:0.9em;
 }
 
-.mainContainerPackageList{
-    margin-left: 50px;
+.continueButton{
+    background-color: #46dd18;
+    color:white;
+    width:100%;
+    padding:8%;
+    border:none;
+    border-radius: 10px;
+    margin-top:5px;
 }
 
 /* Progress bar */
