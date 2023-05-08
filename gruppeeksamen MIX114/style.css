@@ -99,7 +99,9 @@ header{
 }
 
 #calendar {
-    max-width: 60%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    max-width: 65%;
     margin: 0 auto;
 }
 
