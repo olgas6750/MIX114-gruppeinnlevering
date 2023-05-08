@@ -19,7 +19,76 @@ function addPackage(){
     let packages = document.getElementById("mainContainerPackageList");
     
     let newPackageInfo = 
-    '<h1 id="list-item-'+packageNumber+'">Package '+packageNumber+'</h1>'
+    '<form id="packageForm'+packageNumber+'">' +
+    '<h1 id="list-item-'+packageNumber+'">Package '+packageNumber+'</h1>' +
+    '<div class="dropdown">' +
+    '<button ' +
+    'class="btn btn-secondary dropdown-toggle" ' +
+    'type="button" ' +
+    'id="dropdownMenuButton" ' +
+    'data-toggle="dropdown" ' +
+    'aria-haspopup="true" ' +
+    'aria-expanded="false"> ' +
+    'Category' +
+    '</button>' +
+    '<div ' +
+    'class="dropdown-menu" ' +
+    'aria-labelledby="dropdownMenuButton"> ' +
+    '<div class="dropdown-item">' +
+    '<input ' +
+    'type="radio" ' +
+    'id="clothes" ' +
+    'name="category'+packageNumber+'" ' +
+    'value="Clothes" />' +
+    '<label for="clothes">Clothes</label>' +
+    '</div>' +
+    '<div class="dropdown-item">' +
+    '<input ' +
+    'type="radio" ' +
+    'id="food" ' +
+    'name="category'+packageNumber+'" ' +
+    'value="Food" />' +
+    '<label for="food">Food</label>' +
+    '</div>' +
+    '<div class="dropdown-item">' +
+    '<input ' +
+    'type="radio" ' +
+    'id="electronics" ' +
+    'name="category'+packageNumber+'" ' +
+    'value="Electronics" />' +
+    '<label for="electronics">Electronics</label>' +
+    '</div>' +
+    '<div class="dropdown-item">' +
+    '<input ' +
+    'type="radio" ' +
+    'id="other" ' +
+    'name="category'+packageNumber+'" ' +
+    'value="Other" />' +
+    '<label for="other">Other</label>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '<br />' +
+    '<table>' +
+    ' <tr>' +
+    ' <td><label for="weight">Weight (in grams)</label></td>' +
+    ' <td><input type="number" placeholder="Weight" name="weight'+packageNumber+'"/></td>' +
+    ' </tr>' +
+    ' <tr>' +
+    ' <td><label for="length">Length (in cm)</label></td>' +
+    ' <td><input type="number" placeholder="Length" name="length'+packageNumber+'"/></td>' +
+    ' </tr>' +
+    ' <tr>' +
+    ' <td><label for="height">Height (in cm)</label></td>' +
+    ' <td><input type="number" placeholder="Height" name="height'+packageNumber+'"/></td>' +
+    ' </tr>' +
+    ' <tr>' +
+    ' <td><label for="width">Width (in cm)</label></td>' +
+    ' <td><input type="number" placeholder="Width" name="width'+packageNumber+'"/></td>' +
+    ' </tr>' +
+    '</table>'+
+    '</form>'+
+    '<br />';
 
     packages.innerHTML += newPackageInfo;
 
