@@ -147,6 +147,10 @@ header{
     border-radius: 2vh;
 }
 
+a {
+    color: black !important;
+    text-decoration: underline;
+}
 
 footer{
     height:170px;
