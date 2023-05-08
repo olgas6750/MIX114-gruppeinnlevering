@@ -105,6 +105,11 @@ header{
     margin: 0 auto;
 }
 
+.fc .fc-button {
+    margin: 1vh;
+    border-radius: 2vh;
+}
+
 footer{
     height:170px;
     background-color: rgba(0,0,0,0.5);
