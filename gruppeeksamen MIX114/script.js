@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       end: '2023-05-12T12:30:00'
     }
     ]
+
   });
   calendar.render();
 });

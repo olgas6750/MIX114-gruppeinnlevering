@@ -131,14 +131,10 @@ header{
     padding-left: 5vh;
 }
 
-.progressDelen .contasearch-container{
-    float: right;
-}
-
 #calendar {
     padding-top: 5vh;
     padding-bottom: 5vh;
-    max-width: 70%;
+    max-width: 75%;
     margin: 0 auto;
 }
 
