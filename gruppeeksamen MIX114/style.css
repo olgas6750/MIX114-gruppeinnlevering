@@ -89,6 +89,12 @@ header{
     width:100%;
 }
 
+
+#calendar {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 footer{
     height:170px;
     background-color: rgba(0,0,0,0.5);
