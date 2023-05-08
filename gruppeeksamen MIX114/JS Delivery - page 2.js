@@ -5,63 +5,144 @@ function initMap() {
           zoom: 14,
      };
 
+     //!!!!!!!!!!!!!!!! Main map starts here !!!!!!!!!!!!!!!!1
+     const map2 = new google.maps.Map(
+          document.getElementById("delivery2-main-map"),
+          mapOptions
+     );
+
+     // Main map pinpoints starts here
+
+     const coordinates = [
+          { lat: 60.3901, lng: 5.332, name: "Location1" },
+          { lat: 60.3901, lng: 5.3345, name: "Location2" },
+          { lat: 60.389, lng: 5.3315, name: "Location3" },
+          { lat: 60.3887, lng: 5.3332, name: "Location4" },
+          { lat: 60.389, lng: 6.335, name: "Location5" },
+          // Her skal json inn
+     ];
+
+     // This adds marker to main map
+     addMarkers(coordinates, map2);
+
+     //!!!!!!!!!!!!!!!! Main map ends here !!!!!!!!!!!!!!!!!!!
+
+     //!!!!!!!!!!!!!!!! modal map starts here !!!!!!!!!!!!!!!!!!!
+
      // This is modal map
      const map1 = new google.maps.Map(
           document.getElementById("delivery2-modal-map"),
           mapOptions
      );
 
-     // This is main amp
-     const map2 = new google.maps.Map(
-          document.getElementById("delivery2-main-map"),
-          mapOptions
+     const directionsService = new google.maps.DirectionsService();
+     const directionsRenderer = new google.maps.DirectionsRenderer({
+          suppressMarkers: true, // This will remove default A and B markers
+     });
+     directionsRenderer.setMap(map1);
+
+     // Denne er default og kan taes bort
+     // const destination = { lat: 60.366043, lng: 5.345529, name: "Destination" };
+
+     if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+               (position) => {
+                    const userLocation = {
+                         lat: position.coords.latitude,
+                         lng: position.coords.longitude,
+                         name: "Origin",
+                    };
+                    console.log("FROM:", userLocation);
+
+                    calculateAndDisplayRoute(
+                         directionsService,
+                         directionsRenderer,
+                         userLocation,
+                         coordinates[4], // Pass the desired destination from the coordinates array
+                         map1
+                    );
+                    console.log("TO", destination);
+               },
+               () => {
+                    console.log("Error: The Geolocation service failed.");
+               }
+          );
+     } else {
+          console.log("Error: Your browser doesn't support geolocation.");
+     }
+}
+
+// Here starts map tracking for the modal
+// Here starts map tracking for the modal
+function calculateAndDisplayRoute(
+     directionsService,
+     directionsRenderer,
+     origin,
+     destination,
+     map
+) {
+     directionsService.route(
+          {
+               origin: origin,
+               destination: destination,
+               travelMode: google.maps.TravelMode.DRIVING,
+          },
+          (response, status) => {
+               if (status === google.maps.DirectionsStatus.OK) {
+                    directionsRenderer.setDirections(response);
+
+                    // Custom markers for origin and destination
+                    addMarkerWithInfoWindow(origin, map);
+                    addMarkerWithInfoWindow(destination, map);
+               } else {
+                    console.log(
+                         "Error: Directions request failed due to " + status
+                    );
+               }
+          }
      );
 }
 
-// Main map pinpoints starts here
+// Marker naming starts here
+function addMarkerWithInfoWindow(coordinate, map) {
+     const marker = new google.maps.Marker({
+          position: { lat: coordinate.lat, lng: coordinate.lng },
+          map: map,
+          title: coordinate.name,
+     });
+
+     const infoWindow = new google.maps.InfoWindow({
+          content: coordinate.name,
+     });
+
+     marker.addListener("click", () => {
+          infoWindow.open(map, marker);
+     });
+}
+
 function addMarkers(coordinates, map) {
      coordinates.forEach((coordinate) => {
           const marker = new google.maps.Marker({
                position: { lat: coordinate.lat, lng: coordinate.lng },
                map: map,
+               title: coordinate.name, // Set the title property for each marker
+          });
+
+          // Create an InfoWindow for each marker
+          const infoWindow = new google.maps.InfoWindow({
+               content: coordinate.name,
+          });
+
+          // Add a click event listener to the marker to open the InfoWindow
+          marker.addListener("click", () => {
+               infoWindow.open(map, marker);
           });
      });
 }
 
-function initMap() {
-     const mapOptions = {
-          center: { lat: 60.389181, lng: 5.333219 },
-          zoom: 15,
-     };
+// Marker naming ends here
 
-     // This is the modal map
-     const map1 = new google.maps.Map(
-          document.getElementById("delivery2-modal-map"),
-          mapOptions
-     );
-
-     // This is the main map
-     const map2 = new google.maps.Map(
-          document.getElementById("delivery2-main-map"),
-          mapOptions
-     );
-
-     // Replace the following coordinates array with the actual coordinates you want to use
-     const coordinates = [
-          { lat: 60.3901, lng: 5.332 },
-          { lat: 60.3901, lng: 5.3345 },
-          { lat: 60.389, lng: 5.3315 },
-          { lat: 60.3887, lng: 5.3332 },
-          { lat: 60.389, lng: 5.335 },
-     ];
-
-     // Add markers to the main map (map2)
-     addMarkers(coordinates, map2);
-}
-
-// Main map pinpoints starts here
-
-// JS for main maps ends here
+//!!!!!!!!!!!!!!!! modal map ends here !!!!!!!!!!!!!!!!!!!
 
 // Dropdown list for delaytime start here:
 function updateSelectedDelay(selectedItem) {
