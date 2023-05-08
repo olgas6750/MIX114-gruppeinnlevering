@@ -40,7 +40,7 @@ function addPackage(){
     '<input ' +
     'type="radio" ' +
     'id="clothes" ' +
-    'name="category'+packageNumber+'" ' +
+    'name="category" ' +
     'value="Clothes" />' +
     '<label for="clothes">Clothes</label>' +
     '</div>' +
@@ -48,7 +48,7 @@ function addPackage(){
     '<input ' +
     'type="radio" ' +
     'id="food" ' +
-    'name="category'+packageNumber+'" ' +
+    'name="category" ' +
     'value="Food" />' +
     '<label for="food">Food</label>' +
     '</div>' +
@@ -56,7 +56,7 @@ function addPackage(){
     '<input ' +
     'type="radio" ' +
     'id="electronics" ' +
-    'name="category'+packageNumber+'" ' +
+    'name="category" ' +
     'value="Electronics" />' +
     '<label for="electronics">Electronics</label>' +
     '</div>' +
@@ -64,7 +64,7 @@ function addPackage(){
     '<input ' +
     'type="radio" ' +
     'id="other" ' +
-    'name="category'+packageNumber+'" ' +
+    'name="category" ' +
     'value="Other" />' +
     '<label for="other">Other</label>' +
     '</div>' +
@@ -74,19 +74,19 @@ function addPackage(){
     '<table>' +
     ' <tr>' +
     ' <td><label for="weight">Weight (in grams)</label></td>' +
-    ' <td><input type="number" placeholder="Weight" name="weight'+packageNumber+'"/></td>' +
+    ' <td><input type="number" placeholder="Weight" name="weight"/></td>' +
     ' </tr>' +
     ' <tr>' +
     ' <td><label for="length">Length (in cm)</label></td>' +
-    ' <td><input type="number" placeholder="Length" name="length'+packageNumber+'"/></td>' +
+    ' <td><input type="number" placeholder="Length" name="length"/></td>' +
     ' </tr>' +
     ' <tr>' +
     ' <td><label for="height">Height (in cm)</label></td>' +
-    ' <td><input type="number" placeholder="Height" name="height'+packageNumber+'"/></td>' +
+    ' <td><input type="number" placeholder="Height" name="height"/></td>' +
     ' </tr>' +
     ' <tr>' +
     ' <td><label for="width">Width (in cm)</label></td>' +
-    ' <td><input type="number" placeholder="Width" name="width'+packageNumber+'"/></td>' +
+    ' <td><input type="number" placeholder="Width" name="width"/></td>' +
     ' </tr>' +
     '</table>'+
     '</form>'+
@@ -102,19 +102,23 @@ function addPackage(){
 };
 
 function collectData(){
-    let order = {};
+    let newOrder = [];
     for(let i = 0; i<packageNumber; i++){
-        let formName = "packageForm"+(i+1);
+        let formName = "#packageForm"+(i+1);
 
-        //let currentForm = document.querySelector(formName);
-        let formData = new FormData(formName);
+        let currentForm = document.querySelector(formName);
+        console.log(formName);
+        console.log(currentForm);
+        let formData = new FormData(currentForm);
         let currentPackage = {};
         
         formData.forEach((value, key) =>{
             currentPackage[key] = value;
         });
 
-        order[package][i] = currentPackage;
+        console.log(currentPackage);
+
+       newOrder[i] = currentPackage;
     }
-    console.log(order);
+   console.log(newOrder);
 }
