@@ -134,7 +134,8 @@ header{
 
 .searchContainer{
     margin-left: 65%;
-    border-radius: 2vh;
+    border-radius: 20px;
+    border-bottom-right-radius: 20px ;
 }
 
 #calendar {
