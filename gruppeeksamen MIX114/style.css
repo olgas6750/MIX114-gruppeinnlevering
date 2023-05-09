@@ -209,7 +209,7 @@ footer{
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 9999;
-  }
+}
   
   #eventOverlayContent {
     position: absolute;
@@ -219,12 +219,12 @@ footer{
     background: #fff;
     padding: 20px;
     border-radius: 5px;
-  }
+}
   
   #eventOverlayTitle {
     margin-top: 0;
-  }
+}
   
   #eventOverlayCloseButton {
     margin-top: 10px;
-  }
+}
