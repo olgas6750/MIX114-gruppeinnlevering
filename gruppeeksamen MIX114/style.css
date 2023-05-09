@@ -124,11 +124,17 @@ header{
 
 .progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc */
     border-bottom: ridge;
-    padding-top: 1vh;
     display: flex;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 .progressDelen h4{
     padding-left: 5vh;
+}
+
+.searchContainer{
+    margin-left: 65%;
+    border-radius: 2vh;
 }
 
 #calendar {
