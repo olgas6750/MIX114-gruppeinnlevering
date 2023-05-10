@@ -50,7 +50,7 @@ function initMap() {
                     const userLocation = {
                          lat: position.coords.latitude,
                          lng: position.coords.longitude,
-                         name: "Origin",
+                         name: "My location:",
                     };
                     console.log("FROM:", userLocation);
 
@@ -72,7 +72,40 @@ function initMap() {
      }
 }
 
-// Here starts map tracking for the modal
+// !!!!
+async function getAddressFromLatLng(lat, lng) {
+     const geocoder = new google.maps.Geocoder();
+     const location = new google.maps.LatLng(lat, lng);
+
+     return new Promise((resolve, reject) => {
+          geocoder.geocode({ location }, (results, status) => {
+               if (status === google.maps.GeocoderStatus.OK && results[0]) {
+                    const addressComponents = results[0].address_components;
+                    const street = addressComponents.find((component) =>
+                         component.types.includes("route")
+                    );
+                    const city = addressComponents.find((component) =>
+                         component.types.includes("locality")
+                    );
+
+                    resolve({
+                         street: street ? street.long_name : "",
+                         city: city ? city.long_name : "",
+                    });
+               } else {
+                    reject(
+                         new Error(
+                              "Geocode was not successful for the following reason: " +
+                                   status
+                         )
+                    );
+               }
+          });
+     });
+}
+
+// !!!!
+
 // Here starts map tracking for the modal
 function calculateAndDisplayRoute(
      directionsService,
@@ -81,6 +114,8 @@ function calculateAndDisplayRoute(
      destination,
      map
 ) {
+     const originIcon = "images/Deliveryman, rounded.png";
+
      directionsService.route(
           {
                origin: origin,
@@ -92,7 +127,7 @@ function calculateAndDisplayRoute(
                     directionsRenderer.setDirections(response);
 
                     // Custom markers for origin and destination
-                    addMarkerWithInfoWindow(origin, map);
+                    addMarkerWithInfoWindow(origin, map, originIcon);
                     addMarkerWithInfoWindow(destination, map);
                } else {
                     console.log(
@@ -104,15 +139,25 @@ function calculateAndDisplayRoute(
 }
 
 // Marker naming starts here
-function addMarkerWithInfoWindow(coordinate, map) {
+function addMarkerWithInfoWindow(coordinate, map, customIcon) {
      const marker = new google.maps.Marker({
           position: { lat: coordinate.lat, lng: coordinate.lng },
           map: map,
           title: coordinate.name,
+          icon: {
+               url: customIcon,
+               scaledSize: new google.maps.Size(40, 40),
+          },
      });
 
+     const infoWindowContent = `
+       <div class="custom-infowindow">
+         ${coordinate.name}
+       </div>
+     `;
+
      const infoWindow = new google.maps.InfoWindow({
-          content: coordinate.name,
+          content: infoWindowContent,
      });
 
      marker.addListener("click", () => {
@@ -125,15 +170,19 @@ function addMarkers(coordinates, map) {
           const marker = new google.maps.Marker({
                position: { lat: coordinate.lat, lng: coordinate.lng },
                map: map,
-               title: coordinate.name, // Set the title property for each marker
+               title: coordinate.name,
           });
+          // This warps the pupupwindow in a div, so that i can style it in css.
+          const infoWindowContent = `
+         <div class="custom-infowindow">
+           ${coordinate.name}
+         </div>
+       `;
 
-          // Create an InfoWindow for each marker
           const infoWindow = new google.maps.InfoWindow({
-               content: coordinate.name,
+               content: infoWindowContent,
           });
 
-          // Add a click event listener to the marker to open the InfoWindow
           marker.addListener("click", () => {
                infoWindow.open(map, marker);
           });
