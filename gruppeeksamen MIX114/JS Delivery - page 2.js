@@ -1,35 +1,83 @@
-// JS for maps starts here:
-function initMap() {
+async function initMap() {
      const mapOptions = {
           center: { lat: 60.389181, lng: 5.333219 },
           zoom: 14,
      };
 
-     //!!!!!!!!!!!!!!!! Main map starts here !!!!!!!!!!!!!!!!1
      const map2 = new google.maps.Map(
           document.getElementById("delivery2-main-map"),
           mapOptions
      );
 
-     // Main map pinpoints starts here
+     async function fetchData() {
+          try {
+               const response = await fetch(
+                    "https://api.npoint.io/1a82a1d24a67d58b1354"
+               );
+               const data = await response.json();
+               const coordinates = extractCoordinatesFromData(data);
 
-     const coordinates = [
-          { lat: 60.3901, lng: 5.332, name: "Location1" },
-          { lat: 60.3901, lng: 5.3345, name: "Location2" },
-          { lat: 60.389, lng: 5.3315, name: "Location3" },
-          { lat: 60.3887, lng: 5.3332, name: "Location4" },
-          { lat: 60.389, lng: 6.335, name: "Location5" },
-          // Her skal json inn
-     ];
+               // Add markers to the main map
+               addMarkers(coordinates, map2);
 
-     // This adds marker to main map
-     addMarkers(coordinates, map2);
+               // Parse JSON data
+               const orders = data.orders;
+               const firstOrder = orders[0];
 
-     //!!!!!!!!!!!!!!!! Main map ends here !!!!!!!!!!!!!!!!!!!
+               // Chat-GPT used to provide av formula (Haversine formula) for calulating the distance between sender and recipicant.
+               function calculateDistance(lat1, lon1, lat2, lon2) {
+                    const R = 6371; // Radius of the earth in km
+                    const dLat = deg2rad(lat2 - lat1);
+                    const dLon = deg2rad(lon2 - lon1);
+                    const a =
+                         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                         Math.cos(deg2rad(lat1)) *
+                              Math.cos(deg2rad(lat2)) *
+                              Math.sin(dLon / 2) *
+                              Math.sin(dLon / 2);
+                    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                    return R * c; // Distance in km
+               }
 
-     //!!!!!!!!!!!!!!!! modal map starts here !!!!!!!!!!!!!!!!!!!
+               function deg2rad(deg) {
+                    return deg * (Math.PI / 180);
+               }
 
-     // This is modal map
+               // Extract data from the first order
+               const category = firstOrder.packages[0].category;
+               const name = firstOrder.sender.name;
+               const pickupDate = firstOrder.pickup_date;
+               const senderLat = firstOrder.sender.lat;
+               const senderLng = firstOrder.sender.lng;
+               const recipientLat = firstOrder.recipient.lat;
+               const recipientLng = firstOrder.recipient.lng;
+               const deliveryDistance = calculateDistance(
+                    senderLat,
+                    senderLng,
+                    recipientLat,
+                    recipientLng
+               );
+               const orderNumber = firstOrder.order_number;
+
+               // Insert data into HTML
+               document.getElementById("category-span").innerText = category;
+               document.getElementById("delivery1-delivery-title").innerText =
+                    name;
+               document.getElementById("pickup-date-span").innerText =
+                    pickupDate;
+               document.getElementById("delivery-distance-span").innerText =
+                    deliveryDistance.toFixed(2) + " km";
+               document.getElementById("order-number-span").innerText =
+                    orderNumber;
+          } catch (error) {
+               console.error("Error fetching API data:", error);
+          }
+     }
+
+     // Call fetchData function to update the HTML elements
+     fetchData();
+
+     // Remaining code of initMap() function
      const map1 = new google.maps.Map(
           document.getElementById("delivery2-modal-map"),
           mapOptions
@@ -41,27 +89,29 @@ function initMap() {
      });
      directionsRenderer.setMap(map1);
 
-     // Denne er default og kan taes bort
-     // const destination = { lat: 60.366043, lng: 5.345529, name: "Destination" };
-
      if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
-               (position) => {
+               async (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+
+                    const address = await getAddressFromLatLng(lat, lng);
+
                     const userLocation = {
-                         lat: position.coords.latitude,
-                         lng: position.coords.longitude,
-                         name: "My location:",
+                         lat: lat,
+                         lng: lng,
+                         name: `My location:<br>${address.street} <br> ${address.postalCode}, ${address.city} <br> ${address.country}`,
                     };
+
                     console.log("FROM:", userLocation);
 
                     calculateAndDisplayRoute(
                          directionsService,
                          directionsRenderer,
                          userLocation,
-                         coordinates[4], // Pass the desired destination from the coordinates array
+                         coordinates[0],
                          map1
                     );
-                    console.log("TO", destination);
                },
                () => {
                     console.log("Error: The Geolocation service failed.");
@@ -71,6 +121,51 @@ function initMap() {
           console.log("Error: Your browser doesn't support geolocation.");
      }
 }
+
+async function fetchData() {
+     try {
+          const response = await fetch(
+               "https://api.npoint.io/1a82a1d24a67d58b1354"
+          );
+          const data = await response.json();
+          const coordinates = extractCoordinatesFromData(data);
+
+          // Add markers to the main map
+          addMarkers(coordinates, map2);
+
+          // Parse JSON data
+          const orders = data.orders;
+          const firstOrder = orders[0];
+
+          // ... the rest of the code that updates the HTML elements
+     } catch (error) {
+          console.error("Error fetching API data:", error);
+     }
+}
+
+fetchData(); // Call the fetchData function
+
+// JSON fetch of coordinates start
+function extractCoordinatesFromData(data) {
+     const senderCoords = data.orders.map((order) => {
+          return {
+               lat: order.sender.lat,
+               lng: order.sender.lng,
+               name: order.sender.name,
+          };
+     });
+
+     const recipientCoords = data.orders.map((order) => {
+          return {
+               lat: order.recipient.lat,
+               lng: order.recipient.lng,
+               name: order.recipient.name,
+          };
+     });
+
+     return senderCoords.concat(recipientCoords);
+}
+// JSON fetch of coordinates stop here.
 
 // !!!!
 async function getAddressFromLatLng(lat, lng) {
@@ -87,10 +182,18 @@ async function getAddressFromLatLng(lat, lng) {
                     const city = addressComponents.find((component) =>
                          component.types.includes("locality")
                     );
+                    const postalCode = addressComponents.find((component) =>
+                         component.types.includes("postal_code")
+                    );
+                    const country = addressComponents.find((component) =>
+                         component.types.includes("country")
+                    );
 
                     resolve({
                          street: street ? street.long_name : "",
                          city: city ? city.long_name : "",
+                         postalCode: postalCode ? postalCode.long_name : "",
+                         country: country ? country.long_name : "",
                     });
                } else {
                     reject(
@@ -146,7 +249,7 @@ function addMarkerWithInfoWindow(coordinate, map, customIcon) {
           title: coordinate.name,
           icon: {
                url: customIcon,
-               scaledSize: new google.maps.Size(40, 40),
+               scaledSize: new google.maps.Size(50, 50),
           },
      });
 
@@ -265,3 +368,7 @@ updateLastCheckedTime(checkboxes[2], "delivery2-modal-arrived-lastUpdate");
 updateLastCheckedTime(checkboxes[3], "delivery2-modal-confirmed-lastUpdate");
 
 // General time update for chekboxes ends here
+
+// |||||||||||||||||| HERE STARTS THE DELIVERY 2, ACCEPTED DELIVERYES JSON BUILD |||
+
+// |||||||||||||||||| HERE ENDS THE DELIVERY 2, ACCEPTED DELIVERYES JSON BUILD |||

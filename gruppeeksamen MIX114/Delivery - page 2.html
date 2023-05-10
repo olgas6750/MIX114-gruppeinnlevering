@@ -144,14 +144,6 @@
                          <div class="delivery1-column-left">
                               <!-- Left column -->
                               <div class="columnleft-row-grid">
-                                   <!-- Bootstrap toggle button -->
-                                   <!-- Request square -->
-                                   <!-- <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        data-bs-toggle="button"
-                                        aria-pressed="true"
-                                   > -->
                                    <button
                                         type="button"
                                         data-bs-toggle="modal"
@@ -159,39 +151,48 @@
                                         class="btn delivery1-accepted-container"
                                    >
                                         <div class="delivery1-ReqAccDec-body">
-                                             <img
+                                             <span
                                                   class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
+                                                  id="category-span"
+                                                  >CATEGORY</span
+                                             >
                                              <div
                                                   class="delivery1-delivery-infotext"
                                              >
                                                   <span
                                                        id="delivery1-delivery-title"
-                                                       >TITLE</span
+                                                       >NAME</span
                                                   >
                                                   <h6>
-                                                       Pick-up:<span>js</span>
+                                                       Pick-up:<span
+                                                            id="pickup-date-span"
+                                                            >PICKUP_DATE</span
+                                                       >
                                                   </h6>
                                                   <h6>
                                                        Delivery distance:<span
-                                                            >js</span
+                                                            id="delivery-distance-span"
+                                                            >DELIVERY_DISTANCE</span
                                                        >
                                                   </h6>
-                                                  <h6>Order:<span>js</span></h6>
+                                                  <h6>
+                                                       Order:<span
+                                                            id="order-number-span"
+                                                            >ORDER_NUMBER</span
+                                                       >
+                                                  </h6>
                                              </div>
                                              <div
                                                   class="delivery1-indication-accept"
                                              >
                                                   <span
                                                        class="material-icons delivery1-check"
+                                                       >check</span
                                                   >
-                                                       check
-                                                  </span>
                                              </div>
                                         </div>
                                    </button>
+
                                    <!-- MODAL STARTS HERE -->
                                    <div
                                         class="modal fade"

@@ -933,10 +933,13 @@ footer {
 /*  JS created class starts here */
 .custom-infowindow {
      width: 25vh;
-     height: 15vh;
+     height: 10vh;
      display: flex;
      justify-content: center;
      text-align: center;
+     align-items: center;
+     line-height: 120%;
+     font-family: Manrope, Helvetica, sans-serif;
 }
 /*  JS created class ends here */
 
