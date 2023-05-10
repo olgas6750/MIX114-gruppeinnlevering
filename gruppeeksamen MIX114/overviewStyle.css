@@ -217,22 +217,220 @@ footer{
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
-    padding: 20px;
     border-radius: 5px;
-    width: 800px;
-    height: 800px;
+    width: 1200px;
+    height: 700px;
 }
   
 #eventOverlayTitle {
     margin-top: 0;
 }
-  
-#eventOverlayCloseButton {
-    margin-top: 10px;
-    position: absolute;
+
+/* her starter arne sitt css*/
+
+.modal-content {
+    height: 85vh !important;
+    width: 100%;
+    border-radius: 50px;
+    outline: 5px black solid;
 }
 
-.tekstenInnenfor{
-    display: flex;
-    float: right;
+.modal-body {
+    overflow: scroll;
+    max-width: 100%;
+    padding: 0 !important;
 }
+
+.delivery2-modal-gridlayout {
+    display: grid;
+    grid-column-gap: 1vh;
+    grid-row-gap: 2%;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.delivery2-modal-title-block {
+    display: flex;
+    padding-left: 5%;
+    padding-top: 5%;
+    align-items: center;
+}
+
+
+.delivery2-modal-block-progress {
+    height: 60vh;
+    width: 56vh;
+    display: grid;
+    grid-template-rows: 15% 15% 14% 14% 14% 14% 14%;
+    padding-left: 5%;
+}
+
+.delivery2-modal-block-maps {
+    height: 60vh;
+    width: 99%;
+    display: flex;
+    justify-items: right;
+}
+
+#delivery2-modal-map {
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+.delivery2-modal-footer {
+    height: 8% !important;
+    display: flex;
+    justify-content: right;
+    padding: 0 !important;
+}
+
+.delivery2-modal-footer button {
+    background: #a0d2be;
+    border-radius: 20px;
+    margin-right: 5vh;
+    height: 80% !important;
+    width: 12vh !important;
+}
+
+.delivery2-modal-footer button:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-check-input {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 100% !important;
+    background: rgba(253, 220, 130, 0.2) !important;
+    border: 1px solid #000000 !important;
+    position: relative;
+    z-index: 0;
+}
+
+.custom-checkbox-container {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-checkbox-icon {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3em;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+    /* This prevents the icon from blocking the input click event */
+}
+
+.form-check-input:hover {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 100% !important;
+    background-color: rgba(0, 132, 80, 0.5) !important;
+    outline: 1px solid #000000 !important;
+}
+
+.form-check-input:checked {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 100% !important;
+    background-color: rgba(0, 132, 80, 0.9) !important;
+    outline: 1.5px solid #000000 !important;
+}
+
+.form-check-input-delay {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background: rgba(0, 132, 80, 0.9);
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input-delay-red {
+    background-color: rgba(252, 110, 81, 0.7);
+    outline: 1.5px solid #000000 !important;
+}
+
+.delivery2-progress-icon {
+    font-size: 1.3em;
+    padding-left: 13%;
+    color: white;
+}
+
+#toggleBtn:focus {
+    box-shadow: none;
+}
+
+.delivery2-picked-up {
+    display: flex;
+    gap: 6%;
+    align-items: center;
+    height: auto;
+}
+
+.delivery2-on-route {
+    display: flex;
+    gap: 6%;
+    align-items: center;
+    height: auto;
+}
+
+.delivery2-delayed {
+    display: flex;
+    gap: 6%;
+    align-items: center;
+    height: auto;
+}
+
+.delivery2-arrived {
+    display: flex;
+    gap: 6%;
+    align-items: center;
+    height: auto;
+}
+
+.delivery2-delivery-confirmed {
+    display: flex;
+    gap: 6%;
+    align-items: center;
+    height: auto;
+}
+
+#delivery2-modal-delay-selected {
+    text-decoration: underline;
+    padding-left: 5px;
+    color: rgba(252, 110, 81, 0.7);
+}
+
+/* Modal slide function */
+.modal.show .modal-dialog {
+    animation: slideInRightBounce 0.6s forwards;
+}
+
+@keyframes slideInRightBounce {
+    0% {
+         transform: translateX(100%);
+    }
+    50% {
+         transform: translateX(-10%);
+    }
+    100% {
+         transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+         transform: translateX(0);
+    }
+    100% {
+         transform: translateX(100%);
+    }
+}
+
+/* her slutter arne sitt css*/

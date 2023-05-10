@@ -144,11 +144,208 @@
           <div id="eventOverlayContent"> <!-- Dette er selve overlayen som man skal skrive koden innenfor-->
             <h2 id="eventOverlayTitle"></h2>
             <p id="eventOverlayDescription"> </p>
-              <div class="tekstenInnenfor">
-                <h4>Sender</h4>
-                <h4>Recipiant</h4>
+            <div class="modal-content"> <!--Her starter arne sitt-->
+              <div class="modal-body">
+                   <div class="w-container">
+                        <div
+                             class="delivery2-modal-gridlayout"
+                        >
+                             <div
+                                  class="delivery2-modal-title-block"
+                             >
+                                  <h2>
+                                       ORDER:
+                                  </h2>
+                                  <span
+                                       >JS</span
+                                  >
+                             </div>
+                             <div
+                                  class="delivery2-modal-block-sendRec"
+                             >
+
+                             </div> <!--Denne diven bestemmer om hvordan griden til siden skla være?-->
+                             <div
+                                  id="w-node-_7de942da-d249-75ec-1859-7bb15796ed3f-e8366478"
+                                  class="delivery2-modal-block-progress"
+                             >
+                                  <div>
+                                       <h5
+                                            class="heading-2"
+                                       >
+                                            Tracking
+                                            Log
+                                       </h5>
+                                       <div>
+                                            Estimated
+                                            Delivery:
+                                            <span
+                                                 >Js
+                                                 info</span
+                                            >
+                                       </div>
+                                  </div>
+                                  <!-- !!!!!!!!Here starts the tracking update section!!!!!!! -->
+                                  <div
+                                       class="delivery2-picked-up"
+                                  >
+                                       <div
+                                            class="custom-checkbox-container"
+                                       >
+                                            <input
+                                                 class="form-check-input"
+                                                 type="checkbox"
+                                                 id="toggleBtn"
+                                            />
+                                            <span
+                                                 class="material-icons custom-checkbox-icon"
+                                                 >check</span
+                                            >
+                                       </div>
+
+                                       <div
+                                            class="delivery2-deliveryUpdate-text"
+                                       >
+                                            <span
+                                                 id="delivery2-modal-pickedUp-lastUpdate"
+                                            ></span>
+                                            <h5>
+                                                 Picked-up
+                                            </h5>
+                                       </div>
+                                  </div>
+                                  <div
+                                       class="delivery2-on-route"
+                                  >
+                                       <div
+                                            class="custom-checkbox-container"
+                                       >
+                                            <input
+                                                 class="form-check-input"
+                                                 type="checkbox"
+                                                 id="toggleBtn"
+                                            />
+                                            <span
+                                                 class="material-icons custom-checkbox-icon"
+                                                 >check</span
+                                            >
+                                       </div>
+
+                                       <div
+                                            class="delivery2-deliveryUpdate-text"
+                                       >
+                                            <h5>
+                                                 On-route
+                                            </h5>
+                                       </div>
+                                  </div>
+                                  <div
+                                       class="delivery2-delayed"
+                                  >
+                                       <div
+                                            class="form-check-input-delay"
+                                       >
+                                            <span
+                                                 class="material-icons delivery2-progress-icon"
+                                                 id="iconSpan"
+                                            >
+                                                 check
+                                            </span>
+                                       </div>
+
+                                       <div
+                                            class="delivery2-deliveryUpdate-text-"
+                                       >
+                                            </span>
+                                            <h5>
+                                                 Delayed:<span
+                                                 > Js info
+                                                 </span>
+                                            </h5>
+                                       </div>
+                                  </div>
+                                  <div
+                                       class="delivery2-arrived"
+                                  >
+                                       <div
+                                            class="custom-checkbox-container"
+                                       >
+                                            <input
+                                                 class="form-check-input"
+                                                 type="checkbox"
+                                                 id="toggleBtn"
+                                            />
+                                            <span
+                                                 class="material-icons custom-checkbox-icon"
+                                                 >check</span
+                                            >
+                                       </div>
+                                       <div
+                                            class="delivery2-deliveryUpdate-text"
+                                       >
+                                            <span
+                                                 id="delivery2-modal-arrived-lastUpdate"
+                                            ></span>
+                                            <h5>
+                                                 Arrived
+                                                 at
+                                                 delivery
+                                                 adress
+                                            </h5>
+                                       </div>
+                                  </div>
+                                  <div
+                                       class="delivery2-delivery-confirmed"
+                                  >
+                                       <div
+                                            class="custom-checkbox-container"
+                                       >
+                                            <input
+                                                 class="form-check-input"
+                                                 type="checkbox"
+                                                 id="toggleBtn"
+                                            />
+                                            <span
+                                                 class="material-icons custom-checkbox-icon"
+                                                 >check</span
+                                            >
+                                       </div>
+                                       <div
+                                            class="delivery2-deliveryUpdate-text"
+                                       >
+                                            <span
+                                                 id="delivery2-modal-confirmed-lastUpdate"
+                                            ></span>
+                                            <h5>
+                                                 Delivery
+                                                 confirmed
+                                            </h5>
+                                       </div>
+                                  </div>
+                             </div>
+                             <div
+                                  class="delivery2-modal-block-maps"
+                                  id="delivery2-modal-map"
+                             ></div>
+                        </div>
+                   </div>
               </div>
-            <button id="eventOverlayCloseButton">Cancel</button>
+
+              <div
+                   class="delivery2-modal-footer"
+              >
+                   <button
+                        type="button"
+                        class="close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                        id="eventOverlayCloseButton"
+                   >
+                        Cancel
+                   </button>
+              </div>
+         </div>
+    </div> <!--Her slutter arne sitt-->
           </div>
         </div>
       </div>
