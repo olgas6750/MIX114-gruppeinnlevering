@@ -66,6 +66,7 @@ header{
     color:black;
 }
 
+<<<<<<< HEAD
 /* Underline hover effect */
 .underline-hover-about {
     position: relative;
@@ -93,6 +94,8 @@ header{
 
 .profileDropdown
 
+=======
+>>>>>>> 1544ce9a5e265c6c634c092147f1a04629a783b6
 .logo img{
     width:15vw;
 }
