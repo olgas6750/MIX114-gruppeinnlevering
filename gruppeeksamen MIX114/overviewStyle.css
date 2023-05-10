@@ -226,6 +226,8 @@ footer{
     margin-top: 0;
 }
 
+
+
 /* her starter arne sitt css*/
 
 .modal-content {
@@ -333,6 +335,12 @@ footer{
     outline: 1px solid #000000 !important;
 }
 
+.delivery2-deliveryUpdate-text {
+}
+
+.delivery2-deliveryUpdate-delay-set {
+}
+
 .form-check-input:checked {
     width: 35px !important;
     height: 35px !important;
@@ -345,7 +353,7 @@ footer{
     width: 35px;
     height: 35px;
     border-radius: 100%;
-    background: rgba(0, 132, 80, 0.9);
+    background: #FDDC82;
     border: 1px solid #000000;
     display: flex;
     align-items: center;
