@@ -118,7 +118,9 @@ function collectData(){
 
         console.log(currentPackage);
 
-       newOrder[i] = currentPackage;
+       newOrder[i] = JSON.stringify(currentPackage);
     }
    console.log(newOrder);
+   localStorage.setItem("packages", JSON.stringify(newOrder));
+   location.replace("sendOrder2.html");
 }
