@@ -51,8 +51,38 @@ header{
 }
 .about{
     font-size:1.5em;
+    color:black;
 }
-.profileDropdown
+
+.dropdown-item:hover {
+    background-color:#008450;
+    color:#000;
+}
+
+/* Underline hover effect */
+.underline-hover-about {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .underline-hover-about::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .underline-hover-about:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
 .logo img{
     width:15vw;
 }
@@ -60,6 +90,8 @@ header{
     display:flex;
     flex-direction:row;
 }
+
+/*Sidebar*/
 .sidebar{
     background-color: #B3DACB;
     width: 170px;
@@ -71,6 +103,37 @@ header{
     padding:20px 20px 20px 20px;
     list-style:none;
 }
+.sidebarList > * {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 300%;
+    padding: 30px 5px 10px 10px;
+    list-style: none;
+    font-size: 0.8em;
+}
+.sidebar-list-items {
+    display: flex;
+    align-items: center;
+    gap: 4%;
+}
+.sidebarList a {
+    text-decoration: none;
+    color: black;
+}
+.sidebarList a:hover {
+    text-decoration: none;
+    color: black;
+}
+.sidebarList li {
+    margin-top: 2px;
+}
+.sidebarList li:hover {
+    background-color: rgba(0, 132, 80, 0.3);
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-top: 2px;
+}
+
 .mainContainer{
     padding:10px 10px 10px 10px;
     width:100%;
@@ -209,3 +272,14 @@ footer{
 .footerContentRight img{
     width:70%;
 }
+
+/* Hover effect */
+.underline-hover {
+    text-decoration: none;
+    color:white;
+  }
+  
+  .underline-hover:hover {
+    text-decoration: underline;
+    color:black;
+  }
