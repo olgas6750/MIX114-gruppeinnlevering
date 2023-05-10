@@ -219,8 +219,8 @@ footer{
     background: #fff;
     padding: 20px;
     border-radius: 5px;
-    width: 500px;
-    height: 500px;
+    width: 800px;
+    height: 800px;
 }
   
 #eventOverlayTitle {
@@ -229,4 +229,10 @@ footer{
   
 #eventOverlayCloseButton {
     margin-top: 10px;
+    position: absolute;
+}
+
+.tekstenInnenfor{
+    display: flex;
+    float: right;
 }
