@@ -179,6 +179,8 @@ footer {
      width: auto;
      height: 92vh;
      overflow: scroll;
+     display: flex;
+     justify-content: center;
 }
 
 .delivery1-column-right {
@@ -258,9 +260,16 @@ footer {
 .columnleft-row-grid {
      display: grid;
      grid-template-rows: auto auto auto auto auto;
-     width: auto;
+     width: 100%;
      padding-bottom: 5px;
      overflow: scroll;
+     /* margin-left: auto !important;
+     margin-right: auto !important;
+     justify-content: center; */
+}
+
+#delivery1-button-container {
+     text-align: center;
 }
 
 .delivery1-request-container {
@@ -415,6 +424,12 @@ footer {
      margin-left: auto;
      margin-right: auto;
 }
+
+/* This hides the html icons, which will be used for javascript functionnality */
+.indication-for-js-reference {
+     display: none;
+}
+
 /* Here stops left side column */
 
 /* Here starts right side column */

@@ -175,153 +175,55 @@
                          <div class="delivery1-column-left">
                               <!-- Left column -->
                               <div class="columnleft-row-grid">
-                                   <!-- Bootstrap toggle button -->
-                                   <!-- Request -->
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-request-container"
-                                        id="delivery1-request-toggle-button"
-                                        data-bs-toggle="button"
-                                        aria-pressed="false"
-                                   >
-                                        <div
-                                             class="delivery1-ReqAccDec-body"
-                                             id="delivery1-requestButton-body"
-                                        >
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
-                                             >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-request"
-                                                  id="delivery1-indicationRequest"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-questionmark"
-                                                  >
-                                                       question_mark
-                                                  </span>
-                                             </div>
-                                        </div>
-                                   </button>
+                                   <!-- Javascript inserted bootstrap buttons start here -->
+                                   <div id="delivery1-button-container"></div>
+                                   <!-- Javascript inserted buttons ends here -->
 
-                                   <!-- Accepted square -->
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-accepted-container"
-                                        id="delivery1-accept-toggle-button"
-                                        data-bs-toggle="button"
-                                        aria-pressed="false"
-                                   >
+                                   <!-- Request indication -->
+                                   <div class="indication-for-js-reference">
                                         <div
-                                             class="delivery1-ReqAccDec-body"
-                                             id="delivery1-acceptedButton-body"
+                                             class="delivery1-indication-request"
+                                             id="delivery1-indicationRequest"
                                         >
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
+                                             <span
+                                                  class="material-icons delivery1-questionmark"
                                              >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-accept"
-                                                  id="delivery1-indicationAccept"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-check"
-                                                  >
-                                                       check
-                                                  </span>
-                                             </div>
+                                                  question_mark
+                                             </span>
                                         </div>
-                                   </button>
 
-                                   <!-- Declined square -->
-                                   <button
-                                        type="button"
-                                        class="btn delivery1-declined-container"
-                                        id="delivery1-decline-toggle-button"
-                                        data-bs-toggle="button"
-                                        aria-pressed="false"
-                                   >
+                                        <!-- Accepted indication -->
+
                                         <div
-                                             class="delivery1-ReqAccDec-body"
-                                             id="delivery1-declinedButton-body"
+                                             class="delivery1-indication-accept"
+                                             id="delivery1-indicationAccept"
                                         >
-                                             <img
-                                                  class="delivery1-delivery-img"
-                                                  src="./images/profilepicture.png"
-                                                  alt="picture of ?"
-                                             />
-                                             <div
-                                                  class="delivery1-delivery-infotext"
+                                             <span
+                                                  class="material-icons delivery1-check"
                                              >
-                                                  <span
-                                                       id="delivery1-delivery-title"
-                                                       >TITLE</span
-                                                  >
-                                                  <h6>
-                                                       Pick-up:<span>js</span>
-                                                  </h6>
-                                                  <h6>
-                                                       Delivery distance:<span
-                                                            >js</span
-                                                       >
-                                                  </h6>
-                                                  <h6>Order:<span>js</span></h6>
-                                             </div>
-                                             <div
-                                                  class="delivery1-indication-decline"
-                                                  id="delivery1-indicationDecline"
-                                             >
-                                                  <span
-                                                       class="material-icons delivery1-exit"
-                                                  >
-                                                       close
-                                                  </span>
-                                             </div>
+                                                  check
+                                             </span>
                                         </div>
-                                   </button>
+
+                                        <!-- Declined indication -->
+                                        <div
+                                             class="delivery1-indication-decline"
+                                             id="delivery1-indicationDecline"
+                                        >
+                                             <span
+                                                  class="material-icons delivery1-exit"
+                                             >
+                                                  close
+                                             </span>
+                                        </div>
+                                   </div>
                               </div>
                          </div>
                          <!-- Right column -->
                          <div class="delivery1-column-right">
                               <div class="columnright-row-grid">
                                    <!--here comes the delivery info container  -->
+                                   <div id="arnetest"></div>
                                    <div class="delivery1-order-info-body">
                                         <div
                                              class="delivery1-order-info-columns"
@@ -788,6 +690,12 @@
                     </div>
                </div>
           </footer>
+
+          <script
+               async
+               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3NIExDqZncKaZzcRJ6pvlTDww82RCGIQ"
+          ></script>
+
           <script
                type="text/javascript"
                src="./JS Delivery - page 1.js"
