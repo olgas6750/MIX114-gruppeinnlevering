@@ -122,12 +122,13 @@ header{
     width:100%;
 }
 
-.progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc */
+.progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc, men på denne siden så er det ikke de sirklene */
     border-bottom: ridge;
     display: flex;
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
+
 .progressDelen h4{
     padding-left: 5vh;
 }
@@ -139,8 +140,8 @@ header{
 }
 
 #calendar {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 7vh;
     max-width: 75%;
     margin: 0 auto;
 }
