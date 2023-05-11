@@ -11,7 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         title: ' ',
         start: '2023-05-12T10:30:00',
-        end: '2023-05-12T12:30:00'
+        end: '2023-05-12T12:30:00',
+      },
+
+      {
+        title: ' ',
+        start: '2023-05-15T10:30:00',
+        end: '2023-05-15T10:30:00'
       }
     ],
     eventClick: function(info) {

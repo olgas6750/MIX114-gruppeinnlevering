@@ -155,6 +155,12 @@ header{
     border-radius: 2vh;
 }
 
+/*
+.fc-daygrid-event-dot{
+    border: calc(var(--fc-daygrid-event-dot-width)/2) solid #FDDC82;
+}
+*/ /* dette er for å forandre farge på dottene, men jeg forandrer da farge på alle av dem*/
+
 a {
     color: black !important;
     text-decoration: underline;
