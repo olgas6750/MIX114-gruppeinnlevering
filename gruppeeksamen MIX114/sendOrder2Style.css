@@ -230,27 +230,27 @@ header{
 }
 
 /* HØYRE SIDEN*/
-.høyreSide{ /* dette er for den venstre siden av formen*/
+.hoyreSide{ /* dette er for den venstre siden av formen*/
     width: 95%;
     margin: 15px;
     margin-left: 35px;
     margin-top: 40px;
 }
 
-.høyreSide #textBoks{
+.hoyreSide #textBoks{
     margin: 2vh;
     border: 1px solid black;
     border-radius: 0.5vh;
     padding: 2%;
 }
 
-.høyreSide h6{ /* overskriften til Pickup adress*/
+.hoyreSide h6{ /* overskriften til Pickup adress*/
     font-size:1.1em;
     margin-left: 0.6em;
     font-family:Manrope, Helvetica, sans-serif;
 }
 
-.høyreSide p{ /* underoverskriften*/
+.hoyreSide p{ /* underoverskriften*/
     font-size: 0.8em;
     margin-left: 0.9em;
     font-weight: 300;
@@ -258,7 +258,7 @@ header{
     color: #35465B;
 }
 
-.høyreSide input{
+.hoyreSide input{
     border-radius: 0.5vh;
     border: 1px solid black;
     padding: 2%;

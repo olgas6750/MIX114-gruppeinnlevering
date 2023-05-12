@@ -102,7 +102,7 @@ function addPackage(){
 };
 
 function collectData(){
-    let newOrder = [];
+    let packages = [];
     for(let i = 0; i<packageNumber; i++){
         let formName = "#packageForm"+(i+1);
 
@@ -118,9 +118,9 @@ function collectData(){
 
         console.log(currentPackage);
 
-       newOrder[i] = JSON.stringify(currentPackage);
+       packages[i] = JSON.stringify(currentPackage);
     }
-   console.log(newOrder);
-   localStorage.setItem("packages", JSON.stringify(newOrder));
+   console.log(packages);
+   localStorage.setItem("packages", packages);
    location.replace("sendOrder2.html");
 }
