@@ -8,7 +8,43 @@ document.addEventListener("DOMContentLoaded", function () {
           "delivery1-indicationAccept"
      );
 
-     // Function to fetch data
+     // Here starts picture selection corrosponding with category
+     function getCategoryImage(category) {
+          switch (category) {
+               case "Food":
+                    return "./images/food 1.png";
+               case "Electronics":
+                    return "./images/electronics 1.png";
+               case "Books":
+                    return "./images/books 1.png";
+               case "Clothing":
+                    return "./images/clothing 1.png";
+               default:
+                    return "./images/logo.png";
+          }
+     }
+     // Here ends picture selection corrosponding with category
+
+     function getOrderImage(order) {
+          switch (order.sender.name) {
+               case "Oliver Hansen":
+                    return "./images/oliver-hansen.png";
+               case "Sophia Andersen":
+                    return "./images/sophia-andersen.png";
+               case "William Pedersen":
+                    return "./images/william-pedersen.png";
+               case "Mia Sørensen":
+                    return "./images/mia-sørensen.png";
+               case "Lars Nilsen":
+                    return "./images/lars-nilsen.png";
+               case "Sofie Jensen":
+                    return "./images/sofie-jensen.png";
+               // add more cases as needed...
+               default:
+                    return "./images/default-sender.png"; // default image
+          }
+     }
+
      // Function to fetch data
      async function fetchData() {
           try {
@@ -21,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
                // Create buttons for each order
                for (let index = 0; index < data.orders.length; index++) {
                     const order = data.orders[index];
-
                     console.log("troubleshooting", order);
+
                     const categories = order.packages.map(
                          (package) => package.category
                     );
@@ -44,9 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Update the innerHTML with order-specific data
                     btn.innerHTML = `
                       <div class="delivery1-ReqAccDec-body" id="delivery1-requestButton-body-${index}">
-                          <span class="delivery1-delivery-img">${categories.join(
-                               ", "
-                          )}</span>
+                      <span class="delivery1-delivery-img"><img src="${getOrderImage(
+                           order
+                      )}" alt="Order image"/></span>
                           <div class="delivery1-delivery-infotext">
                               <span id="delivery1-delivery-title-${index}">${
                          order.sender.name
@@ -67,6 +103,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     btn.addEventListener("click", () => {
                          console.log(order);
 
+                         // Get the parent element
+                         const parentElement = document.getElementById(
+                              "delivery1-JS-insert-informationsquare"
+                         );
+
+                         const parentElement2 = document.getElementById(
+                              "delivery1-topbar-sendReci-JS-insert"
+                         );
+
+                         // Remove the existing detailed order info if it exists
+                         if (parentElement.lastElementChild) {
+                              parentElement.lastElementChild.remove();
+                         }
+
+                         // Remove the existing sender and recipient info if it exists
+                         if (parentElement2.lastElementChild) {
+                              parentElement2.lastElementChild.remove();
+                         }
+
                          if (
                               btn.classList.contains("active") ||
                               btn.getAttribute("aria-pressed") === "true"
@@ -76,107 +131,115 @@ document.addEventListener("DOMContentLoaded", function () {
                                    "Button is active or aria-pressed is true"
                               );
 
-                              // Append the new div into the parent element
+                              // Generate the items HTML
+                              let packagesHTML = "";
+                              for (let package of order.packages) {
+                                   const imgSrc = getCategoryImage(
+                                        package.category
+                                   );
+                                   packagesHTML += `
+        <li class="delivery1-items-info">
+            <span>
+                <img src="${imgSrc}" alt="picture of ${package.category}" />
+                <span>${package.category}</span>
+            </span>
+            <span>${package.volume}</span>
+            <span>${package.weight}</span>
+        </li>
+    `;
+                              }
+
+                              // Create a new div to hold the detailed order information
                               const deliveryInfoContainer =
                                    document.createElement("div");
+
+                              // Set the class name for the new div
                               deliveryInfoContainer.className =
                                    "delivery1-order-info-body";
+
+                              // Add the order-specific data as the innerHTML for the new div
                               deliveryInfoContainer.innerHTML = `
-    <div class="delivery1-order-info-columns">
-        <div class="delivery1-order-column-general">
-            <div class="delivery1-infobox-1">
-                <div class="delivery1-infobox-1-2-element">
-                    <h5>Order date:</h5>
-                    <span>Javascript -></span>
-                </div>
-                <div class="delivery1-infobox-1-2-element">
-                    <h5>Pick-up:</h5>
-                    <span>Javascript -></span>
-                </div>
-                <div class="delivery1-infobox-1-2-element">
-                    <h5>Comment:</h5>
-                    <span>Javascript -></span>
-                </div>
-            </div>
-            <div class="delivery1-infobox-2">
-                <div class="delivery1-infobox-1-2-element">
-                    <h5>Delivery:</h5>
-                    <span>Javascript -></span>
-                </div>
-                <div class="delivery1-infobox-1-2-element">
-                    <h5>Delivery address:</h5>
-                    <span>Javascript -></span>
-                </div>
-                <div class="delivery1-infobox-1-2-element">
-                    <h5>Order number:</h5>
-                    <span>Tjødnali 34, 6856 Sogndal</span>
-                </div>
-            </div>
-        </div>
-        <div class="delivery1-order-column-items">
-            <div class="delivery1-order-items-title">
-                <h6>Items</h6>
-                <h6 id="delivery1-item-title-Qty">Qty</h6>
-                <h6>Weight</h6>
-            </div>
-            <div class="delivery1-items-OLlist">
-                <ol>
-                    <li class="delivery1-items-info">
-                        <span>
-                            <img src="./images/profilepicture.png" alt="picture of delivery item" />
-                            <span>Name</span>
-                        </span>
-                        <span>10</span>
-                        <span>10g</span>
-                    </li>
-                    <li class="delivery1-items-info">
-                        <span>
-                            <img src="./images/profilepicture.png" alt="picture of delivery item" />
-                            <span>Name</span>
-                        </span>
-                        <span>10</span>
-                        <span>10g</span>
-                    </li>
-                    <li class="delivery1-items-info">
-                        <span>
-                            <img src="./images/profilepicture.png" alt="picture of delivery item" />
-                            <span>Name</span>
-                        </span>
-                        <span>10</span>
-                        <span>10g</span>
-                    </li>
-                    <li class="delivery1-items-info">
-                        <span>
-                            <img src="./images/profilepicture.png" alt="picture of delivery item" />
-                            <span>Name</span>
-                        </span>
-                        <span>10</span>
-                        <span>10g</span>
-                    </li>
-                    <li class="delivery1-items-info">
-                        <span>
-                            <img src="./images/profilepicture.png" alt="picture of delivery item" />
-                            <span>Name</span>
-                        </span>
-                        <span>10</span>
-                        <span>10g</span>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
-`;
-                              const parentElement =
-                                   document.getElementById("arnetest");
+                        <div class="delivery1-order-info-columns">
+                            <div class="delivery1-order-column-general">
+                                <div class="delivery1-infobox-1">
+                                    <div class="delivery1-infobox-1-2-element">
+                                        <span id="arnetestindic">----</span>
+                                    </div>
+                                    <div class="delivery1-infobox-1-2-element">
+                                        <h5>Pick-up:</h5>
+                                        <span>${order.pickup_date}</span>
+                                    </div>
+                                    <div class="delivery1-infobox-1-2-element">
+                                        <h5>Comment:</h5>
+                                        <span>${order.comment}</span>
+                                    </div>
+                                </div>
+                                <div class="delivery1-infobox-2">
+                                    <div class="delivery1-infobox-1-2-element">
+                                        <h5>Delivery:</h5>
+                                        <span>${order.delivery_date}</span>
+                                    </div>
+                                    <div class="delivery1-infobox-1-2-element">
+                                        <h5>Delivery address:</h5>
+                                        <span>${order.recipient.address}, ${order.recipient.postal_code}</span>
+
+                                    </div>
+                                    <div class="delivery1-infobox-1-2-element">
+                                        <h5>Order number:</h5>
+                                        <span>${order.order_number}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delivery1-order-column-items">
+                                <div class="delivery1-order-items-title">
+                                    <h6>Items</h6>
+                                    <h6 id="delivery1-item-title-Qty">Qty</h6>
+                                    <h6>Weight</h6>
+                                </div>
+                                <div class="delivery1-items-OLlist">
+                                    <ol>
+                                        ${packagesHTML}
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                              // Append the new div into the parent element
+                              const parentElement = document.getElementById(
+                                   "delivery1-JS-insert-informationsquare"
+                              );
                               parentElement.appendChild(deliveryInfoContainer);
 
-                              // Add your logic here
+                              const senderRecipientContainer =
+                                   document.createElement("div");
+                              senderRecipientContainer.className =
+                                   "delivery1-sendRecip-info-topbar";
+                              senderRecipientContainer.innerHTML = `
+                                   <div class=delivery1-sender-topbar>
+                                       <h5>Sender:</h5>
+                                       <span>${order.sender.name}</span></br>
+                                       <span>${order.sender.address}, ${order.sender.postal_code}</span>
+                                   </div>
+                                   <div class=delivery1-recipient-topbar>
+                                       <h5>Receiver:</h5>
+                                       <span>${order.recipient.name}</span></br>
+                                       <span>${order.recipient.address}, ${order.recipient.postal_code}</span>
+                                   </div>
+                               `;
+
+                              const parentElement2 = document.getElementById(
+                                   "delivery1-topbar-sendReci-JS-insert"
+                              );
+
+                              parentElement2.appendChild(
+                                   senderRecipientContainer
+                              );
                          } else {
                               // Run logic when the button is not active or aria-pressed is false
                               console.log(
                                    "Button is not active or aria-pressed is false"
                               );
-                              // Add your logic here
                          }
                     });
 

@@ -204,9 +204,26 @@ footer {
 }
 
 .delivery1-topbar-sender-receiver {
-     margin-left: 10vh;
+     /* margin-left: 10vh; */
      display: flex;
      gap: 10vh;
+     width: 40vh;
+}
+
+.delivery1-sendRecip-info-topbar {
+     display: flex;
+     justify-content: space-between;
+     gap: 1vh;
+     max-height: 65vh;
+     margin-top: 3%;
+}
+
+.delivery1-sender-topbar {
+     width: 35vh;
+}
+
+.delivery1-recipient-topbar {
+     width: 35vh;
 }
 
 .delivery1-topbar-buttons {
@@ -439,17 +456,25 @@ footer {
      display: grid;
      grid-template-rows: auto auto;
      justify-content: center;
-     width: auto;
+     max-width: 100vh;
+     width: 100vh;
      height: auto;
      align-items: center;
 }
 
 .delivery1-order-info-body {
-     width: auto;
+     width: 90vh;
      height: 40vh;
      border: 1px solid rgba(0, 0, 0, 0.25);
-     margin-top: 5%;
+
      border-radius: 20px;
+}
+
+#delivery1-JS-insert-informationsquare {
+     width: auto;
+     max-width: 100%;
+     height: auto;
+     margin-top: 5%;
 }
 
 .delivery1-order-info-columns {
@@ -470,6 +495,17 @@ footer {
 .delivery1-infobox-2 {
      display: flex;
      flex-direction: column;
+}
+
+#arnetestindic {
+     background-color: rgb(0, 132, 80);
+     border-radius: 100px;
+     width: 1.5em;
+     height: 1.5em;
+     margin-top: 2%;
+     margin-right: 2%;
+
+     align-items: center;
 }
 
 .delivery1-order-column-general h5 {
