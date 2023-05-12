@@ -266,6 +266,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
      fetchData();
 
+     // |||||REF 2
+
      // Function to calculate distance
      // Function to calculate driving distance
      async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {

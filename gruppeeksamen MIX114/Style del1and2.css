@@ -370,6 +370,15 @@ footer {
      margin-right: 1%;
      width: 13vh;
      height: auto;
+     max-height: 11vh;
+     max-width: 13vh;
+}
+
+.delivery1-delivery-img img {
+     width: 13vh;
+     height: auto;
+     max-height: 11vh;
+     max-width: 13vh;
 }
 
 .delivery1-delivery-infotext {
