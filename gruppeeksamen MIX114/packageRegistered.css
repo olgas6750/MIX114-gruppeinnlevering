@@ -228,13 +228,18 @@ header{
     background-color: #B3DACB;
 }
 
-.bildeHøyre {
+.bildeHoyre {
     grid-area: 1 / 2 / 3 / 3; /* This positions the element in the second column and spans two rows */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 6em;
-    padding-top: 2em;
+    position:relative;
+}
+
+.bildeHoyre img{
+    width:100%;
+    position: absolute;
+    bottom: 0;
 }
 
 footer{
