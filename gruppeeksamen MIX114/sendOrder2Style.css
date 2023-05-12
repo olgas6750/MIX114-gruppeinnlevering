@@ -353,3 +353,10 @@ footer{
 .footerContentRight img{
     width:70%;
 }
+
+#calendarContainer{
+    padding-top:2.5%;
+    padding-left:10%;
+    padding-right:10%;
+}
+
