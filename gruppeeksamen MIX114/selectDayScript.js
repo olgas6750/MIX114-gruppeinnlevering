@@ -1,3 +1,9 @@
+window.onload = function(){
+
+  orderString = localStorage.getItem("orderInfo");
+  order = JSON.parse(orderString);
+}
+
 var selectedDateAndTime;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -25,3 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render();
   });
 
+function nextPage(){
+  order.pickUpTime = selectedDateAndTime;
+  console.log(order);
+  const finalOrderInfo = JSON.stringify(order);
+  localStorage.setItem("finalOrderInfo", finalOrderInfo);
+   location.replace("packageRegistered.html");
+}

@@ -175,29 +175,28 @@
           </div>
         </div>
         <!--Skal vi lage javascrip til at dersom man mangler å fylle ut et felt så blir det rødt?  vi kan føle på det-->
-        <form>
-          <div class="beggeFormsene">
-            <div class="venstreSide">
-              <form id="senderForm">
-                <h6>Pickup adress</h6>
-                <p>Fields are required unless specified</p>
-                <input type="text" placeholder="First name" name="firstName" />
-                <input type="text" placeholder="Last name" name="lastName" />
-                <br />
-                <input type="email" placeholder="Email" name="email" />
-                <input
-                  type="number"
-                  placeholder="Phone number"
-                  name="phoneNumber"
-                />
-                <br />
-                <input
-                  type="text"
-                  style="width: 65vh"
-                  placeholder="Address"
-                  name="address"
-                />
-                <!--
+        <div class="beggeFormsene">
+          <div class="venstreSide">
+            <form class="senderForm" id="senderForm">
+              <h6>Pickup adress</h6>
+              <p>Fields are required unless specified</p>
+              <input type="text" placeholder="First name" name="firstName" />
+              <input type="text" placeholder="Last name" name="lastName" />
+              <br />
+              <input type="email" placeholder="Email" name="email" />
+              <input
+                type="number"
+                placeholder="Phone number"
+                name="phoneNumber"
+              />
+              <br />
+              <input
+                type="text"
+                style="width: 65vh"
+                placeholder="Address"
+                name="address"
+              />
+              <!--
                   <input
                   type="text"
                   style="width: 65vh"
@@ -205,40 +204,55 @@
                   name="street"
                 />
                 -->
-                <br />
-                <input type="number" placeholder="Zip code" name="zipCode" />
-                <input type="text" placeholder="country" name="country" />
-                <br />
-              </form>
-            </div>
-
-            <div class="hoyreSide">
-              <form id="receiverForm">
-                <h6>Delivery adress</h6>
-                <p>Fields are required unless specified</p>
-                <input type="text" placeholder="First name" />
-                <input type="text" placeholder="Last name" /> <br />
-                <input type="email" placeholder="Email" />
-                <input type="number" placeholder="Phone number" /> <br />
-                <input type="text" style="width: 65vh" placeholder="Address" />
-                <br />
-                <!--
-                <input type="text" style="width: 65vh" placeholder="Street" />
-                <br />
-                -->
-                <input type="number" placeholder="Zip code" />
-                <input type="text" placeholder="country" /> <br />
-              </form>
-            </div>
-            <br />
-            <textarea
-              id="textBoks"
-              type="text"
-              style="grid-column: span 2; margin-left: 5%; margin-right: 5%"
-              placeholder="Additional notes for the delivery driver... (optional)"
-            ></textarea>
+              <br />
+              <input type="number" placeholder="Zip code" name="zipCode" />
+              <input type="text" placeholder="country" name="country" />
+              <br />
+            </form>
           </div>
-        </form>
+
+          <div class="hoyreSide">
+            <form class="recipientForm" id="recipientForm">
+              <h6>Pickup adress</h6>
+              <p>Fields are required unless specified</p>
+              <input type="text" placeholder="First name" name="firstName" />
+              <input type="text" placeholder="Last name" name="lastName" />
+              <br />
+              <input type="email" placeholder="Email" name="email" />
+              <input
+                type="number"
+                placeholder="Phone number"
+                name="phoneNumber"
+              />
+              <br />
+              <input
+                type="text"
+                style="width: 65vh"
+                placeholder="Address"
+                name="address"
+              />
+              <!--
+                  <input
+                  type="text"
+                  style="width: 65vh"
+                  placeholder="Street"
+                  name="street"
+                />
+                -->
+              <br />
+              <input type="number" placeholder="Zip code" name="zipCode" />
+              <input type="text" placeholder="country" name="country" />
+              <br />
+            </form>
+          </div>
+          <br />
+          <textarea
+            id="textBoks"
+            type="text"
+            style="grid-column: span 2; margin-left: 5%; margin-right: 5%"
+            placeholder="Additional notes for the delivery driver... (optional)"
+          ></textarea>
+        </div>
 
         <div class="knapperVidere">
           <button

@@ -218,8 +218,9 @@ header{
     padding-top: 2em;
     padding: 1em;
 }
-.registrertPakke h6{
-    padding: 1em;
+.registrertPakke p{
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .registrertPakke button{
