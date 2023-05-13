@@ -166,9 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="delivery1-order-info-columns">
                             <div class="delivery1-order-column-general">
                                 <div class="delivery1-infobox-1">
-                                    <div class="delivery1-infobox-1-2-element">
-                                        <span id="arnetestindic">----</span>
-                                    </div>
+                                   
                                     <div class="delivery1-infobox-1-2-element">
                                         <h5>Pick-up:</h5>
                                         <span>${order.pickup_date}</span>

@@ -15,7 +15,7 @@ async function initMap() {
           mapOptions
      );
 
-     const originIcon = "images/Deliveryman, rounded.png";
+     originIcon = "images/Deliveryman, rounded.png";
 
      if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
@@ -227,7 +227,7 @@ async function fetchData() {
                                    map: map1,
                                    title: "Current Position",
                                    icon: {
-                                        url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                                        url: originIcon,
                                         scaledSize: new google.maps.Size(
                                              50,
                                              50
@@ -376,7 +376,7 @@ function calculateAndDisplayRoute(
      destination,
      map
 ) {
-     const originIcon = "images/Deliveryman, rounded.png";
+     // const originIcon = "images/Deliveryman, rounded.png";
 
      directionsService.route(
           {
@@ -446,3 +446,75 @@ function getOrderImage(order) {
 // ||||||||HERE STARTS MODAL DELAY
 
 // |||||||HERE STOPS MODAL DELAY
+
+function updateSelectedDelay(selectedItem) {
+     // Get the delay hours from the data attribute of the selected item
+     const delayHours = parseInt(selectedItem.getAttribute("data-delay-hours"));
+
+     // Find the span element with the id "delivery2-modal-delay-selected"
+     const targetSpan = document.getElementById(
+          "delivery2-modal-delay-selected"
+     );
+
+     const iconSpan = document.getElementById("iconSpan");
+     iconSpan.textContent = "priority_high";
+     const formCheckInputDelay = document.querySelector(
+          ".form-check-input-delay"
+     );
+     formCheckInputDelay.classList.add("form-check-input-delay-red");
+
+     // Get the current value in the span
+     const currentValue = parseInt(targetSpan.textContent) || 0;
+
+     // Add the delay hours to the current value
+     const newValue = currentValue + delayHours;
+
+     // Update the span's content with the new value
+     targetSpan.textContent = newValue + " Hours";
+
+     // Find the span element with the id "delivery2-modal-delayed-lastUpdate"
+     const lastUpdateSpan = document.getElementById(
+          "delivery2-modal-delayed-lastUpdate"
+     );
+
+     // Get the current date and time
+     const now = new Date();
+
+     // Format the date and time
+     const formattedDateTime = now.toLocaleString();
+
+     // Update the lastUpdateSpan's content with the formatted date and time
+     lastUpdateSpan.textContent = formattedDateTime;
+}
+
+// Move the event listener outside the function
+const dropdownMenu = document.getElementById("dropdownMenu");
+dropdownMenu.addEventListener("click", function (event) {
+     const selectedItem = event.target;
+     if (selectedItem.classList.contains("dropdown-item")) {
+          updateSelectedDelay(selectedItem);
+     }
+});
+
+// Dropdown list for delaytime ends here:
+
+// General time update for chekboxes starts here
+function updateLastCheckedTime(checkbox, spanId) {
+     checkbox.addEventListener("change", function () {
+          if (checkbox.checked) {
+               const now = new Date();
+               const formattedDateTime = now.toLocaleString();
+               const targetSpan = document.getElementById(spanId);
+               targetSpan.textContent = formattedDateTime;
+          }
+     });
+}
+
+const checkboxes = document.getElementsByClassName("form-check-input");
+
+updateLastCheckedTime(checkboxes[0], "delivery2-modal-pickedUp-lastUpdate");
+updateLastCheckedTime(checkboxes[1], "delivery2-modal-onRoute-lastUpdate");
+updateLastCheckedTime(checkboxes[2], "delivery2-modal-arrived-lastUpdate");
+updateLastCheckedTime(checkboxes[3], "delivery2-modal-confirmed-lastUpdate");
+
+// General time update for chekboxes ends here

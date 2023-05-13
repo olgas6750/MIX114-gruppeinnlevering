@@ -177,7 +177,7 @@ footer {
 
 .delivery1-column-left {
      width: auto;
-     height: 92vh;
+     height: 80vh;
      overflow: scroll;
      display: flex;
      justify-content: center;
@@ -289,13 +289,11 @@ footer {
      width: 100%;
      padding-bottom: 5px;
      overflow: scroll;
-     /* margin-left: auto !important;
-     margin-right: auto !important;
-     justify-content: center; */
 }
 
 #delivery1-button-container {
      text-align: center;
+     height: 100%;
 }
 
 .delivery1-request-container {

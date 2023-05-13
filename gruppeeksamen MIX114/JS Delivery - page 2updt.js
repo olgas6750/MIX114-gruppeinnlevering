@@ -270,14 +270,13 @@ function updateSelectedDelay(selectedItem) {
 }
 
 // Move the event listener outside the function
-const dropdownMenu = document.getElementById("dropdownMenu");
-dropdownMenu.addEventListener("click", function (event) {
-     const selectedItem = event.target;
-     if (selectedItem.classList.contains("dropdown-item")) {
+const dropdownItems = document.querySelectorAll(".dropdown-item");
+dropdownItems.forEach(function (item) {
+     item.addEventListener("click", function (event) {
+          const selectedItem = event.target;
           updateSelectedDelay(selectedItem);
-     }
+     });
 });
-
 // Dropdown list for delaytime ends here:
 
 // General time update for chekboxes starts here
