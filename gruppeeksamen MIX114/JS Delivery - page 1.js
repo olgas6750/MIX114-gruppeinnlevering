@@ -28,20 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
      function getOrderImage(order) {
           switch (order.sender.name) {
                case "Oliver Hansen":
-                    return "./images/oliver-hansen.png";
+                    return "./images/biome.png";
                case "Sophia Andersen":
-                    return "./images/sophia-andersen.png";
+                    return "./images/Birdgate.png";
                case "William Pedersen":
-                    return "./images/william-pedersen.png";
+                    return "./images/Levita.png";
                case "Mia Sørensen":
-                    return "./images/mia-sørensen.png";
+                    return "./images/Sport Norway.png";
                case "Lars Nilsen":
-                    return "./images/lars-nilsen.png";
+                    return "./images/Stranded.png";
                case "Sofie Jensen":
-                    return "./images/sofie-jensen.png";
+                    return "./images/Yellow cat.png";
                // add more cases as needed...
                default:
-                    return "./images/default-sender.png"; // default image
+                    return "./images/profilepicture.png"; // default image
           }
      }
 
@@ -82,16 +82,20 @@ document.addEventListener("DOMContentLoaded", function () {
                       <div class="delivery1-ReqAccDec-body" id="delivery1-requestButton-body-${index}">
                       <span class="delivery1-delivery-img"><img src="${getOrderImage(
                            order
-                      )}" alt="Order image"/></span>
+                      )}" alt="Sender image"/></span>
                           <div class="delivery1-delivery-infotext">
-                              <span id="delivery1-delivery-title-${index}">${
+                              <span class="infotext-title" id="delivery1-delivery-title-${index}">${
                          order.sender.name
                     }</span>
-                              <h6>Pick-up:<span>${order.pickup_date}</span></h6>
-                              <h6>Delivery distance:<span>${distance.toFixed(
+                              <div class="infotext-flex"><h6>Pick-up:</h6><span>${
+                                   order.pickup_date
+                              }</span></div>
+                              <div class="infotext-flex"><h6>Delivery distance:</h6><span>${distance.toFixed(
                                    2
-                              )} km</span></h6>
-                              <h6>Order:<span>${order.order_number}</span></h6>
+                              )} km</span></div>
+                              <div class="infotext-flex"><h6>Order:</h6><span>${
+                                   order.order_number
+                              }</span></div>
                           </div>
                           <div class="delivery1-indication-request" id="delivery1-indicationRequest-${index}">
                               <span class="material-icons delivery1-questionmark">question_mark</span>
