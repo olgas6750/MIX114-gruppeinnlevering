@@ -141,7 +141,7 @@
                                    MY DELIVERIES
                               </h3>
                               <div>
-                                   <h4>My location</h4>
+                                   <h5>My location:</h5>
                                    <span
                                         id="delivery2-JS-insert-myLocation"
                                    ></span>
@@ -176,10 +176,11 @@
                                                                  <div
                                                                       class="delivery2-modal-title-block"
                                                                  >
-                                                                      <h2>
+                                                                      <h3>
                                                                            ORDER:
-                                                                      </h2>
+                                                                      </h3>
                                                                       <span
+                                                                           id="order-number"
                                                                            >JS</span
                                                                       >
                                                                  </div>
@@ -190,15 +191,19 @@
                                                                            id="w-node-_26c98ac7-4e38-6cab-7006-996b8bfb269b-e8366478"
                                                                            class="sender"
                                                                       >
-                                                                           <h4>
+                                                                           <h4
+                                                                                class="delivery2-modal-titles"
+                                                                           >
                                                                                 Sender
                                                                            </h4>
                                                                            <span
                                                                                 class="delivery2-modal-sendRec-text"
+                                                                                id="sender-name"
                                                                                 >JSname</span
                                                                            >
                                                                            <span
                                                                                 class="delivery2-modal-sendRec-text"
+                                                                                id="sender-address"
                                                                                 >JSadress</span
                                                                            >
                                                                       </div>
@@ -206,47 +211,60 @@
                                                                            id="w-node-_3f25c5e3-5d9f-6f7a-7e06-907376bb3adc-e8366478"
                                                                            class="recipiant"
                                                                       >
-                                                                           <h4>
+                                                                           <h4
+                                                                                class="delivery2-modal-titles"
+                                                                           >
                                                                                 Recipiant
                                                                            </h4>
 
                                                                            <span
                                                                                 class="delivery2-modal-sendRec-text"
+                                                                                id="recipient-name"
                                                                                 >JSname</span
                                                                            >
                                                                            <span
                                                                                 class="delivery2-modal-sendRec-text"
+                                                                                id="recipient-address"
                                                                                 >JSadress</span
                                                                            >
                                                                       </div>
                                                                  </div>
                                                                  <div
-                                                                      id="w-node-_7de942da-d249-75ec-1859-7bb15796ed3f-e8366478"
                                                                       class="delivery2-modal-block-progress"
                                                                  >
-                                                                      <div>
-                                                                           <h5>
+                                                                      <div
+                                                                           class="delivery2-modal-infoBuyer"
+                                                                      >
+                                                                           <h5
+                                                                                class="delivery2-modal-titles"
+                                                                           >
                                                                                 Info
                                                                                 from
                                                                                 the
                                                                                 buyer:
                                                                            </h5>
                                                                            <span
+                                                                                id="buyer-info"
                                                                                 >JS
                                                                                 info</span
                                                                            >
                                                                       </div>
                                                                       <div>
                                                                            <h5
-                                                                                class="heading-2"
+                                                                                class="delivery2-modal-titles"
                                                                            >
                                                                                 Tracking
                                                                                 Log
                                                                            </h5>
-                                                                           <div>
-                                                                                Estimated
-                                                                                Delivery:
+                                                                           <div
+                                                                                class="delivery2-estimate-delivery"
+                                                                           >
+                                                                                <span>
+                                                                                     Estimated
+                                                                                     Delivery:
+                                                                                </span>
                                                                                 <span
+                                                                                     id="estimated-delivery"
                                                                                      >Js
                                                                                      info</span
                                                                                 >
@@ -262,7 +280,7 @@
                                                                                 <input
                                                                                      class="form-check-input"
                                                                                      type="checkbox"
-                                                                                     id="toggleBtn"
+                                                                                     id="pickedUpCheckbox"
                                                                                 />
                                                                                 <span
                                                                                      class="material-icons custom-checkbox-icon"
@@ -276,7 +294,9 @@
                                                                                 <span
                                                                                      id="delivery2-modal-pickedUp-lastUpdate"
                                                                                 ></span>
-                                                                                <h5>
+                                                                                <h5
+                                                                                     class="delivery2-modal-progress-titles"
+                                                                                >
                                                                                      Picked-up
                                                                                 </h5>
                                                                            </div>
@@ -290,7 +310,7 @@
                                                                                 <input
                                                                                      class="form-check-input"
                                                                                      type="checkbox"
-                                                                                     id="toggleBtn"
+                                                                                     id="onRouteCheckbox"
                                                                                 />
                                                                                 <span
                                                                                      class="material-icons custom-checkbox-icon"
@@ -304,7 +324,9 @@
                                                                                 <span
                                                                                      id="delivery2-modal-onRoute-lastUpdate"
                                                                                 ></span>
-                                                                                <h5>
+                                                                                <h5
+                                                                                     class="delivery2-modal-progress-titles"
+                                                                                >
                                                                                      On-route
                                                                                 </h5>
                                                                            </div>
@@ -330,7 +352,9 @@
                                                                                      id="delivery2-modal-delayed-lastUpdate"
                                                                                 >
                                                                                 </span>
-                                                                                <h5>
+                                                                                <h5
+                                                                                     class="delivery2-modal-progress-titles"
+                                                                                >
                                                                                      Delayed:<span
                                                                                           id="delivery2-modal-delay-selected"
                                                                                      >
@@ -403,7 +427,7 @@
                                                                                 <input
                                                                                      class="form-check-input"
                                                                                      type="checkbox"
-                                                                                     id="toggleBtn"
+                                                                                     id="arrivedCheckbox"
                                                                                 />
                                                                                 <span
                                                                                      class="material-icons custom-checkbox-icon"
@@ -416,7 +440,9 @@
                                                                                 <span
                                                                                      id="delivery2-modal-arrived-lastUpdate"
                                                                                 ></span>
-                                                                                <h5>
+                                                                                <h5
+                                                                                     class="delivery2-modal-progress-titles"
+                                                                                >
                                                                                      Arrived
                                                                                      at
                                                                                      delivery
@@ -433,7 +459,7 @@
                                                                                 <input
                                                                                      class="form-check-input"
                                                                                      type="checkbox"
-                                                                                     id="toggleBtn"
+                                                                                     id="confirmedCheckbox"
                                                                                 />
                                                                                 <span
                                                                                      class="material-icons custom-checkbox-icon"
@@ -446,7 +472,9 @@
                                                                                 <span
                                                                                      id="delivery2-modal-confirmed-lastUpdate"
                                                                                 ></span>
-                                                                                <h5>
+                                                                                <h5
+                                                                                     class="delivery2-modal-progress-titles"
+                                                                                >
                                                                                      Delivery
                                                                                      confirmed
                                                                                 </h5>

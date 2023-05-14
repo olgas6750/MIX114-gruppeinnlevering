@@ -1,4 +1,24 @@
 // ||||||||||||HERE STARTS UPDATED DELIVER 2||||||||||||||||||||
+let userLocation = null;
+
+// Call this function once to get and store the user's location
+function getUserLocation() {
+     return new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(
+               (position) => {
+                    userLocation = {
+                         lat: position.coords.latitude,
+                         lng: position.coords.longitude,
+                    };
+                    resolve(userLocation);
+               },
+               (error) => {
+                    reject(error);
+               }
+          );
+     });
+}
+
 let map2;
 let map1;
 
@@ -203,6 +223,136 @@ async function fetchData() {
                     (order) => order.order_number === currentOrderNumber
                );
 
+               // Add event listeners to checkboxes
+               document
+                    .getElementById("pickedUpCheckbox")
+                    .addEventListener("change", function () {
+                         if (this.checked) {
+                              const currentTime = new Date();
+                              const formattedTime =
+                                   currentTime.toLocaleString();
+                              document.getElementById(
+                                   "delivery2-modal-pickedUp-lastUpdate"
+                              ).innerText = formattedTime;
+                         }
+                    });
+
+               document
+                    .getElementById("onRouteCheckbox")
+                    .addEventListener("change", function () {
+                         if (this.checked) {
+                              const currentTime = new Date();
+                              const formattedTime =
+                                   currentTime.toLocaleString();
+                              document.getElementById(
+                                   "delivery2-modal-onRoute-lastUpdate"
+                              ).innerText = formattedTime;
+                         }
+                    });
+
+               document
+                    .getElementById("arrivedCheckbox")
+                    .addEventListener("change", function () {
+                         if (this.checked) {
+                              const currentTime = new Date();
+                              const formattedTime =
+                                   currentTime.toLocaleString();
+                              document.getElementById(
+                                   "delivery2-modal-arrived-lastUpdate"
+                              ).innerText = formattedTime;
+                         }
+                    });
+
+               document
+                    .getElementById("confirmedCheckbox")
+                    .addEventListener("change", function () {
+                         if (this.checked) {
+                              const currentTime = new Date();
+                              const formattedTime =
+                                   currentTime.toLocaleString();
+                              document.getElementById(
+                                   "delivery2-modal-confirmed-lastUpdate"
+                              ).innerText = formattedTime;
+                         }
+                    });
+
+               // Here starts bootstrap Dropdown item selection event
+               document
+                    .querySelectorAll(".dropdown-item")
+                    .forEach(function (dropdownItem) {
+                         dropdownItem.addEventListener(
+                              "click",
+                              function (event) {
+                                   const delayHours =
+                                        this.getAttribute("data-delay-hours");
+                                   const delaySpan = document.getElementById(
+                                        "delivery2-modal-delay-selected"
+                                   );
+                                   const delayContainer =
+                                        document.querySelector(
+                                             ".form-check-input-delay"
+                                        );
+                                   const lastUpdateSpan =
+                                        document.getElementById(
+                                             "delivery2-modal-delayed-lastUpdate"
+                                        );
+
+                                   // 1. Append the chosen time to the span
+                                   const currentDelayHours = delaySpan.innerText
+                                        ? parseInt(delaySpan.innerText)
+                                        : 0;
+                                   const totalDelayHours =
+                                        currentDelayHours +
+                                        parseInt(delayHours);
+                                   delaySpan.innerText =
+                                        totalDelayHours + " Hours";
+
+                                   // 2. Change the class to 'form-check-input-delay-red'
+                                   delayContainer.classList.remove(
+                                        "form-check-input-delay"
+                                   );
+                                   delayContainer.classList.add(
+                                        "form-check-input-delay-red"
+                                   );
+
+                                   // 3. Append time and date to the span
+                                   const currentTime = new Date();
+                                   const formattedTime =
+                                        currentTime.toDateString() +
+                                        " " +
+                                        currentTime.getHours() +
+                                        ":" +
+                                        currentTime.getMinutes() +
+                                        ":" +
+                                        currentTime.getSeconds();
+                                   lastUpdateSpan.innerText = formattedTime;
+                              }
+                         );
+                    });
+               // Here stops bootstrap Dropdown item selection event
+
+               // Inside the 'shown.bs.modal' event callback, after finding the corresponding order...
+
+               // Here starts the populate modal with order.data
+               document.getElementById("order-number").innerText =
+                    order.order_number;
+               document.getElementById("sender-name").innerText =
+                    order.sender.name;
+               document.getElementById("sender-address").innerText =
+                    order.sender.address;
+               document.getElementById("recipient-name").innerText =
+                    order.recipient.name;
+               document.getElementById("recipient-address").innerText =
+                    order.recipient.address;
+               document.getElementById("buyer-info").innerText = order.comment;
+               document.getElementById("estimated-delivery").innerText =
+                    order.delivery_date;
+               // Here ends the populate modal with order.data
+
+               $("#exampleModalCenter").on("shown.bs.modal", function () {
+                    // Existing logic...
+               });
+
                if (!order) {
                     console.error(
                          `Could not find order with number ${currentOrderNumber}`
@@ -247,6 +397,8 @@ async function fetchData() {
      }
 }
 
+let currentInfoWindow = null; // Global variable to store the current open infoWindow
+
 function addMarkers(orders, map2) {
      orders.forEach((order) => {
           const sender = order.sender;
@@ -261,34 +413,99 @@ function addMarkers(orders, map2) {
           });
 
           const infoWindowContent = `
-         <div class="custom-infowindow">
-             ${sender.name}
-         </div>
-         `;
+               <div class="custom-infowindow">
+               SENDER:</br></br>${sender.name},</br> ${sender.address}, ${sender.postal_code},</br></br> ${order.comment}
+               </div>
+          `;
 
           const infoWindow = new google.maps.InfoWindow({
                content: infoWindowContent,
           });
 
-          marker.addListener("click", () => {
+          // Instantiate the Directions Service
+          var directionsService = new google.maps.DirectionsService();
+          var directionsRenderer = new google.maps.DirectionsRenderer();
+
+          // Add to mouseover listener
+          marker.addListener("mouseover", () => {
+               if (currentInfoWindow) {
+                    currentInfoWindow.close();
+               }
+
                infoWindow.open(map2, marker);
+               currentInfoWindow = infoWindow;
+
+               // Check if userLocation is already set
+               if (userLocation) {
+                    // Set the map
+                    directionsRenderer.setMap(map2);
+
+                    // Set the directions
+                    directionsService.route(
+                         {
+                              origin: userLocation,
+                              destination: marker.position,
+                              travelMode: "DRIVING",
+                         },
+                         function (response, status) {
+                              if (status === "OK") {
+                                   directionsRenderer.setDirections(response);
+                              } else {
+                                   console.log(
+                                        "Directions request failed due to " +
+                                             status
+                                   );
+                              }
+                         }
+                    );
+               } else {
+                    console.error("User location not yet set");
+               }
+          });
+
+          // Add to mouseout listener
+          marker.addListener("mouseout", () => {
+               infoWindow.close();
+
+               // Remove the directions from the map
+               directionsRenderer.setMap(null);
           });
      });
 }
 
+let markerMap1 = []; // Declare markerMap1 array globally
 let directionsRenderer = null; // Declare it globally
 
 function addMarkersToMap1(order, map) {
      // Clear out old markers
-     for (let marker of markers) {
+     for (let marker of markerMap1) {
           marker.setMap(null);
      }
-     markers = []; // Reset the markers array
+     markerMap1 = []; // Reset the markers array
 
-     // Clear out the old route
-     if (directionsRenderer != null) {
-          directionsRenderer.setDirections({ routes: [] });
+     // Create the DirectionsRenderer if it doesn't exist yet
+     if (directionsRenderer == null) {
+          directionsRenderer = new google.maps.DirectionsRenderer({
+               suppressMarkers: true,
+          }); // Add this line
+     } else {
+          // Clear out the old route
+          directionsRenderer.setMap(null);
+          directionsRenderer.setPanel(null);
+          directionsRenderer = new google.maps.DirectionsRenderer({
+               suppressMarkers: true,
+          }); // Add this line
      }
+
+     const senderInfoWindowContent = `
+               <div class="custom-infowindow">
+               SENDER:</br></br>${order.sender.name},</br> ${order.sender.address}, ${order.sender.postal_code},</br></br> ${order.comment}
+               </div>
+          `;
+
+     const senderInfoWindow = new google.maps.InfoWindow({
+          content: senderInfoWindowContent,
+     });
 
      const senderMarker = new google.maps.Marker({
           position: { lat: order.sender.lat, lng: order.sender.lng },
@@ -300,18 +517,44 @@ function addMarkersToMap1(order, map) {
           },
      });
 
+     senderMarker.addListener("mouseover", () => {
+          senderInfoWindow.open(map, senderMarker);
+     });
+
+     senderMarker.addListener("mouseout", () => {
+          senderInfoWindow.close();
+     });
+
+     const recipientInfoWindowContent = `
+               <div class="custom-infowindow">
+               RECIPIENT:</br></br>${order.recipient.name},</br> ${order.recipient.address}, ${order.recipient.postal_code}
+               </div>
+          `;
+
+     const recipientInfoWindow = new google.maps.InfoWindow({
+          content: recipientInfoWindowContent,
+     });
+
      const recipientMarker = new google.maps.Marker({
           position: { lat: order.recipient.lat, lng: order.recipient.lng },
           map: map,
           title: order.recipient.name,
           icon: {
-               url: getOrderImage(order),
+               url: getOrderImageRecipient(order),
                scaledSize: new google.maps.Size(40, 30),
           },
      });
 
-     // Add new markers to markers array
-     markers.push(senderMarker, recipientMarker);
+     recipientMarker.addListener("mouseover", () => {
+          recipientInfoWindow.open(map, recipientMarker);
+     });
+
+     recipientMarker.addListener("mouseout", () => {
+          recipientInfoWindow.close();
+     });
+
+     // Add new markers to markerMap1 array
+     markerMap1.push(senderMarker, recipientMarker);
 
      // Get current position and display route
      if (navigator.geolocation) {
@@ -324,7 +567,6 @@ function addMarkersToMap1(order, map) {
 
                     const directionsService =
                          new google.maps.DirectionsService();
-                    directionsRenderer = new google.maps.DirectionsRenderer(); // assign to the global variable
                     directionsRenderer.setMap(map);
 
                     calculateAndDisplayRoute(
@@ -332,7 +574,8 @@ function addMarkersToMap1(order, map) {
                          directionsRenderer,
                          currentPosition,
                          { lat: order.sender.lat, lng: order.sender.lng },
-                         { lat: order.recipient.lat, lng: order.recipient.lng }
+                         { lat: order.recipient.lat, lng: order.recipient.lng },
+                         map
                     );
                },
                () => {
@@ -369,46 +612,24 @@ async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {
      });
 }
 
-function calculateAndDisplayRoute(
+async function calculateAndDisplayRoute(
      directionsService,
      directionsRenderer,
      origin,
+     waypoint,
      destination,
      map
 ) {
-     // const originIcon = "images/Deliveryman, rounded.png";
-
      directionsService.route(
           {
                origin: origin,
                destination: destination,
-               waypoints: [
-                    { location: origin, stopover: false },
-                    { location: destination, stopover: true },
-               ],
-               optimizeWaypoints: true,
+               waypoints: [{ location: waypoint }],
                travelMode: google.maps.TravelMode.DRIVING,
           },
-          (response, status) => {
+          async (response, status) => {
                if (status === google.maps.DirectionsStatus.OK) {
                     directionsRenderer.setDirections(response);
-
-                    // Custom markers for origin, sender, and recipient
-                    const route = response.routes[0];
-                    const leg1 = route.legs[0];
-                    const leg2 = route.legs[1];
-
-                    addMarkerWithInfoWindow(origin, map, originIcon);
-                    addMarkerWithInfoWindow(
-                         leg1.start_location,
-                         map,
-                         "Sender Marker"
-                    );
-                    addMarkerWithInfoWindow(
-                         leg2.end_location,
-                         map,
-                         "Recipient Marker"
-                    );
                } else {
                     console.log(
                          "Error: Directions request failed due to " + status
@@ -417,6 +638,16 @@ function calculateAndDisplayRoute(
           }
      );
 }
+
+// Then, when you call the function:
+calculateAndDisplayRoute(
+     directionsService,
+     directionsRenderer,
+     currentPosition, // Origin
+     { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
+     { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
+     map
+);
 
 function getOrderImage(order) {
      switch (order.sender.name) {
@@ -437,6 +668,26 @@ function getOrderImage(order) {
                return "./images/profilepicture.png"; // default image
      }
 }
+
+function getOrderImageRecipient(order) {
+     switch (order.recipient.name) {
+          case "Emma Johnson":
+               return "./images/Person 1.png";
+          case "Noah Olsen":
+               return "./images/Person 2.png";
+          case "Ava Larsen":
+               return "./images/Person 1.png";
+          case "Erik Johansen":
+               return "./images/Person 4.png";
+          case "Ingrid Solberg":
+               return "./images/Person 1.png";
+          case "Jonas Berg":
+               return "./images/Person 6.png";
+          default:
+               return "./images/profilepicture.png"; // Default image for recipient
+     }
+}
+
 // Function to calculate driving distance ends here
 
 // This DMOContentLodaed will run the functions after the HTML is finished loading
@@ -446,75 +697,3 @@ function getOrderImage(order) {
 // ||||||||HERE STARTS MODAL DELAY
 
 // |||||||HERE STOPS MODAL DELAY
-
-function updateSelectedDelay(selectedItem) {
-     // Get the delay hours from the data attribute of the selected item
-     const delayHours = parseInt(selectedItem.getAttribute("data-delay-hours"));
-
-     // Find the span element with the id "delivery2-modal-delay-selected"
-     const targetSpan = document.getElementById(
-          "delivery2-modal-delay-selected"
-     );
-
-     const iconSpan = document.getElementById("iconSpan");
-     iconSpan.textContent = "priority_high";
-     const formCheckInputDelay = document.querySelector(
-          ".form-check-input-delay"
-     );
-     formCheckInputDelay.classList.add("form-check-input-delay-red");
-
-     // Get the current value in the span
-     const currentValue = parseInt(targetSpan.textContent) || 0;
-
-     // Add the delay hours to the current value
-     const newValue = currentValue + delayHours;
-
-     // Update the span's content with the new value
-     targetSpan.textContent = newValue + " Hours";
-
-     // Find the span element with the id "delivery2-modal-delayed-lastUpdate"
-     const lastUpdateSpan = document.getElementById(
-          "delivery2-modal-delayed-lastUpdate"
-     );
-
-     // Get the current date and time
-     const now = new Date();
-
-     // Format the date and time
-     const formattedDateTime = now.toLocaleString();
-
-     // Update the lastUpdateSpan's content with the formatted date and time
-     lastUpdateSpan.textContent = formattedDateTime;
-}
-
-// Move the event listener outside the function
-const dropdownMenu = document.getElementById("dropdownMenu");
-dropdownMenu.addEventListener("click", function (event) {
-     const selectedItem = event.target;
-     if (selectedItem.classList.contains("dropdown-item")) {
-          updateSelectedDelay(selectedItem);
-     }
-});
-
-// Dropdown list for delaytime ends here:
-
-// General time update for chekboxes starts here
-function updateLastCheckedTime(checkbox, spanId) {
-     checkbox.addEventListener("change", function () {
-          if (checkbox.checked) {
-               const now = new Date();
-               const formattedDateTime = now.toLocaleString();
-               const targetSpan = document.getElementById(spanId);
-               targetSpan.textContent = formattedDateTime;
-          }
-     });
-}
-
-const checkboxes = document.getElementsByClassName("form-check-input");
-
-updateLastCheckedTime(checkboxes[0], "delivery2-modal-pickedUp-lastUpdate");
-updateLastCheckedTime(checkboxes[1], "delivery2-modal-onRoute-lastUpdate");
-updateLastCheckedTime(checkboxes[2], "delivery2-modal-arrived-lastUpdate");
-updateLastCheckedTime(checkboxes[3], "delivery2-modal-confirmed-lastUpdate");
-
-// General time update for chekboxes ends here
