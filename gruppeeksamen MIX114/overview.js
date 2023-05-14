@@ -43,8 +43,8 @@ async function loadEvents(calendar) {
      for (let i = 0; i < orderCount; i++) {
           let currentOrder = data.orders[i];
           let orderID = data.orders[i].order_number;
-          let currentPackageList = data.orders[i].packages;
-          console.log(currentPackageList);
+/*           let currentPackageList = data.orders[i].packages;
+          console.log(currentPackageList); */
 
           if (currentOrder.sender.name == userName) {
                const pickUpDate = currentOrder.pickup_date;
@@ -77,6 +77,14 @@ async function loadEvents(calendar) {
 }
 
 function loadModal(info) {
-     console.log(info);
+     let orderModal = document.getElementById("orderModal");
+
+     let modalOrderInfo = info.event.extendedProps;
+     
+     document.getElementById("modal-title").innerHTML = modalOrderInfo.order_number;
+     document.getElementById("senderName").innerHTML = modalOrderInfo.sender.name;
+     document.getElementById("senderAddress").innerHTML = modalOrderInfo.sender.address;
+     document.getElementById("recipientName").innerHTML = modalOrderInfo.recipient.name;
+     document.getElementById("recipientAddress").innerHTML = modalOrderInfo.recipient.address;
      $("#orderModal").modal("show");
 }
