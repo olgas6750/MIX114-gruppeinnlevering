@@ -585,3 +585,13 @@ footer{
   text-decoration: underline;
   color:black;
 }
+
+
+code
+.image-hover {
+  transition: transform 0.2s; /* Animation */
+}
+
+.image-hover:hover {
+  transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
