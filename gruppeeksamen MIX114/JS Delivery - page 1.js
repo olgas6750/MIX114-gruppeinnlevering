@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+     var calendarEl = document.getElementById("calendar");
+
+     var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "timeGridWeek",
+          navLinks: true,
+          dayMaxEvents: true,
+          allDaySlot: false,
+
+          eventClick: function (info) {
+               loadModal(info);
+          },
+     });
+     calendar.render();
+
      const acceptButton = document.getElementById("delivery1-acceptButton");
      const declineButton = document.getElementById("delivery1-declineButton");
      const indicationDecline = document.getElementById(
