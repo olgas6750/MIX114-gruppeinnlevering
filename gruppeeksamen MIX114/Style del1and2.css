@@ -617,8 +617,9 @@ footer {
      text-align: center;
 }
 
-#calendar{
-     height:100%;
+#calendar {
+     height: 100%;
+     padding: 3%;
 }
 /* Here starts calendar modal */
 .modal {
