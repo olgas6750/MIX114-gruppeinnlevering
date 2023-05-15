@@ -1,0 +1,1100 @@
+html * {
+     font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+h1 {
+     font-size: 4em;
+     font-family: Manrope, Helvetica, sans-serif;
+}
+h2 {
+     font-size: 3em;
+     font-family: Manrope, Helvetica, sans-serif;
+}
+h3 {
+     font-size: 2.625em;
+     font-family: Manrope, Helvetica, sans-serif;
+}
+h4 {
+     font-size: 2.125em;
+     font-family: Manrope, Helvetica, sans-serif;
+}
+h5 {
+     font-size: 1.5em;
+     font-family: Manrope, Helvetica, sans-serif;
+}
+h6 {
+     font-size: 1em;
+     font-family: Manrope, Helvetica, sans-serif;
+}
+
+body {
+     display: grid;
+     grid-template-rows: auto 1fr auto;
+     min-height: 100vh;
+}
+
+header {
+     height: auto;
+     box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.2);
+     z-index: 9999;
+}
+
+.header-items {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px 10px 10px 10px;
+     margin-right: 40px;
+}
+
+.header-right {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 40px;
+}
+
+.about {
+     font-size: calc(12px+1vw);
+}
+
+.profileDropdown .logo img {
+     width: 15vw;
+}
+
+.bodyContainer {
+     display: flex;
+     flex-direction: row;
+}
+
+.sidebar {
+     background-color: #b3dacb;
+     width: 170px;
+}
+
+.sidebarList > * {
+     font-size: 16px;
+     font-weight: bold;
+     line-height: 300%;
+     padding: 30px 5px 10px 10px;
+     list-style: none;
+     font-size: 0.8em;
+}
+
+#general-chosen-page-background {
+     background-color: rgba(0, 132, 80, 0.3);
+     border-radius: 10px;
+     padding-left: 5px;
+}
+
+.sidebar-list-items {
+     display: flex;
+     align-items: center;
+     gap: 4%;
+}
+
+.sidebarList a {
+     text-decoration: none;
+     color: black;
+}
+
+.sidebarList a:hover {
+     text-decoration: none;
+     color: black;
+}
+
+.sidebarList li {
+     margin-top: 2px;
+}
+
+.sidebarList li:hover {
+     background-color: rgba(0, 132, 80, 0.3);
+     border-radius: 10px;
+     padding-left: 5px;
+     margin-top: 2px;
+}
+
+.mainContainer {
+     padding: 10px 10px 10px 10px;
+     width: 100%;
+}
+
+footer {
+     height: 170px;
+     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footerContent {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     margin-left: 10%;
+     margin-right: 10%;
+     align-items: center;
+}
+
+.footerContentLeft {
+     display: flex;
+     flex-direction: row;
+}
+
+.footerContentLeft > * {
+     padding-top: 15px;
+     font-size: 14px;
+     color: white;
+     list-style: none;
+}
+
+.footerContentRight {
+     display: flex;
+     flex-direction: column;
+}
+
+.footerContentRight > * {
+     padding-top: 15px;
+     font-size: 14px;
+     color: white;
+}
+.footerContentRight img {
+     width: 70%;
+}
+
+/* ------------------- Here begins Delivery - page 1 ---------------------- */
+
+/* Here starts the main structure */
+.mainContainer-delivery1 {
+     height: 100%;
+     width: 100%;
+}
+
+.delivery1-column-grid {
+     display: grid;
+     grid-template-columns: 35% 65%;
+     height: auto;
+     width: auto;
+}
+
+.delivery1-column-left {
+     width: auto;
+     height: 80vh;
+     overflow: scroll;
+     display: flex;
+     justify-content: center;
+}
+
+.delivery1-column-right {
+     border-left: 1px solid rgba(0, 0, 0, 0.25);
+     width: 100%;
+     height: 100%;
+}
+/* Here stops the main structure */
+
+/* Here starts the topbar */
+.delivery1-topbar {
+     grid-column: 1 / span 3; /* Topbar spans both columns*/
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-left: 5vh;
+     padding-right: 8vh;
+     height: 90px;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+     box-sizing: border-box;
+}
+
+.delivery1and2-topbar-title {
+     margin-top: 1.5%;
+}
+
+.delivery1-topbar-sender-receiver {
+     margin-left: 25%;
+     display: flex;
+     gap: 1%;
+     width: auto;
+     overflow: hidden;
+}
+
+.delivery1-sendRecip-info-topbar {
+     display: flex;
+     justify-content: space-between;
+     gap: 1vh;
+     max-height: 85px;
+     margin-top: 1.5%;
+     line-height: 120%;
+}
+
+.delivery1-sender-topbar {
+     width: 45vh;
+     max-height: 85px;
+}
+
+.delivery1-recipient-topbar {
+     width: 35vh;
+     max-height: 85px;
+}
+
+.delivery1-topbar-buttons {
+     display: flex;
+     align-items: center;
+     gap: 3vh;
+}
+
+.delivery1-accept {
+     width: 60px;
+     height: 60px;
+     border-radius: 100%;
+     border: 2px solid rgba(84, 140, 248, 0.8);
+     background-color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.delivery1-decline {
+     width: 60px;
+     height: 60px;
+     border-radius: 100%;
+     background-color: white;
+     border: 2px solid rgba(252, 110, 81, 0.8);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.delivery1-topButtons {
+     font-size: 2.7em !important;
+     color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 800px) or (max-height: 500px) {
+     .delivery1-delivery-infotext {
+          font-size: 0.7em;
+          gap: 0%;
+     }
+
+     .delivery1-delivery-infotext h6 {
+          font-size: 0.7em;
+     }
+}
+
+.delivery1-accept:hover {
+     border: 3px solid rgba(84, 140, 248, 0.8);
+}
+
+.delivery1-decline:hover {
+     border: 3px solid rgba(252, 110, 81, 0.8);
+}
+
+/* Here stops the Topbar */
+
+/* Here starts the left-side column  */
+.columnleft-row-grid {
+     display: grid;
+     grid-template-rows: auto auto auto auto auto;
+     width: 100%;
+     padding-bottom: 5px;
+     overflow: scroll;
+}
+
+#delivery1-button-container {
+     text-align: center;
+     height: 100%;
+}
+
+.delivery1-request-container {
+     height: auto !important;
+     width: 90% !important;
+     border: 2px solid rgb(253, 220, 130) !important;
+     margin-top: 5% !important;
+     border-radius: 10px !important;
+     /* box-sizing: border-box; */
+     margin-left: auto !important;
+     margin-right: auto !important;
+     text-align: left !important;
+     padding: 0 !important;
+}
+
+.delivery1-accepted-container {
+     height: auto !important;
+     width: 90% !important;
+     border: 2px solid rgb(0, 132, 80) !important;
+     margin-top: 5% !important;
+     border-radius: 10px !important;
+     box-sizing: border-box !important;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     text-align: left !important;
+}
+
+.delivery1-declined-container {
+     height: 15% !important;
+     width: 90% !important;
+     border: 2px solid rgba(252, 110, 81, 1) !important;
+     margin-top: 5% !important;
+     border-radius: 10px !important;
+     box-sizing: border-box !important;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     text-align: left !important;
+}
+
+.delivery1-request-container.active {
+     outline: 3px solid rgb(253, 220, 130) !important;
+}
+
+.delivery1-accepted-container.active {
+     outline: 3px solid rgb(0, 132, 80) !important;
+}
+
+.delivery1-declined-container.active {
+     outline: 3px solid rgba(252, 110, 81, 1) !important;
+}
+
+.delivery1-request-container:hover {
+     outline: 2px solid rgb(253, 220, 130) !important;
+     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.delivery1-accepted-container:hover {
+     outline: 2px solid rgb(0, 132, 80) !important;
+     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.delivery1-declined-container:hover {
+     outline: 2px solid rgba(252, 110, 81, 1) !important;
+     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.delivery1-ReqAccDec-body {
+     display: flex;
+     justify-content: space-between;
+     height: 100%;
+}
+
+.delivery1-delivery-img {
+     margin-top: auto;
+     margin-bottom: auto;
+     margin-left: 2%;
+     margin-right: 2%;
+     max-height: 11vh;
+     max-width: 13vh;
+}
+
+.delivery1-delivery-img img {
+     width: 13vh;
+     height: auto;
+     max-height: 11vh;
+     max-width: 13vh;
+}
+
+.delivery1-delivery-infotext {
+     flex: 2;
+}
+
+.delivery1-delivery-infotext h6 {
+     margin: 0;
+     padding: 0;
+     font-weight: 600;
+}
+
+.infotext-title {
+     font-size: 1.3em;
+     font-weight: 600;
+}
+
+.infotext-flex {
+     display: flex;
+     align-items: center;
+     gap: 3%;
+}
+
+.delivery1-indication-request {
+     background-color: rgb(253, 220, 130);
+     border-radius: 100px;
+     width: 1.5em;
+     height: 1.5em;
+     margin-top: 1%;
+     margin-right: 1%;
+     align-items: center;
+}
+
+.delivery1-indication-accept {
+     background-color: rgb(0, 132, 80);
+     border-radius: 100px;
+     width: 1.5em;
+     height: 1.5em;
+     margin-top: 2%;
+     margin-right: 2%;
+
+     align-items: center;
+}
+
+.delivery1-indication-decline {
+     background-color: rgba(252, 110, 81, 1);
+     border-radius: 100px;
+     width: 1.5em;
+     height: 1.5em;
+     margin-top: 1% !important;
+     margin-right: 1% !important;
+
+     align-items: center;
+}
+
+.delivery1-questionmark {
+     font-size: 16px !important;
+     color: white;
+     margin-left: 3.5px;
+     margin-top: 3.5px;
+     margin-right: auto;
+}
+
+.delivery1-check {
+     font-size: 16px !important;
+     color: white;
+     margin-left: 3.5px;
+     margin-top: 3.5px;
+     margin-right: auto;
+}
+
+.delivery1-exit {
+     font-size: 16px;
+     color: rgb(255, 255, 255);
+     margin-left: auto;
+     margin-right: auto;
+}
+
+/* This hides the html icons, which will be used for javascript functionnality */
+.indication-for-js-reference {
+     display: none;
+}
+
+/* Here stops left side column */
+
+/* Here starts right side column */
+
+/* Here is the information square */
+.columnright-row-grid {
+     display: grid;
+     grid-template-rows: auto auto;
+     justify-content: center;
+     max-width: 100vh;
+     width: 100vh;
+     height: auto;
+     align-items: center;
+}
+
+.delivery1-order-info-body {
+     width: 90vh;
+     height: 40vh;
+     border: 1px solid rgba(0, 0, 0, 0.25);
+
+     border-radius: 20px;
+}
+
+#delivery1-JS-insert-informationsquare {
+     width: auto;
+     max-width: 100%;
+     height: auto;
+     margin-top: 5%;
+}
+
+.delivery1-order-info-columns {
+     display: grid;
+     grid-template-columns: 50% 50%;
+     height: 100%;
+}
+
+.delivery1-order-column-general {
+     margin-left: 1%;
+     padding-right: 10%;
+     display: flex;
+     overflow: auto;
+     max-width: 100%;
+     width: 100%;
+}
+
+.delivery1-infobox-1,
+.delivery1-infobox-2 {
+     max-width: 55%;
+}
+
+.delivery1-order-column-general h5 {
+     margin: 0;
+     margin-right: 1rem;
+}
+
+.delivery1-order-column-general span {
+     flex-grow: 1;
+     text-align: right;
+}
+
+.delivery1-infobox-1-2-element {
+     flex: 1;
+     padding: 1rem;
+     min-width: 24vh;
+     box-sizing: border-box;
+}
+
+.delivery1-order-column-items {
+     height: 100%;
+     overflow: auto;
+     border-left: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.delivery1-order-items-title {
+     display: flex;
+     justify-content: space-between;
+     padding-left: 10%;
+     padding-right: 13%;
+     padding-top: 3%;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.delivery1-items-OLlist ol {
+     padding-left: 2%;
+}
+
+.delivery1-items-info {
+     display: flex;
+     justify-content: space-between;
+     text-align: left;
+     padding-right: 15%;
+     padding-top: 1%;
+     border-bottom: 0.5px dotted rgba(0, 0, 0, 0.2);
+     padding-bottom: 1%;
+}
+
+.delivery1-items-info > span {
+     margin-right: 20px;
+}
+
+.delivery1-items-info > span:last-child {
+     margin-right: 10px;
+}
+
+.delivery1-info-picandname {
+     width: 40%;
+     max-width: 40%;
+}
+
+.delivery1-info-volWeg {
+     width: 10%;
+     max-width: 10%;
+}
+
+.delivery1-items-info img {
+     width: 4.3vh;
+     height: 4vh;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+     border-radius: 10px;
+}
+
+#delivery1-item-title-Qty {
+     padding-left: 20%;
+}
+
+/* Here stops the information square */
+
+/* Here starts the calendar square */
+.delivery1-order-calendar-body {
+     width: 90vh;
+     height: 60vh;
+     border: 1px solid rgba(0, 0, 0, 0.25);
+     margin-top: 5%;
+     border-radius: 20px;
+
+     text-align: center;
+}
+
+#calendar {
+     height: 100%;
+     padding: 3%;
+}
+/* Here starts calendar modal */
+.modal {
+     background-color: rgba(150, 150, 150, 0.5);
+}
+
+.modal-dialog-centered {
+     max-width: 80vh !important;
+}
+
+.delivery1-modal {
+     width: 50vh !important;
+}
+
+.modal-header img {
+     width: 15vh;
+     height: auto;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+     border-radius: 10px;
+}
+
+.delivery1-btn-primary {
+     background-color: transparent !important;
+     border: 1px solid rgba(0, 132, 80, 0.5) !important;
+     border-radius: 30px !important;
+     width: 25%;
+     height: 20%;
+     color: black !important;
+     display: flex !important;
+     align-items: center !important;
+}
+
+.delivery1-nearMe {
+     color: black;
+     font-size: 16px !important;
+     margin-left: 15%;
+     margin-right: 2%;
+}
+
+.delivery1-btn-primary:hover {
+     background-color: transparent !important;
+     border: 2px solid rgba(0, 132, 80, 0.7) !important;
+     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+     border-radius: 30px !important;
+     width: 25%;
+     height: 20%;
+     color: black !important;
+     font-size: 1.1em;
+}
+
+.delivery1-modal-header-info {
+     line-height: 200%;
+     display: flex;
+     align-items: center;
+     margin-left: 5%;
+}
+
+.delivery1-modal-indication {
+     display: inline-flex;
+     background-color: rgba(94, 199, 142, 1);
+     width: 3vh;
+     height: 3vh;
+     border-radius: 100%;
+     margin-left: 5%;
+     margin-top: 5%;
+}
+
+#delivery1-delivery-title {
+     font-size: 1.5em;
+     font-weight: 600;
+}
+
+.delivery1-modal-infosection {
+     display: flex;
+     flex-direction: column;
+     text-align: left;
+     padding-right: 30%;
+     width: 80%;
+}
+
+.modal-body {
+     margin-left: 2%;
+     margin-right: 2%;
+     text-align: left;
+     border: none;
+}
+
+/* Here stops calendar modal */
+/* Here stops the calendar square */
+/* !!!!!!!!!!!!!!Here stops right side column!!!!!!!!!!!!!!! */
+
+/* A-media for delivery1 and delivery2 starts here */
+@media (max-width: 650px) or (max-height: 400px) {
+     .delivery1-topbar {
+          display: none;
+     }
+
+     .delivery1-request-container.active {
+          height: 15% !important;
+          width: 87% !important;
+     }
+
+     .delivery1-ReqAccDec-body {
+          display: flex;
+          justify-content: space-between;
+          height: 100%;
+          align-items: center;
+     }
+     .delivery1-delivery-infotext {
+          display: none;
+     }
+
+     .delivery1-delivery-img {
+          margin-left: 20%;
+          width: 18vh;
+          height: auto;
+     }
+}
+/* A-media for delivery1 and delivery2 ends here  */
+
+/* Hide the horizontal scrollbar */
+::-webkit-scrollbar {
+     display: none;
+}
+
+/* CSS for main-map starts here */
+
+.columnright-map-grid {
+     margin: 2%;
+}
+#delivery2-main-map {
+     width: 100%;
+     height: 75vh;
+     border-radius: 10px;
+}
+/* CSS for main-map ends here */
+
+/* CSS for modal starts here */
+.modal {
+     opacity: 0;
+     transition: opacity 0.3s ease;
+}
+
+.modal.show {
+     opacity: 1;
+}
+
+.modal.fade .modal-dialog {
+     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+     animation: slideOutRight 0.6s forwards;
+     width: 80% !important; /* Adjust the width as desired */
+     max-width: 100% !important; /* Ensure the modal doesn't exceed the viewport width */
+     height: auto !important;
+     max-height: 300px; /* Adjust the height as desired, or use a specific value like 500px */
+     justify-content: center;
+     margin-top: 70px;
+     margin-bottom: 10%;
+}
+
+.modal-content {
+     height: 85vh !important;
+     width: 100%;
+     border-radius: 50px;
+     outline: 5px black solid;
+}
+
+.modal-body {
+     overflow: scroll;
+     max-width: 100%;
+     padding: 0 !important;
+}
+
+.delivery2-modal-gridlayout {
+     display: grid;
+     grid-column-gap: 1vh;
+     grid-row-gap: 2%;
+     grid-template-rows: auto auto;
+     grid-template-columns: auto auto;
+     max-width: 100%;
+     max-height: 100%;
+}
+
+.delivery2-modal-title-block {
+     display: flex;
+     padding-left: 5%;
+
+     align-items: center;
+     gap: 3%;
+}
+
+#order-number {
+     font-weight: 600;
+     font-size: 1.5em;
+     padding-bottom: 1.5%;
+}
+
+.delivery2-modal-titles {
+     font-weight: 600;
+}
+
+.delivery2-modal-block-sendRec {
+     display: grid;
+     grid-template-columns: auto auto;
+     column-gap: 5%;
+     padding-top: 5%;
+     height: auto;
+     width: 80vh;
+     max-width: 100%;
+}
+
+.delivery2-modal-infoBuyer {
+     margin-bottom: 3%;
+}
+
+.delivery2-estimate-delivery {
+     display: flex;
+     align-items: center;
+     gap: 2%;
+}
+
+.delivery2-modal-sendRec-text {
+     display: flex;
+}
+
+.delivery2-modal-block-progress {
+     height: 60vh;
+     width: 60vh;
+     display: grid;
+     grid-template-rows: auto 15% 14% 14% 14% 14% 14%;
+     padding-left: 5%;
+}
+
+.delivery2-modal-block-maps {
+     height: 60vh;
+     width: 99%;
+     display: flex;
+     justify-items: right;
+}
+
+#delivery2-modal-map {
+     width: 99%;
+     height: 97%;
+     border-radius: 10px;
+     margin-right: 5%;
+}
+
+.delivery2-modal-footer {
+     height: 8% !important;
+     display: flex;
+     justify-content: right;
+     padding: 0 !important;
+}
+
+.delivery2-modal-footer button {
+     background: #a0d2be;
+     border-radius: 20px;
+     margin-right: 5vh;
+     height: 80% !important;
+     width: 12vh !important;
+}
+
+.delivery2-modal-footer button:hover {
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Dynamic respone for minimizing the modal window. This will remove everything but the map. */
+@media (max-width: 750px) or (max-height: 600px) {
+     .delivery2-modal-title-block {
+          display: none;
+     }
+     header {
+          display: none;
+     }
+     .modal.fade .modal-dialog {
+          transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          animation: slideOutRight 0.6s forwards;
+          width: 95% !important; /* Adjust the width as desired */
+          max-width: 100% !important; /* Ensure the modal doesn't exceed the viewport width */
+          height: 95% !important;
+          max-height: 95%; /* Adjust the height as desired, or use a specific value like 500px */
+          justify-content: center;
+          margin-top: 0 !important;
+     }
+     .delivery2-modal-gridlayout {
+          display: grid;
+          grid-template-columns: auto;
+          width: 100vh !important;
+          height: 100vh !important;
+     }
+     .delivery2-modal-block-progress {
+          display: none;
+     }
+     .delivery2-modal-footer {
+          display: none;
+     }
+     .delivery2-modal-block-sendRec {
+          display: none;
+     }
+     .delivery2-modal-block-maps {
+          height: 95%;
+          width: 97%;
+          position: absolute;
+          /* display: flex;
+          justify-items: right; */
+          margin: 3%;
+     }
+}
+
+.form-check-input {
+     width: 35px !important;
+     height: 35px !important;
+     border-radius: 100% !important;
+     background: rgba(0, 132, 80, 0.2) !important;
+
+     position: relative;
+     z-index: 0;
+}
+
+.custom-checkbox-container {
+     position: relative;
+     display: inline-block;
+}
+
+.custom-checkbox-icon {
+     position: absolute;
+     top: 55%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: white;
+     font-size: 1.3em;
+     z-index: 1;
+     pointer-events: none;
+     /* This prevents the icon from blocking the input click event */
+}
+
+.form-check-input:hover {
+     width: 35px !important;
+     height: 35px !important;
+     background-color: rgba(0, 132, 80, 0.5) !important;
+     outline: none !important;
+}
+
+.form-check-input:checked {
+     width: 35px !important;
+     height: 35px !important;
+     background-color: rgba(0, 132, 80, 0.9) !important;
+     outline: none !important;
+}
+
+.form-check-input-delay {
+     width: 35px;
+     height: 35px;
+     border-radius: 100%;
+     background: rgba(0, 132, 80, 0.9);
+     display: flex;
+     align-items: center;
+}
+
+.form-check-input-delay-red {
+     color: #000000 !important;
+     width: 35px;
+     height: 35px;
+     border-radius: 100%;
+     background-color: rgba(252, 110, 81, 0.7);
+     display: flex;
+     align-items: center;
+}
+
+.delivery2-progress-icon {
+     font-size: 1.3em;
+     padding-left: 13%;
+     color: white;
+}
+
+.form-check-input {
+     box-shadow: none !important;
+}
+
+.delivery2-dropdown-toggle {
+     width: 12.5vh;
+     height: auto;
+     color: rgba(252, 110, 81, 0.7) !important;
+     background: rgba(255, 255, 255, 0.1) !important;
+     border: 1px solid rgba(252, 110, 81, 0.7) !important;
+     border-radius: 20px !important;
+     display: flex !important;
+     align-items: center !important;
+}
+
+.delivery2-dropdown-toggle:hover {
+     width: 12.5vh;
+     height: auto;
+     color: rgba(252, 110, 81, 0.7) !important;
+     background: rgba(255, 255, 255, 0.1) !important;
+     outline: 1px solid rgba(252, 110, 81, 0.7) !important;
+     border-radius: 20px !important;
+     text-align: left !important;
+     justify-content: left !important;
+}
+
+.delivery2-picked-up {
+     display: flex;
+     gap: 6%;
+     align-items: center;
+     height: auto;
+}
+
+.delivery2-on-route {
+     display: flex;
+     gap: 6%;
+     align-items: center;
+     height: auto;
+}
+
+.delivery2-delayed {
+     display: flex;
+     gap: 6%;
+     align-items: center;
+     height: auto;
+}
+
+.delivery2-arrived {
+     display: flex;
+     gap: 6%;
+     align-items: center;
+     height: auto;
+}
+
+.delivery2-delivery-confirmed {
+     display: flex;
+     gap: 6%;
+     align-items: center;
+     height: auto;
+}
+
+#delivery2-modal-delay-selected {
+     text-decoration: underline;
+     padding-left: 5px;
+     color: rgba(252, 110, 81, 0.7);
+}
+
+/*  JS created class starts here */
+.custom-infowindow {
+     font-weight: 600;
+     width: 30vh;
+     height: auto;
+     display: flex;
+     justify-content: center;
+     text-align: center;
+     align-items: center;
+     line-height: 120%;
+     padding: 5%;
+     font-family: Manrope, Helvetica, sans-serif;
+     overflow: scroll;
+}
+/*  JS created class ends here */
+
+/* Modal slide function */
+.modal.show .modal-dialog {
+     animation: slideInRightBounce 0.6s forwards;
+}
+
+@keyframes slideInRightBounce {
+     0% {
+          transform: translateX(100%);
+     }
+     50% {
+          transform: translateX(-10%);
+     }
+     100% {
+          transform: translateX(0);
+     }
+}
+
+@keyframes slideOutRight {
+     0% {
+          transform: translateX(0);
+     }
+     100% {
+          transform: translateX(100%);
+     }
+}
+
+/* Modal slide function stop*/
+
+/* CSS for modal ends here */
+
+/* Here ends delivery page 2 */
