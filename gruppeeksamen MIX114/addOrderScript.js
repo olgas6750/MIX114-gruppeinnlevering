@@ -74,19 +74,19 @@ function addPackage(){
     '<table>' +
     ' <tr>' +
     ' <td><label for="weight">Weight (in grams)</label></td>' +
-    ' <td><input type="number" placeholder="Weight" name="weight"/></td>' +
+    ' <td><input type="number" placeholder="Weight" name="weight" class="infoInput"/></td>' +
     ' </tr>' +
     ' <tr>' +
     ' <td><label for="length">Length (in cm)</label></td>' +
-    ' <td><input type="number" placeholder="Length" name="length"/></td>' +
+    ' <td><input type="number" placeholder="Length" name="length"class="infoInput"/></td>' +
     ' </tr>' +
     ' <tr>' +
     ' <td><label for="height">Height (in cm)</label></td>' +
-    ' <td><input type="number" placeholder="Height" name="height"/></td>' +
+    ' <td><input type="number" placeholder="Height" name="height"class="infoInput"/></td>' +
     ' </tr>' +
     ' <tr>' +
     ' <td><label for="width">Width (in cm)</label></td>' +
-    ' <td><input type="number" placeholder="Width" name="width"/></td>' +
+    ' <td><input type="number" placeholder="Width" name="width"class="infoInput"/></td>' +
     ' </tr>' +
     '</table>'+
     '</form>'+

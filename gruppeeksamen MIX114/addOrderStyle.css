@@ -161,6 +161,10 @@ header{
     width:100%;
 }
 
+td{
+    margin-top:20px;
+}
+
 /* ..................footer.........................*/
 /* Hover effect */
 .underline-hover {
@@ -248,11 +252,20 @@ footer{
     padding-top:5%;
 }
 
+.mainContainerPackageList{
+    width:100%;
+}
+
+.mainContainerPackageList >*{
+    width:100%;
+}
+
 .addOrderPackageView{
     grid-column: 2;
     grid-row: 2;
     margin-left:20px;
     margin-top:20px;
+    width:100%;
 }
 
 .addOrderSidebar ul{
@@ -261,9 +274,10 @@ footer{
 }
 
 .addOrderPackageView img {
-    margin-bottom: 10%;
     width:80%;
+    margin-bottom: 10%;
     margin-top:-20px;
+    align-self:top;
 }
 
 .addPackageButton {
@@ -273,7 +287,7 @@ footer{
     padding:8%;
     border:none;
     border-radius: 10px;
-    margin-bottom:5px;
+    margin-top:10px;
 }
 
 .viewPackageButton{
@@ -288,7 +302,7 @@ footer{
 }
 
 .continueButton{
-    background-color: #46dd18;
+    background-color: #008450;
     color:white;
     width:100%;
     padding:8%;
@@ -363,4 +377,8 @@ footer{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.infoInput{
+    width:100%;
 }
