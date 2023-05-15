@@ -146,18 +146,47 @@
               </div>
               <div class="modal-body">
                 <div class="modalTopRow">
-                  <h5>To:</h5>
+                  <h5>From:</h5>
                   <div class="senderInfo">
                     <p id="senderName"></p>
                     <p id="senderAddress"></p>
                   </div>
-                  <h5>From:</h5>
+                  <h5>To:</h5>
                   <div class="recipientInfo">
                     <p id="recipientName"></p>
                     <p id="recipientAddress"></p>
                   </div>
                 </div>
-                <div class="modalBottomLeft"></div>
+                <div class="modalBottomLeft">
+                  <div class="accordion" id="orderPackageList">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          Packages
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div
+                          class="accordion-body"
+                          id="orderPackageListContainer"
+                        >
+                          <ul id="packageName"></ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="modalBottomRight">
                   <div
                     class="overview-modal-goolgeMaps-container"

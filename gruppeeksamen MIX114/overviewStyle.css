@@ -175,8 +175,8 @@ footer{
     max-width:100%;
     padding:0!important;
     display:grid;
-    grid-template-columns: auto 55%;
-    grid-template-rows: 15% auto;
+    grid-template-columns: auto 70%;
+    grid-template-rows: 80px auto;
 }
 
 .modalTopRow{
@@ -199,16 +199,16 @@ footer{
     padding-left:10px;
     padding-right:10px;
 
-    background-color: #f1f1f1;
+    background-color: #e7e5e562;
     border-radius:10px;
     padding-top:10px;
-    margin-top:5px;
-    margin-bottom:5px;
-    margin-left:15px;
+    margin-top:10px;
+    margin-bottom:10px;
+    line-height:60%;
 }
 
 .modalBottomLeft{
-    grid-row:2;
+    grid-row:1/2;
     grid-column:1;
 }
 

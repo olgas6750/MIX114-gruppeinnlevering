@@ -36,7 +36,6 @@ async function loadEvents(calendar) {
 
      const response = await fetch(url);
      data = await response.json();
-     console.log(data);
 
      var orderCount = Object.keys(data.orders).length;
 
@@ -76,8 +75,13 @@ async function loadEvents(calendar) {
      }
 }
 
+let mapMarkers = [];
+
 function loadModal(info) {
-     let orderModal = document.getElementById("orderModal");
+     for (let i = 0; i < mapMarkers.length; i++) {
+       mapMarkers[i].setMap(null);
+     }
+    mapMarkers = [];
 
      let modalOrderInfo = info.event.extendedProps;
      
@@ -86,5 +90,47 @@ function loadModal(info) {
      document.getElementById("senderAddress").innerHTML = modalOrderInfo.sender.address;
      document.getElementById("recipientName").innerHTML = modalOrderInfo.recipient.name;
      document.getElementById("recipientAddress").innerHTML = modalOrderInfo.recipient.address;
+
+     let senderLat = modalOrderInfo.sender.lat;
+     let senderLng = modalOrderInfo.sender.lng;
+     let recipientLat = modalOrderInfo.recipient.lat;
+     let recipientLng = modalOrderInfo.recipient.lng;
+
+      var senderLatlng = new google.maps.LatLng(senderLat,senderLng);
+      var recipientLatlng = new google.maps.LatLng(recipientLat,recipientLng);
+
+      const senderMarker = new google.maps.Marker({
+        position: senderLatlng,
+        title:modalOrderInfo.sender.name
+      });
+
+      const recipientMarker = new google.maps.Marker({
+        position: recipientLatlng,
+        title:modalOrderInfo.recipient.name
+      })
+
+      mapMarkers.push(senderMarker);
+      mapMarkers.push(recipientMarker);
+
+      for (let i = 0; i < mapMarkers.length; i++) {
+        mapMarkers[i].setMap(mapOverview);
+      }
+
+     document.getElementById("orderPackageListContainer").innerHTML = "";
+     for(let i = 0; i<modalOrderInfo.packages.length;i++){
+      let thisPackage = modalOrderInfo.packages[i];
+
+
+      document.getElementById("orderPackageListContainer").innerHTML += 
+      '<ul id="package'+i+'">' +
+      '<li id="packageName'+i+'">Package '+(i+1)+'</li>' +
+      '<ul>'+
+      '<li id="packageWeight'+i+'">Weight: '+ thisPackage.weight +'</li>' +
+      '<li id="packageVolume'+i+'">Quantity: '+ thisPackage.volume +'</li>' +
+      '<li id="packageCategory'+i+'">Category: '+ thisPackage.category +'</li>' +
+      '</ul>'+
+      '</ul>';
+      
+     }
      $("#orderModal").modal("show");
 }
