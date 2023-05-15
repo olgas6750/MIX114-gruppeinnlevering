@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
       timeZone: 'GMT',
       initialView: 'timeGridDay',
       headerToolbar: {
-        left: 'next today',
+        left: 'next',
         center: 'title',
-        right: 'timeGridDay'
+        right: 'today'
       },
       allDaySlot: false,
       slotMinTime: "07:00:00",

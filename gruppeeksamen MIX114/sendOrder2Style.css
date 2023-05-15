@@ -113,7 +113,7 @@ header{
 }
 
 .mainContainer{
-    padding:10px 10px 10px 10px;
+    padding:0px;
     width:100%;
 }
 
@@ -121,6 +121,8 @@ header{
     border-bottom: ridge;
     padding-top: 1vh;
     display: flex;
+    margin-top:3%;
+
 }
 
 .progressDelen h4{

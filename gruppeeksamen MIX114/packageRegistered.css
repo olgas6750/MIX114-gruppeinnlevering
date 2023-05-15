@@ -97,13 +97,7 @@ header{
     background-color: #B3DACB;
     width: 170px;
 }
-.sidebarList>*{
-    font-size:16px;
-    font-weight:bold;
-    line-height: 200%;
-    padding:20px 20px 20px 20px;
-    list-style:none;
-}
+
 .sidebarList > * {
     font-size: 16px;
     font-weight: bold;
@@ -112,31 +106,41 @@ header{
     list-style: none;
     font-size: 0.8em;
 }
+
+#general-chosen-page-background {
+    background-color: rgba(0, 132, 80, 0.3);
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
 .sidebar-list-items {
     display: flex;
     align-items: center;
     gap: 4%;
 }
+
 .sidebarList a {
     text-decoration: none;
     color: black;
 }
+
 .sidebarList a:hover {
     text-decoration: none;
     color: black;
 }
+
 .sidebarList li {
     margin-top: 2px;
 }
+
 .sidebarList li:hover {
     background-color: rgba(0, 132, 80, 0.3);
     border-radius: 10px;
     padding-left: 5px;
     margin-top: 2px;
 }
-
 .mainContainer{
-    padding:10px 10px 10px 10px;
+    padding:0px;
     width:100%;
 }
 
@@ -144,6 +148,7 @@ header{
     border-bottom: ridge;
     padding-top: 1vh;
     display: flex;
+    margin-top:3%;
 }
 .progressDelen h4{
     padding-left: 5vh;
