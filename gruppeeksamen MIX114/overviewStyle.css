@@ -222,6 +222,7 @@ footer{
     min-height:75vh;
 }
 
+
 @keyframes slideInRightBounce{
     0%{
         transform:translateX(100%)
