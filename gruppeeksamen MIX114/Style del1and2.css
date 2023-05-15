@@ -243,7 +243,7 @@ footer {
      width: 60px;
      height: 60px;
      border-radius: 100%;
-     border: 2px solid rgba(84, 140, 248, 0.8);
+     border: 2px solid rgb(0, 132, 80);
      background-color: white;
      display: flex;
      align-items: center;
@@ -278,7 +278,7 @@ footer {
 }
 
 .delivery1-accept:hover {
-     border: 3px solid rgba(84, 140, 248, 0.8);
+     border: 3px solid rgb(0, 132, 80);
 }
 
 .delivery1-decline:hover {
@@ -478,7 +478,7 @@ footer {
      grid-template-rows: auto auto;
      justify-content: center;
      max-width: 100vh;
-     width: 100vh;
+     width: 100%;
      height: auto;
      align-items: center;
 }
@@ -613,12 +613,13 @@ footer {
      border: 1px solid rgba(0, 0, 0, 0.25);
      margin-top: 5%;
      border-radius: 20px;
-
+     overflow: auto;
      text-align: center;
 }
 
-#calendar{
-     height:100%;
+#calendar {
+     height: 100%;
+     margin: 3%;
 }
 /* Here starts calendar modal */
 .modal {

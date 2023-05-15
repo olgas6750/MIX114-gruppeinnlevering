@@ -6,12 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
           navLinks: true,
           dayMaxEvents: true,
           allDaySlot: false,
-
-          eventClick: function (info) {
-               loadModal(info);
-          },
      });
      calendar.render();
+
+     let ordersData = [];
 
      const acceptButton = document.getElementById("delivery1-acceptButton");
      const declineButton = document.getElementById("delivery1-declineButton");
@@ -66,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "https://api.npoint.io/1a82a1d24a67d58b1354"
                );
                const data = await response.json();
-               console.log(data); // Check your fetched data structure
+               ordersData = data.orders;
 
                // Create buttons for each order
                for (let index = 0; index < data.orders.length; index++) {
@@ -117,9 +115,25 @@ document.addEventListener("DOMContentLoaded", function () {
                       </div>
                   `;
 
-                    // Add click event listener to the button
                     btn.addEventListener("click", () => {
                          console.log(order);
+                         if (btn.getAttribute("aria-pressed") == "true") {
+                              const event = {
+                                   title: order.sender.name,
+                                   start: order.pickup_date,
+                              };
+                              calendar.addEvent(event);
+                         } else {
+                              const events = calendar.getEvents();
+                              const eventToDelete = events.find(
+                                   (e) =>
+                                        e.startStr === order.pickup_date &&
+                                        e.title === order.sender.name
+                              );
+                              if (eventToDelete) {
+                                   eventToDelete.remove();
+                              }
+                         }
 
                          // Get the parent element
                          const parentElement = document.getElementById(
