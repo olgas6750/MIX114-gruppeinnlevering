@@ -2,6 +2,7 @@ window.onload = function(){
 
   orderString = localStorage.getItem("orderInfo");
   order = JSON.parse(orderString);
+  console.log(order);
 }
 
 var selectedDateAndTime;

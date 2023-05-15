@@ -225,7 +225,7 @@ footer{
     height:100%;
     width:100%;
     display:grid;
-    grid-template-columns: 12.5% 87.5%;
+    grid-template-columns: 12.5% auto;
     grid-template-rows: 100px auto;
 }
 
@@ -263,9 +263,9 @@ footer{
 .addOrderPackageView{
     grid-column: 2;
     grid-row: 2;
-    margin-left:20px;
-    margin-top:20px;
     width:100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 45%, rgba(209,247,255,1) 100%);
 }
 
 .addOrderSidebar ul{
@@ -378,7 +378,28 @@ footer{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-.infoInput{
+#faen-i-helvete{
+    margin-left:10px;
+    margin-top:30px;
+    display:flex;
+    flex-direction:row;
+    gap:20px;
     width:100%;
+    align-items:center;
+}
+
+#resten button{
+    justify-content:center;
+}
+
+#resten{
+    display:flex;
+    flex-direction:column;
+    border-radius: 10px;
+    padding:10px 10px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.8px);
 }

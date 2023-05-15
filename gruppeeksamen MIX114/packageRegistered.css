@@ -142,13 +142,16 @@ header{
 .mainContainer{
     padding:0px;
     width:100%;
+    background-color: #ffffff;
+
+background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 25px ), repeating-linear-gradient( #f0f0f755, #f0f0f7 );
 }
 
 .progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc */
     border-bottom: ridge;
-    padding-top: 1vh;
+    padding-top: 3%;
     display: flex;
-    margin-top:3%;
+    background-color: white;
 }
 .progressDelen h4{
     padding-left: 5vh;
@@ -209,14 +212,20 @@ header{
 /*Dottene er ferdig her*/
 
 .registrertPakke{
-    border: 1px solid black;
-    border-color: #D7D7D7;
-    border-radius: 1em;
+
     margin: 3rem;
     display: grid;
     grid-template-columns: 50% 50%;
     height: 28rem;
     padding: 1rem;
+
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.8px);
+-webkit-backdrop-filter: blur(15.8px);
+border: 1px solid rgba(255, 255, 255, 0.17);
 }
 
 .infoVenstre h2{

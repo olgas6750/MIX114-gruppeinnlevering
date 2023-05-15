@@ -22,7 +22,9 @@ function addPackage(){
     
     let newPackageInfo = 
     '<form id="packageForm'+packageNumber+'">' +
+    '<div id="faen-i-helvete">'+
     '<h1 id="list-item-'+packageNumber+'">Package '+packageNumber+'</h1>' +
+    '<div id="resten">'+
     '<div class="dropdown">' +
     '<button ' +
     'class="btn btn-secondary dropdown-toggle" ' +
@@ -89,6 +91,8 @@ function addPackage(){
     ' <td><input type="number" placeholder="Width" name="width"class="infoInput"/></td>' +
     ' </tr>' +
     '</table>'+
+    '</div>'+
+    '</div>'+
     '</form>'+
     '<br />';
 

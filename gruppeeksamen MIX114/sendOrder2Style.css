@@ -115,6 +115,8 @@ header{
 .mainContainer{
     padding:0px;
     width:100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 74%, rgba(209,247,255,1) 100%);
 }
 
 .progressDelen{ /* dette er den øverste delen for å se hvor mange steg man mangler osc */
@@ -192,20 +194,39 @@ header{
 .beggeFormsene{ /* felles diven for hele forms delen*/
     display: grid;
     grid-template-columns: 50% 50%;
+    align-items:center;
+    margin-right:30px;
 }
 
 .venstreSide{ /* dette er for den venstre siden av formen*/
-    width: 95%;
-    margin: 15px;
+    padding-top:30px;
+    padding-bottom:30px;
+    width:90%;
     margin-left: 35px;
     margin-top: 40px;
+
+    display:flex;
+    justify-content:center;
+        /* From https://css.glass */
+    background: rgba(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.8px);
+    -webkit-backdrop-filter: blur(15.8px);
+    border: 1px solid rgba(255, 255, 255, 0.17);
 }
 
-.venstreSide #textBoks{
-    margin: 2vh;
-    border: 1px solid black;
-    border-radius: 0.5vh;
+#textBoks{
+    border-radius: 10px;
+    border: 1px solid rgb(206, 206, 206);
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+
+   
     padding: 2%;
+    text-shadow: none;
 }
 
 .venstreSide h6{ /* overskriften til Pickup adress*/
@@ -224,7 +245,7 @@ header{
 
 .venstreSide input{
     border-radius: 0.5vh;
-    border: 1px solid black;
+    border: 1px solid rgb(206, 206, 206);
     padding: 2%;
     text-shadow: none;
     margin: 2vh;
@@ -233,10 +254,21 @@ header{
 
 /* HØYRE SIDEN*/
 .hoyreSide{ /* dette er for den venstre siden av formen*/
-    width: 95%;
-    margin: 15px;
+    padding-top:30px;
+    padding-bottom:30px;
+    width:90%;
     margin-left: 35px;
     margin-top: 40px;
+
+    display:flex;
+    justify-content:center;
+        /* From https://css.glass */
+    background: rgba(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.8px);
+    -webkit-backdrop-filter: blur(15.8px);
+    border: 1px solid rgba(255, 255, 255, 0.17);
 }
 
 .hoyreSide #textBoks{
@@ -262,12 +294,13 @@ header{
 
 .hoyreSide input{
     border-radius: 0.5vh;
-    border: 1px solid black;
+    border: 1px solid rgb(206, 206, 206);
     padding: 2%;
     text-shadow: none;
     margin: 2vh;
     width: 30vh;
 }
+
 
 input[type="text"]{ /* dette er for å definere størrelsen på teksten innenfor boksene + alle de neddenfor*/
     font-size: 0.7em;
@@ -360,5 +393,18 @@ footer{
     padding-top:2.5%;
     padding-left:10%;
     padding-right:10%;
+}
+
+#calendar{
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.8px);
+-webkit-backdrop-filter: blur(15.8px);
+border: 1px solid rgba(255, 255, 255, 0.17);
+
+margin-bottom:5%;
+padding: 10px 10px;
 }
 
