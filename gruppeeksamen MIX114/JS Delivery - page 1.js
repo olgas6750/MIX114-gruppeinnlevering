@@ -157,12 +157,12 @@ document.addEventListener("DOMContentLoaded", function () {
                                    );
                                    packagesHTML += `
         <li class="delivery1-items-info">
-            <span>
+            <span class="delivery1-info-picandname">
                 <img src="${imgSrc}" alt="picture of ${package.category}" />
                 <span>${package.category}</span>
             </span>
-            <span>${package.volume}</span>
-            <span>${package.weight}</span>
+            <span class="delivery1-info-volWeg">${package.volume}</span>
+            <span class="delivery1-info-volWeg">${package.weight}</span>
         </li>
     `;
                               }
@@ -208,9 +208,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                             <div class="delivery1-order-column-items">
                                 <div class="delivery1-order-items-title">
-                                    <h6>Items</h6>
-                                    <h6 id="delivery1-item-title-Qty">Qty</h6>
-                                    <h6>Weight</h6>
+                                    <h6 class="infotext-title">Items</h6>
+                                    <h6 class="infotext-title" id="delivery1-item-title-Qty">Qty</h6>
+                                    <h6 class="infotext-title">Weight</h6>
                                 </div>
                                 <div class="delivery1-items-OLlist">
                                     <ol>

@@ -556,7 +556,7 @@ footer {
      display: flex;
      justify-content: space-between;
      padding-left: 10%;
-     padding-right: 10%;
+     padding-right: 13%;
      padding-top: 3%;
      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
@@ -568,18 +568,29 @@ footer {
 .delivery1-items-info {
      display: flex;
      justify-content: space-between;
+     text-align: left;
      padding-right: 15%;
      padding-top: 1%;
      border-bottom: 0.5px dotted rgba(0, 0, 0, 0.2);
      padding-bottom: 1%;
 }
 
-.delivery1-items-info > div {
+.delivery1-items-info > span {
      margin-right: 20px;
 }
 
-.delivery1-items-info > div:last-child {
-     margin-right: 0;
+.delivery1-items-info > span:last-child {
+     margin-right: 10px;
+}
+
+.delivery1-info-picandname {
+     width: 40%;
+     max-width: 40%;
+}
+
+.delivery1-info-volWeg {
+     width: 10%;
+     max-width: 10%;
 }
 
 .delivery1-items-info img {
@@ -590,7 +601,7 @@ footer {
 }
 
 #delivery1-item-title-Qty {
-     padding-left: 5%;
+     padding-left: 20%;
 }
 
 /* Here stops the information square */

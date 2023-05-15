@@ -37,8 +37,6 @@ async function initMap() {
 
      originIcon = "images/Deliveryman, rounded.png";
 
-     // In your geolocation block
-     // In your geolocation block
      if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
                async (position) => {
@@ -57,9 +55,6 @@ async function initMap() {
                          },
                     });
 
-                    // Set the center of the map to the user's current location
-                    map2.setCenter(pos);
-
                     // Get the human-readable address and insert it into the span
                     const address = await geocodeLatLng(
                          position.coords.latitude,
@@ -69,20 +64,24 @@ async function initMap() {
                          "#delivery2-JS-insert-myLocation"
                     ).textContent = address;
 
-                    // Create an InfoWindow
+                    // Create an info window for the marker
                     const infoWindow = new google.maps.InfoWindow({
-                         content: `<div class="custom-infowindow"><p>Your position: ${address}</p></div>`,
+                         content: `<div class="custom-infowindow">
+                             <span>Your position:</br></br>${address}</span>
+                         </div>`,
                     });
-
-                    // Associate the InfoWindow with the marker
+                    // Add a mouseover listener to the marker
                     marker.addListener("mouseover", () => {
                          infoWindow.open(map2, marker);
                     });
 
-                    // Close the InfoWindow when the mouse leaves the marker
+                    // Add a mouseout listener to the marker
                     marker.addListener("mouseout", () => {
                          infoWindow.close();
                     });
+
+                    // Set the center of the map to the user's current location
+                    map2.setCenter(pos);
                },
                () => {
                     handleLocationError(true, map2);
@@ -178,33 +177,33 @@ async function fetchData() {
                );
 
                const buttonContent = `
-  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn delivery1-accepted-container" data-order-number="${
-       order.order_number
-  }">
-             <div class="delivery1-ReqAccDec-body">
-               <span class="delivery1-delivery-img"><img src="${getOrderImage(
-                    order
-               )}" alt="Order image"/></span>
-               <div class="delivery1-delivery-infotext">
-                 <span class="infotext-title" id="delivery1-delivery-title">${
-                      order.sender.name
-                 }</span>
-                 <div class="infotext-flex"><h6>Pick-up:</h6><span id="pickup-date-span">${
-                      order.pickup_date
-                 }</span></div>
-                 <div class="infotext-flex"><h6>Delivery distance:</h6><span id="delivery-distance-span">${deliveryDistance.toFixed(
-                      2
-                 )} km</span></div>
-                 <div class="infotext-flex"><h6>Order:</h6><span id="order-number-span">${
-                      order.order_number
-                 }</span></h6></div>
-               </div>
-               <div class="delivery1-indication-accept">
-                 <span class="material-icons delivery1-check">check</span>
-               </div>
-             </div>
-           </button>
-         `;
+   <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn delivery1-accepted-container" data-order-number="${
+        order.order_number
+   }">
+              <div class="delivery1-ReqAccDec-body">
+                <span class="delivery1-delivery-img"><img src="${getOrderImage(
+                     order
+                )}" alt="Order image"/></span>
+                <div class="delivery1-delivery-infotext">
+                  <span class="infotext-title" id="delivery1-delivery-title">${
+                       order.sender.name
+                  }</span>
+                  <div class="infotext-flex"><h6>Pick-up:</h6><span id="pickup-date-span">${
+                       order.pickup_date
+                  }</span></div>
+                  <div class="infotext-flex"><h6>Delivery distance:</h6><span id="delivery-distance-span">${deliveryDistance.toFixed(
+                       2
+                  )} km</span></div>
+                  <div class="infotext-flex"><h6>Order:</h6><span id="order-number-span">${
+                       order.order_number
+                  }</span></h6></div>
+                </div>
+                <div class="delivery1-indication-accept">
+                  <span class="material-icons delivery1-check">check</span>
+                </div>
+              </div>
+            </button>
+          `;
                container.innerHTML += buttonContent;
                console.log(order);
           }
@@ -223,6 +222,7 @@ async function fetchData() {
           // Setup event listener for modal's 'shown' event
           let map1;
 
+          //|||||||||||||||||||||| Here starts inilazation of modal content|||||||||||||||||||||||||||||||
           $("#exampleModalCenter").on("shown.bs.modal", function () {
                if (!map1) {
                     map1 = new google.maps.Map(
@@ -343,7 +343,6 @@ async function fetchData() {
                                         ":" +
                                         currentTime.getSeconds();
                                    lastUpdateSpan.innerText = formattedTime;
-
                                    // 4. Change the icon in the span with id "iconSpan"
                                    document.getElementById(
                                         "iconSpan"
@@ -351,7 +350,6 @@ async function fetchData() {
                               }
                          );
                     });
-
                // Here stops bootstrap Dropdown item selection event
 
                // Inside the 'shown.bs.modal' event callback, after finding the corresponding order...
@@ -371,9 +369,57 @@ async function fetchData() {
                document.getElementById("estimated-delivery").innerText =
                     order.delivery_date;
                // Here ends the populate modal with order.data
+               //|||||||||||||||||||||| Here ends inilazation of modal content|||||||||||||||||||||||||||||||
 
-               $("#exampleModalCenter").on("shown.bs.modal", function () {
-                    // Existing logic...
+               //|||||||||||||||||||||| Here starts reset of modal when hidden|||||||||||||||||||||||||||||||
+               $("#exampleModalCenter").on("hide.bs.modal", function () {
+                    // Reset checkboxes
+                    document.getElementById("pickedUpCheckbox").checked = false;
+                    document.getElementById("onRouteCheckbox").checked = false;
+                    document.getElementById("arrivedCheckbox").checked = false;
+                    document.getElementById(
+                         "confirmedCheckbox"
+                    ).checked = false;
+
+                    // Reset time display
+                    document.getElementById(
+                         "delivery2-modal-pickedUp-lastUpdate"
+                    ).innerText = "";
+                    document.getElementById(
+                         "delivery2-modal-onRoute-lastUpdate"
+                    ).innerText = "";
+                    document.getElementById(
+                         "delivery2-modal-arrived-lastUpdate"
+                    ).innerText = "";
+                    document.getElementById(
+                         "delivery2-modal-confirmed-lastUpdate"
+                    ).innerText = "";
+
+                    // Reset dropdown selection
+                    const delaySpan = document.getElementById(
+                         "delivery2-modal-delay-selected"
+                    );
+                    delaySpan.innerText = "";
+
+                    // Reset Delay container class
+                    const delayContainer = document.querySelector(
+                         ".form-check-input-delay-red"
+                    );
+                    if (delayContainer) {
+                         delayContainer.classList.remove(
+                              "form-check-input-delay-red"
+                         );
+                         delayContainer.classList.add("form-check-input-delay");
+                    }
+
+                    // Reset the last update time for delay
+                    document.getElementById(
+                         "delivery2-modal-delayed-lastUpdate"
+                    ).innerText = "";
+
+                    // Reset the icon in the span with id "iconSpan"
+                    document.getElementById("iconSpan").innerText = "";
+                    //|||||||||||||||||||||||||| Here stops reset of modal when hidden|||||||||||||||||||||||||||
                });
 
                if (!order) {
@@ -436,14 +482,17 @@ function addMarkers(orders, map2) {
           });
 
           const infoWindowContent = `
-             <div class="custom-infowindow">
-             SENDER:</br></br>${sender.name},</br> ${sender.address}, ${sender.postal_code},</br></br> ${order.comment}
-             </div>
-         `;
+           <div class="custom-infowindow">
+           SENDER:</br></br>${sender.name},</br> ${sender.address}, ${sender.postal_code}
+           </div>
+      `;
 
           const infoWindow = new google.maps.InfoWindow({
                content: infoWindowContent,
           });
+          // Instantiate the Directions Service
+          var directionsService = new google.maps.DirectionsService();
+          var directionsRenderer = new google.maps.DirectionsRenderer();
 
           // Add to mouseover listener
           marker.addListener("mouseover", () => {
@@ -494,7 +543,6 @@ function addMarkers(orders, map2) {
 
 let markerMap1 = []; // Declare markerMap1 array globally
 let directionsRenderer = null; // Declare it globally
-let directionsService = new google.maps.DirectionsService();
 
 function addMarkersToMap1(order, map) {
      // Clear out old markers
@@ -502,16 +550,25 @@ function addMarkersToMap1(order, map) {
           marker.setMap(null);
      }
      markerMap1 = []; // Reset the markers array
-
-     // Clear out the old route
-     directionsRenderer.setMap(null);
-     directionsRenderer.setPanel(null);
+     // Create the DirectionsRenderer if it doesn't exist yet
+     if (directionsRenderer == null) {
+          directionsRenderer = new google.maps.DirectionsRenderer({
+               suppressMarkers: true,
+          }); // Add this line
+     } else {
+          // Clear out the old route
+          directionsRenderer.setMap(null);
+          directionsRenderer.setPanel(null);
+          directionsRenderer = new google.maps.DirectionsRenderer({
+               suppressMarkers: true,
+          }); // Add this line
+     }
 
      const senderInfoWindowContent = `
-         <div class="custom-infowindow">
-         SENDER:</br></br>${order.sender.name},</br> ${order.sender.address}, ${order.sender.postal_code},</br></br> ${order.comment}
-         </div>
-     `;
+               <div class="custom-infowindow">
+               SENDER:</br></br>${order.sender.name},</br> ${order.sender.address}, ${order.sender.postal_code}
+               </div>
+          `;
 
      const senderInfoWindow = new google.maps.InfoWindow({
           content: senderInfoWindowContent,
@@ -536,10 +593,10 @@ function addMarkersToMap1(order, map) {
      });
 
      const recipientInfoWindowContent = `
-         <div class="custom-infowindow">
-         RECIPIENT:</br></br>${order.recipient.name},</br> ${order.recipient.address}, ${order.recipient.postal_code}
-         </div>
-     `;
+               <div class="custom-infowindow">
+               RECIPIENT:</br></br>${order.recipient.name},</br> ${order.recipient.address}, ${order.recipient.postal_code},</br></br> ${order.comment}
+               </div>
+          `;
 
      const recipientInfoWindow = new google.maps.InfoWindow({
           content: recipientInfoWindowContent,
@@ -554,7 +611,6 @@ function addMarkersToMap1(order, map) {
                scaledSize: new google.maps.Size(40, 30),
           },
      });
-
      recipientMarker.addListener("mouseover", () => {
           recipientInfoWindow.open(map, recipientMarker);
      });
@@ -567,19 +623,33 @@ function addMarkersToMap1(order, map) {
      markerMap1.push(senderMarker, recipientMarker);
 
      // Get current position and display route
-     if (userLocation) {
-          const currentPosition = userLocation;
+     if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+               (position) => {
+                    const currentPosition = {
+                         lat: position.coords.latitude,
+                         lng: position.coords.longitude,
+                    };
 
-          directionsRenderer.setMap(map);
+                    const directionsService =
+                         new google.maps.DirectionsService();
+                    directionsRenderer.setMap(map);
 
-          calculateAndDisplayRoute(
-               currentPosition, // Origin
-               { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
-               { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
-               map
+                    calculateAndDisplayRoute(
+                         directionsService,
+                         directionsRenderer,
+                         currentPosition,
+                         { lat: order.sender.lat, lng: order.sender.lng },
+                         { lat: order.recipient.lat, lng: order.recipient.lng },
+                         map
+                    );
+               },
+               () => {
+                    handleLocationError(true, map);
+               }
           );
      } else {
-          // Handle situation where User location is not set
+          // Browser doesn't support Geolocation
           handleLocationError(false, map);
      }
 }
@@ -608,7 +678,14 @@ async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {
      });
 }
 
-async function calculateAndDisplayRoute(origin, waypoint, destination, map) {
+async function calculateAndDisplayRoute(
+     directionsService,
+     directionsRenderer,
+     origin,
+     waypoint,
+     destination,
+     map
+) {
      directionsService.route(
           {
                origin: origin,
@@ -629,14 +706,14 @@ async function calculateAndDisplayRoute(origin, waypoint, destination, map) {
 }
 
 // Then, when you call the function:
-// calculateAndDisplayRoute(
-//      directionsService,
-//      directionsRenderer,
-//      currentPosition, // Origin
-//      { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
-//      { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
-//      map
-// );
+calculateAndDisplayRoute(
+     directionsService,
+     directionsRenderer,
+     currentPosition, // Origin
+     { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
+     { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
+     map
+);
 
 function getOrderImage(order) {
      switch (order.sender.name) {
@@ -676,13 +753,3 @@ function getOrderImageRecipient(order) {
                return "./images/profilepicture.png"; // Default image for recipient
      }
 }
-
-// Function to calculate driving distance ends here
-
-// This DMOContentLodaed will run the functions after the HTML is finished loading
-
-//||||||||||||||here starts google maps functionality|||||||||||||||||||
-
-// ||||||||HERE STARTS MODAL DELAY
-
-// |||||||HERE STOPS MODAL DELAY
