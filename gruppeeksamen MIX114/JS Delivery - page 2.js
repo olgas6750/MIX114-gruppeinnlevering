@@ -37,6 +37,8 @@ async function initMap() {
 
      originIcon = "images/Deliveryman, rounded.png";
 
+     // In your geolocation block
+     // In your geolocation block
      if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
                async (position) => {
@@ -46,7 +48,7 @@ async function initMap() {
                     };
 
                     // Create a new marker and set its position to the user's current location
-                    new google.maps.Marker({
+                    const marker = new google.maps.Marker({
                          map: map2,
                          position: pos,
                          icon: {
@@ -66,6 +68,21 @@ async function initMap() {
                     document.querySelector(
                          "#delivery2-JS-insert-myLocation"
                     ).textContent = address;
+
+                    // Create an InfoWindow
+                    const infoWindow = new google.maps.InfoWindow({
+                         content: `<div class="custom-infowindow"><p>Your position: ${address}</p></div>`,
+                    });
+
+                    // Associate the InfoWindow with the marker
+                    marker.addListener("mouseover", () => {
+                         infoWindow.open(map2, marker);
+                    });
+
+                    // Close the InfoWindow when the mouse leaves the marker
+                    marker.addListener("mouseout", () => {
+                         infoWindow.close();
+                    });
                },
                () => {
                     handleLocationError(true, map2);
@@ -326,9 +343,15 @@ async function fetchData() {
                                         ":" +
                                         currentTime.getSeconds();
                                    lastUpdateSpan.innerText = formattedTime;
+
+                                   // 4. Change the icon in the span with id "iconSpan"
+                                   document.getElementById(
+                                        "iconSpan"
+                                   ).innerText = "priority_high";
                               }
                          );
                     });
+
                // Here stops bootstrap Dropdown item selection event
 
                // Inside the 'shown.bs.modal' event callback, after finding the corresponding order...
@@ -413,18 +436,14 @@ function addMarkers(orders, map2) {
           });
 
           const infoWindowContent = `
-               <div class="custom-infowindow">
-               SENDER:</br></br>${sender.name},</br> ${sender.address}, ${sender.postal_code},</br></br> ${order.comment}
-               </div>
-          `;
+             <div class="custom-infowindow">
+             SENDER:</br></br>${sender.name},</br> ${sender.address}, ${sender.postal_code},</br></br> ${order.comment}
+             </div>
+         `;
 
           const infoWindow = new google.maps.InfoWindow({
                content: infoWindowContent,
           });
-
-          // Instantiate the Directions Service
-          var directionsService = new google.maps.DirectionsService();
-          var directionsRenderer = new google.maps.DirectionsRenderer();
 
           // Add to mouseover listener
           marker.addListener("mouseover", () => {
@@ -475,6 +494,7 @@ function addMarkers(orders, map2) {
 
 let markerMap1 = []; // Declare markerMap1 array globally
 let directionsRenderer = null; // Declare it globally
+let directionsService = new google.maps.DirectionsService();
 
 function addMarkersToMap1(order, map) {
      // Clear out old markers
@@ -483,25 +503,15 @@ function addMarkersToMap1(order, map) {
      }
      markerMap1 = []; // Reset the markers array
 
-     // Create the DirectionsRenderer if it doesn't exist yet
-     if (directionsRenderer == null) {
-          directionsRenderer = new google.maps.DirectionsRenderer({
-               suppressMarkers: true,
-          }); // Add this line
-     } else {
-          // Clear out the old route
-          directionsRenderer.setMap(null);
-          directionsRenderer.setPanel(null);
-          directionsRenderer = new google.maps.DirectionsRenderer({
-               suppressMarkers: true,
-          }); // Add this line
-     }
+     // Clear out the old route
+     directionsRenderer.setMap(null);
+     directionsRenderer.setPanel(null);
 
      const senderInfoWindowContent = `
-               <div class="custom-infowindow">
-               SENDER:</br></br>${order.sender.name},</br> ${order.sender.address}, ${order.sender.postal_code},</br></br> ${order.comment}
-               </div>
-          `;
+         <div class="custom-infowindow">
+         SENDER:</br></br>${order.sender.name},</br> ${order.sender.address}, ${order.sender.postal_code},</br></br> ${order.comment}
+         </div>
+     `;
 
      const senderInfoWindow = new google.maps.InfoWindow({
           content: senderInfoWindowContent,
@@ -526,10 +536,10 @@ function addMarkersToMap1(order, map) {
      });
 
      const recipientInfoWindowContent = `
-               <div class="custom-infowindow">
-               RECIPIENT:</br></br>${order.recipient.name},</br> ${order.recipient.address}, ${order.recipient.postal_code}
-               </div>
-          `;
+         <div class="custom-infowindow">
+         RECIPIENT:</br></br>${order.recipient.name},</br> ${order.recipient.address}, ${order.recipient.postal_code}
+         </div>
+     `;
 
      const recipientInfoWindow = new google.maps.InfoWindow({
           content: recipientInfoWindowContent,
@@ -557,33 +567,19 @@ function addMarkersToMap1(order, map) {
      markerMap1.push(senderMarker, recipientMarker);
 
      // Get current position and display route
-     if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-               (position) => {
-                    const currentPosition = {
-                         lat: position.coords.latitude,
-                         lng: position.coords.longitude,
-                    };
+     if (userLocation) {
+          const currentPosition = userLocation;
 
-                    const directionsService =
-                         new google.maps.DirectionsService();
-                    directionsRenderer.setMap(map);
+          directionsRenderer.setMap(map);
 
-                    calculateAndDisplayRoute(
-                         directionsService,
-                         directionsRenderer,
-                         currentPosition,
-                         { lat: order.sender.lat, lng: order.sender.lng },
-                         { lat: order.recipient.lat, lng: order.recipient.lng },
-                         map
-                    );
-               },
-               () => {
-                    handleLocationError(true, map);
-               }
+          calculateAndDisplayRoute(
+               currentPosition, // Origin
+               { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
+               { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
+               map
           );
      } else {
-          // Browser doesn't support Geolocation
+          // Handle situation where User location is not set
           handleLocationError(false, map);
      }
 }
@@ -612,14 +608,7 @@ async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {
      });
 }
 
-async function calculateAndDisplayRoute(
-     directionsService,
-     directionsRenderer,
-     origin,
-     waypoint,
-     destination,
-     map
-) {
+async function calculateAndDisplayRoute(origin, waypoint, destination, map) {
      directionsService.route(
           {
                origin: origin,
@@ -640,14 +629,14 @@ async function calculateAndDisplayRoute(
 }
 
 // Then, when you call the function:
-calculateAndDisplayRoute(
-     directionsService,
-     directionsRenderer,
-     currentPosition, // Origin
-     { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
-     { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
-     map
-);
+// calculateAndDisplayRoute(
+//      directionsService,
+//      directionsRenderer,
+//      currentPosition, // Origin
+//      { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
+//      { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
+//      map
+// );
 
 function getOrderImage(order) {
      switch (order.sender.name) {
