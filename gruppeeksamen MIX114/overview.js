@@ -1,5 +1,10 @@
 // HERE STARTS OVERVIEW MAP
+var directionsService;
+var directionsRenderer;
+
 async function initMap() {
+     directionsService = new google.maps.DirectionsService();
+     directionsRenderer = new google.maps.DirectionsRenderer();
      const mapOptions = {
           center: { lat: 60.389181, lng: 5.333219 },
           zoom: 14,
@@ -9,6 +14,24 @@ async function initMap() {
           document.getElementById("overview-modal-goolgeMaps"),
           mapOptions
      );
+
+     directionsRenderer.setMap(mapOverview);
+}
+
+function calcRoute(start,end){
+     var request = {
+          origin: start,
+          destination: end,
+          // Note that JavaScript allows us to access the constant
+          // using square brackets and a string value as its
+          // "property."
+          travelMode: "DRIVING"
+      };
+      directionsService.route(request, function(response, status) {
+        if (status == 'OK') {
+          directionsRenderer.setDirections(response);
+        }
+      });
 }
 
 // HERE ENDS OVERVIEW MAP
@@ -75,13 +98,9 @@ async function loadEvents(calendar) {
      }
 }
 
-let mapMarkers = [];
 
 function loadModal(info) {
-     for (let i = 0; i < mapMarkers.length; i++) {
-       mapMarkers[i].setMap(null);
-     }
-    mapMarkers = [];
+
 
      let modalOrderInfo = info.event.extendedProps;
      
@@ -99,22 +118,7 @@ function loadModal(info) {
       var senderLatlng = new google.maps.LatLng(senderLat,senderLng);
       var recipientLatlng = new google.maps.LatLng(recipientLat,recipientLng);
 
-      const senderMarker = new google.maps.Marker({
-        position: senderLatlng,
-        title:modalOrderInfo.sender.name
-      });
-
-      const recipientMarker = new google.maps.Marker({
-        position: recipientLatlng,
-        title:modalOrderInfo.recipient.name
-      })
-
-      mapMarkers.push(senderMarker);
-      mapMarkers.push(recipientMarker);
-
-      for (let i = 0; i < mapMarkers.length; i++) {
-        mapMarkers[i].setMap(mapOverview);
-      }
+      calcRoute(senderLatlng, recipientLatlng);
 
      document.getElementById("orderPackageListContainer").innerHTML = "";
      for(let i = 0; i<modalOrderInfo.packages.length;i++){
