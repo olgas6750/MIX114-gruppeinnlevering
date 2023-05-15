@@ -265,7 +265,7 @@ footer{
     grid-row: 2;
     width:100%;
     background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 45%, rgba(209,247,255,1) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 74%, rgba(209,247,255,1) 100%);
 }
 
 .addOrderSidebar ul{
@@ -395,6 +395,7 @@ footer{
 #resten{
     display:flex;
     flex-direction:column;
+    border: 1px solid white;
     border-radius: 10px;
     padding:10px 10px;
     /* From https://css.glass */
