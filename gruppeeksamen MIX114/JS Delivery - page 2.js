@@ -418,7 +418,7 @@ async function fetchData() {
                     ).innerText = "";
 
                     // Reset the icon in the span with id "iconSpan"
-                    document.getElementById("iconSpan").innerText = "";
+                    document.getElementById("iconSpan").innerText = "check";
                     //|||||||||||||||||||||||||| Here stops reset of modal when hidden|||||||||||||||||||||||||||
                });
 

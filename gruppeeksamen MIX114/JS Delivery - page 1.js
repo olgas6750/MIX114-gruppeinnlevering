@@ -10,13 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
      calendar.render();
 
-     // Add event
-     calendar.addEvent({
-          title: "My Event", // You can set the title of the event here
-          start: "2023-05-15", // This is the start date of the event
-          end: "2023-05-16", // This is the end date of the event (optional)
-     });
-
      let ordersData = [];
 
      const acceptButton = document.getElementById("delivery1-acceptButton");
@@ -123,9 +116,17 @@ document.addEventListener("DOMContentLoaded", function () {
                       </div>
                   `;
 
-                    btn.addEventListener("click", () => {
-                         console.log(order);
-                         if (btn.getAttribute("aria-pressed") == "true") {
+                    // Define variable to track if acceptButton has been pressed
+
+                    // Add event listener to acceptButton
+                    acceptButton.addEventListener("click", function () {
+                         console.log("Accept button clicked");
+                         acceptButtonPressed = true;
+
+                         if (
+                              btn.getAttribute("aria-pressed") == "true" &&
+                              acceptButtonPressed
+                         ) {
                               const event = {
                                    title: order.sender.name,
                                    start: order.pickup_date,
@@ -138,10 +139,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                         e.startStr === order.pickup_date &&
                                         e.title === order.sender.name
                               );
-                              if (eventToDelete) {
-                                   eventToDelete.remove();
-                              }
                          }
+                    });
+
+                    // Add event listener to all other buttons that could be pressed
+                    // Replace 'otherButtons' with the correct selector for your other buttons
+
+                    // Modify btn event listener
+                    btn.addEventListener("click", () => {
+                         console.log(order);
 
                          // Get the parent element
                          const parentElement = document.getElementById(
@@ -204,28 +210,28 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <div class="delivery1-infobox-1">
                                    
                                     <div class="delivery1-infobox-1-2-element">
-                                        <h5>Pick-up:</h5>
+                                        <h5 class="infotext-title">Pick-up:</h5>
                                         <span>${order.pickup_date}</span>
                                     </div>
                                     <div class="delivery1-infobox-1-2-element">
-                                        <h5>Comment:</h5>
-                                        <span>${order.comment}</span>
+                                        <h5 class="infotext-title">Order number:</h5>
+                                        <span>${order.order_number}</span>
                                     </div>
+                                    <div class="delivery1-infobox-1-2-element">
+                                    <h5 class="infotext-title">Comment:</h5>
+                                    <span>${order.comment}</span>
+                                </div>
                                 </div>
                                 <div class="delivery1-infobox-2">
                                     <div class="delivery1-infobox-1-2-element">
-                                        <h5>Delivery:</h5>
+                                        <h5 class="infotext-title">Delivery:</h5>
                                         <span>${order.delivery_date}</span>
                                     </div>
                                     <div class="delivery1-infobox-1-2-element">
-                                        <h5>Delivery address:</h5>
+                                        <h5 class="infotext-title">Delivery address:</h5>
                                         <span>${order.recipient.address}, ${order.recipient.postal_code}</span>
-
                                     </div>
-                                    <div class="delivery1-infobox-1-2-element">
-                                        <h5>Order number:</h5>
-                                        <span>${order.order_number}</span>
-                                    </div>
+               
                                 </div>
                             </div>
                             <div class="delivery1-order-column-items">
