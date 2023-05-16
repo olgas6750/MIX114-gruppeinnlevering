@@ -240,6 +240,11 @@ header {
      padding-top: 2em;
      padding: 1em;
 }
+
+.infoVenstre a {
+     color: transparent !important;
+}
+
 .registrertPakke p {
      padding-left: 1em;
      padding-right: 1em;
