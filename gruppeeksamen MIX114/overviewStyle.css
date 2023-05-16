@@ -177,16 +177,22 @@ footer{
     display:grid;
     grid-template-columns: auto 70%;
     grid-template-rows: 80px auto;
+    gap:5px;
 }
 
 .modalTopRow{
     width:100%;
     grid-row: 1;
-    grid-column: 2;
+    grid-column: 1/3;
     display:flex;
     flex-direction:row;
-    justify-content:center;
+    justify-content:space-evenly;
     line-height:100%;
+}
+
+.SenRecInfo{
+    display:flex;
+    flex-direction:row;
 }
 
 .modalTopRow h5{
@@ -208,8 +214,12 @@ footer{
 }
 
 .modalBottomLeft{
-    grid-row:1/2;
+    grid-row:2;
     grid-column:1;
+    background-color:#e8e8e88b;
+    height:100%;
+    padding:5px 5px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .modalBottomRight{
@@ -241,4 +251,80 @@ footer{
     100%{
         transform:translateX(100%)
     }
+}
+
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+  }
+  
+  .rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .rating label:last-child {
+    position: static;
+  }
+  
+  .rating label:nth-child(1) {
+    z-index: 5;
+  }
+  
+  .rating label:nth-child(2) {
+    z-index: 4;
+  }
+  
+  .rating label:nth-child(3) {
+    z-index: 3;
+  }
+  
+  .rating label:nth-child(4) {
+    z-index: 2;
+  }
+  
+  .rating label:nth-child(5) {
+    z-index: 1;
+  }
+  
+  .rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  
+  .rating label .icon {
+    float: left;
+    color: transparent;
+  }
+  
+  .rating label:last-child .icon {
+    color: #c4c2c2;
+  }
+  
+  .rating:not(:hover) label input:checked ~ .icon,
+  .rating:hover label:hover input ~ .icon {
+    color: rgb(238, 255, 1);
+  }
+  
+  .rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: #d6d6d6;
+    text-shadow: 0 0 5px #09f;
+  }
+
+.giveRating{
+    text-align:center;
+    
+    margin: 5px 5px;
+    margin-top:50px;
+    padding: 5px 5px;
+    background-color:white;
+    border-radius:10px;
 }
