@@ -177,6 +177,14 @@ footer {
 
 .delivery1-column-left {
      width: auto;
+     height: 95%;
+     overflow: scroll;
+     display: flex;
+     justify-content: center;
+}
+
+.delivery2-column-left {
+     width: auto;
      height: 80vh;
      overflow: scroll;
      display: flex;
@@ -306,7 +314,7 @@ footer {
      height: auto !important;
      width: 90% !important;
      border: 2px solid rgb(253, 220, 130) !important;
-     margin-top: 5% !important;
+     margin-top: 3% !important;
      border-radius: 10px !important;
      /* box-sizing: border-box; */
      margin-left: auto !important;
@@ -319,7 +327,7 @@ footer {
      height: auto !important;
      width: 90% !important;
      border: 2px solid rgb(0, 132, 80) !important;
-     margin-top: 5% !important;
+     margin-top: 3% !important;
      border-radius: 10px !important;
      box-sizing: border-box !important;
      margin-left: auto !important;
@@ -328,10 +336,10 @@ footer {
 }
 
 .delivery1-declined-container {
-     height: 15% !important;
+     height: auto !important;
      width: 90% !important;
      border: 2px solid rgba(252, 110, 81, 1) !important;
-     margin-top: 5% !important;
+     margin-top: 3% !important;
      border-radius: 10px !important;
      box-sizing: border-box !important;
      margin-left: auto !important;
@@ -488,7 +496,6 @@ footer {
      width: 90vh;
      height: 40vh;
      border: 1px solid rgba(0, 0, 0, 0.25);
-
      border-radius: 20px;
 }
 
@@ -496,7 +503,7 @@ footer {
      width: auto;
      max-width: 100%;
      height: auto;
-     margin-top: 5%;
+     margin-top: 3%;
 }
 
 .delivery1-order-info-columns {
@@ -591,7 +598,7 @@ footer {
 }
 
 #delivery1-item-title-Qty {
-     padding-left: 20%;
+     padding-left: 15%;
 }
 
 /* Here stops the information square */
@@ -601,7 +608,7 @@ footer {
      width: 90vh;
      height: 60vh;
      border: 1px solid rgba(0, 0, 0, 0.25);
-     margin-top: 5%;
+     margin-top: 3%;
      border-radius: 20px;
 
      text-align: center;

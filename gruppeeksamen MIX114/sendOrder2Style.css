@@ -117,10 +117,10 @@ header {
      width: 100%;
      background: rgb(255, 255, 255);
      background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 1) 0%,
+          130deg,
+          rgba(255, 255, 255, 0.1) 0%,
           rgba(255, 255, 255, 0.2) 40%,
-          rgba(179, 218, 203, 0.4) 90%
+          rgba(179, 218, 203, 0.35) 90%
      );
 }
 

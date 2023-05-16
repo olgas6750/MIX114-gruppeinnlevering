@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span>${package.category}</span>
             </span>
             <span class="delivery1-info-volWeg">${package.volume}</span>
-            <span class="delivery1-info-volWeg">${package.weight}</span>
+            <span class="delivery1-info-volWeg">${package.weight}Kg</span>
         </li>
     `;
                               }
@@ -261,12 +261,12 @@ document.addEventListener("DOMContentLoaded", function () {
                                    "delivery1-sendRecip-info-topbar";
                               senderRecipientContainer.innerHTML = `
                                    <div class=delivery1-sender-topbar>
-                                       <h5>Sender:</h5>
+                                       <h5 class="infotext-title">Sender:</h5>
                                        <span>${order.sender.name}</span></br>
                                        <span>${order.sender.address}, ${order.sender.postal_code}</span>
                                    </div>
                                    <div class=delivery1-recipient-topbar>
-                                       <h5>Receiver:</h5>
+                                       <h5 class="infotext-title">Receiver:</h5>
                                        <span>${order.recipient.name}</span></br>
                                        <span>${order.recipient.address}, ${order.recipient.postal_code}</span>
                                    </div>
