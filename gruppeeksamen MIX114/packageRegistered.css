@@ -152,12 +152,14 @@ header {
 }
 
 .progressDelen {
-     /* dette er den øverste delen for å se hvor mange steg man mangler osc */
+     /* dette er den øverste delen for å se hvor mange steg man mangler osv */
      border-bottom: ridge;
-     padding-top: 3%;
+     padding-top: 1vh;
      display: flex;
+     margin-top: 3%;
      background-color: white;
 }
+
 .progressDelen h4 {
      padding-left: 5vh;
 }
