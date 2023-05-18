@@ -56,18 +56,17 @@ header {
 }
 
 .about {
-     font-size:1.5em;
-     color:black;
+     font-size: 1.5em;
+     color: black;
 }
 
-/* Underline hover effect */
 .underline-hover-about {
      position: relative;
      text-decoration: none;
-   }
-   
-   .underline-hover-about::before {
-     content: '';
+}
+
+.underline-hover-about::before {
+     content: "";
      position: absolute;
      width: 100%;
      height: 2px;
@@ -77,12 +76,12 @@ header {
      visibility: hidden;
      transform: scaleX(0);
      transition: all 0.3s ease-in-out;
-   }
-   
-   .underline-hover-about:hover::before {
+}
+
+.underline-hover-about:hover::before {
      visibility: visible;
      transform: scaleX(1);
-   }
+}
 
 .profileDropdown .logo img {
      width: 15vw;
@@ -225,7 +224,7 @@ footer {
 
 /* Here starts the topbar */
 .delivery1-topbar {
-     grid-column: 1 / span 3; /* Topbar spans both columns*/
+     grid-column: 1 / span 3;
      display: flex;
      justify-content: space-between;
      align-items: center;
@@ -335,13 +334,13 @@ footer {
      height: 100%;
 }
 
+/* Because of bootstrap default style, !important must be used ot overrule exsisting style */
 .delivery1-request-container {
      height: auto !important;
      width: 90% !important;
      border: 2px solid rgb(253, 220, 130) !important;
      margin-top: 3% !important;
      border-radius: 10px !important;
-     /* box-sizing: border-box; */
      margin-left: auto !important;
      margin-right: auto !important;
      text-align: left !important;
@@ -643,6 +642,8 @@ footer {
      height: 100%;
      padding: 3%;
 }
+/* Here stops the calendar square */
+
 /* Here starts calendar modal */
 .modal {
      background-color: rgba(150, 150, 150, 0.5);
@@ -729,7 +730,6 @@ footer {
      border: none;
 }
 
-/* Here stops calendar modal */
 /* Here stops the calendar square */
 /* !!!!!!!!!!!!!!Here stops right side column!!!!!!!!!!!!!!! */
 
@@ -762,7 +762,7 @@ footer {
 }
 /* A-media for delivery1 and delivery2 ends here  */
 
-/* Hide the horizontal scrollbar */
+/* This will hide the horizontal scrollbar */
 ::-webkit-scrollbar {
      display: none;
 }
@@ -792,10 +792,10 @@ footer {
 .modal.fade .modal-dialog {
      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
      animation: slideOutRight 0.6s forwards;
-     width: 80% !important; /* Adjust the width as desired */
-     max-width: 100% !important; /* Ensure the modal doesn't exceed the viewport width */
+     width: 80% !important;
+     max-width: 100% !important;
      height: auto !important;
-     max-height: 300px; /* Adjust the height as desired, or use a specific value like 500px */
+     max-height: 300px;
      justify-content: center;
      margin-top: 70px;
      margin-bottom: 10%;
@@ -827,7 +827,6 @@ footer {
 .delivery2-modal-title-block {
      display: flex;
      padding-left: 5%;
-
      align-items: center;
      gap: 3%;
 }
@@ -918,10 +917,10 @@ footer {
      .modal.fade .modal-dialog {
           transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
           animation: slideOutRight 0.6s forwards;
-          width: 95% !important; /* Adjust the width as desired */
-          max-width: 100% !important; /* Ensure the modal doesn't exceed the viewport width */
+          width: 95% !important;
+          max-width: 100% !important;
           height: 95% !important;
-          max-height: 95%; /* Adjust the height as desired, or use a specific value like 500px */
+          max-height: 95%;
           justify-content: center;
           margin-top: 0 !important;
      }
@@ -944,8 +943,6 @@ footer {
           height: 95%;
           width: 97%;
           position: absolute;
-          /* display: flex;
-          justify-items: right; */
           margin: 3%;
      }
 }
@@ -974,7 +971,6 @@ footer {
      font-size: 1.3em;
      z-index: 1;
      pointer-events: none;
-     /* This prevents the icon from blocking the input click event */
 }
 
 .form-check-input:hover {
@@ -1099,7 +1095,7 @@ footer {
 }
 /*  JS created class ends here */
 
-/* Modal slide function */
+/* Modal slide animation */
 .modal.show .modal-dialog {
      animation: slideInRightBounce 0.6s forwards;
 }
@@ -1125,16 +1121,15 @@ footer {
      }
 }
 
-/* Hover effect */
 .underline-hover {
      text-decoration: none;
-     color:white;
-   }
-   
-   .underline-hover:hover {
+     color: white;
+}
+
+.underline-hover:hover {
      text-decoration: underline;
-     color:black;
-   }
+     color: black;
+}
 /* Modal slide function stop*/
 
 /* CSS for modal ends here */
