@@ -706,14 +706,14 @@ async function calculateAndDisplayRoute(
 }
 
 // Then, when you call the function:
-calculateAndDisplayRoute(
-     directionsService,
-     directionsRenderer,
-     currentPosition, // Origin
-     { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
-     { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
-     map
-);
+// calculateAndDisplayRoute(
+//      directionsService,
+//      directionsRenderer,
+//      currentPosition, // Origin
+//      { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
+//      { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
+//      map
+// );
 
 function getOrderImage(order) {
      switch (order.sender.name) {

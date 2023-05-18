@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
      var calendarEl = document.getElementById("calendar");
 
+     // This will launch the Fullcalendar API and set it to some initial settings
      var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: "dayGridMonth",
           navLinks: true,
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
      );
 
      // Here starts picture selection corrosponding with category
+     // This will set a specific picture, stored locally, to it's corrosponding "case" which is data stored in the JSON api
      function getCategoryImage(category) {
           switch (category) {
                case "Food":
@@ -58,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
      }
 
-     // Function to fetch data
+     // Function to fetch data from the JSON api
      async function fetchData() {
           try {
                const response = await fetch(
@@ -67,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                const data = await response.json();
                ordersData = data.orders;
 
-               // Create buttons for each order
+               // Here, a for-loop runs through each "orders" og the JSON data.
                for (let index = 0; index < data.orders.length; index++) {
                     const order = data.orders[index];
                     console.log("Data", order);
@@ -90,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     btn.setAttribute("data-bs-toggle", "button");
                     btn.setAttribute("aria-pressed", "false");
 
-                    // Update the innerHTML with order-specific data
+                    // Here the buttons are created and populated with the fetched data.
                     btn.innerHTML = `
                       <div class="delivery1-ReqAccDec-body" id="delivery1-requestButton-body-${index}">
                       <span class="delivery1-delivery-img"><img src="${getOrderImage(
@@ -116,9 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       </div>
                   `;
 
-                    // Define variable to track if acceptButton has been pressed
-
-                    // Add event listener to acceptButton
+                    // This specific eventlistener for the acceptbutton will add an event to the calendar if aria presser is true.
                     acceptButton.addEventListener("click", function () {
                          console.log("Accept button clicked");
                          acceptButtonPressed = true;
@@ -142,14 +142,9 @@ document.addEventListener("DOMContentLoaded", function () {
                          }
                     });
 
-                    // Add event listener to all other buttons that could be pressed
-                    // Replace 'otherButtons' with the correct selector for your other buttons
-
-                    // Modify btn event listener
                     btn.addEventListener("click", () => {
                          console.log(order);
 
-                         // Get the parent element
                          const parentElement = document.getElementById(
                               "delivery1-JS-insert-informationsquare"
                          );
@@ -158,12 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
                               "delivery1-topbar-sendReci-JS-insert"
                          );
 
-                         // Remove the existing detailed order info if it exists
                          if (parentElement.lastElementChild) {
                               parentElement.lastElementChild.remove();
                          }
 
-                         // Remove the existing sender and recipient info if it exists
                          if (parentElement2.lastElementChild) {
                               parentElement2.lastElementChild.remove();
                          }
@@ -172,12 +165,11 @@ document.addEventListener("DOMContentLoaded", function () {
                               btn.classList.contains("active") ||
                               btn.getAttribute("aria-pressed") === "true"
                          ) {
-                              // Run logic when the button is active or aria-pressed is true
                               console.log(
                                    "Button is active or aria-pressed is true"
                               );
 
-                              // Generate the items HTML
+                              //     Here a part of the information square is created and and used to populate further down
                               let packagesHTML = "";
                               for (let package of order.packages) {
                                    const imgSrc = getCategoryImage(
@@ -195,15 +187,15 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
                               }
 
-                              // Create a new div to hold the detailed order information
+                              // Creates a new div to hold the detailed order information
                               const deliveryInfoContainer =
                                    document.createElement("div");
 
-                              // Set the class name for the new div
+                              // Sets class name
                               deliveryInfoContainer.className =
                                    "delivery1-order-info-body";
 
-                              // Add the order-specific data as the innerHTML for the new div
+                              //    Here is another dynamically inserted HTML section, which creates the information square.
                               deliveryInfoContainer.innerHTML = `
                         <div class="delivery1-order-info-columns">
                             <div class="delivery1-order-column-general">
@@ -249,7 +241,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     `;
 
-                              // Append the new div into the parent element
                               const parentElement = document.getElementById(
                                    "delivery1-JS-insert-informationsquare"
                               );
@@ -259,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                    document.createElement("div");
                               senderRecipientContainer.className =
                                    "delivery1-sendRecip-info-topbar";
+                              // This will appends the information into the sub-header.
                               senderRecipientContainer.innerHTML = `
                                    <div class=delivery1-sender-topbar>
                                        <h5 class="infotext-title">Sender:</h5>
@@ -280,16 +272,14 @@ document.addEventListener("DOMContentLoaded", function () {
                                    senderRecipientContainer
                               );
                          } else {
-                              // Run logic when the button is not active or aria-pressed is false
                               console.log(
                                    "Button is not active or aria-pressed is false"
                               );
                          }
                     });
 
-                    // Add event listener to handle active button
+                    // This adds an event listener to handle active button
                     btn.addEventListener("click", function () {
-                         // Make sure only this button has the active class
                          document.querySelectorAll(".btn").forEach((button) => {
                               button.classList.remove("active");
                               button.setAttribute("aria-pressed", "false");
@@ -298,7 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
                          btn.setAttribute("aria-pressed", "true");
                     });
 
-                    // Append the button to the container
                     document
                          .getElementById("delivery1-button-container")
                          .appendChild(btn);
@@ -310,10 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
      fetchData();
 
-     // |||||REF 2
-
-     // Function to calculate distance
-     // Function to calculate driving distance
+     // This function calculates the driving distance
      async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {
           return new Promise((resolve, reject) => {
                let service = new google.maps.DistanceMatrixService();
@@ -337,9 +323,8 @@ document.addEventListener("DOMContentLoaded", function () {
           });
      }
 
-     // Add event listeners to the accept and decline buttons
+     // Event listeners to the accept and decline buttons which will change class for CSS styling.
      acceptButton.addEventListener("click", function (event) {
-          // Handle the click event for the active button
           const activeButton = document.querySelector(".btn.active");
           if (
                activeButton &&
@@ -367,7 +352,6 @@ document.addEventListener("DOMContentLoaded", function () {
      });
 
      declineButton.addEventListener("click", function (event) {
-          // Handle the click event for the active button
           const activeButton = document.querySelector(".btn.active");
           if (
                activeButton &&
