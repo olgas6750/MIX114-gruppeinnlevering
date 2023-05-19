@@ -1,7 +1,8 @@
-// ||||||||||||HERE STARTS UPDATED DELIVER 2||||||||||||||||||||
 let userLocation = null;
 
-// Call this function once to get and store the user's location
+// Global function for storing location.
+// I tried implementing this at the end to replace each indicidual geolocation call, but this demanded to much code change, so there
+// are still other individual calls. I think this is the potential for most improvement in the code structure.
 function getUserLocation() {
      return new Promise((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(
@@ -19,22 +20,23 @@ function getUserLocation() {
      });
 }
 
+// Map2 is for the main page
+// Map1 is for the modal
 let map2;
 let map1;
-
+// Google maps is launched and under initMap comes all added functinality to the map
 async function initMap() {
      const mapOptions = {
           center: { lat: 60.389181, lng: 5.333219 },
           zoom: 14,
      };
 
-     // adding sender's location
-
      map2 = new google.maps.Map(
           document.getElementById("delivery2-main-map"),
           mapOptions
      );
 
+     // Picture for current position
      originIcon = "images/Deliveryman, rounded.png";
 
      if (navigator.geolocation) {
@@ -45,17 +47,17 @@ async function initMap() {
                          lng: position.coords.longitude,
                     };
 
-                    // Create a new marker and set its position to the user's current location
+                    // Adds new pin for current position
                     const marker = new google.maps.Marker({
                          map: map2,
                          position: pos,
                          icon: {
-                              url: originIcon, // Use custom icon for this marker
-                              scaledSize: new google.maps.Size(50, 50), // This will scale your custom icon
+                              url: originIcon,
+                              scaledSize: new google.maps.Size(50, 50),
                          },
                     });
 
-                    // Get the human-readable address and insert it into the span
+                    //   Calling the translation from coordinates to human readable aderess.
                     const address = await geocodeLatLng(
                          position.coords.latitude,
                          position.coords.longitude
@@ -64,23 +66,22 @@ async function initMap() {
                          "#delivery2-JS-insert-myLocation"
                     ).textContent = address;
 
-                    // Create an info window for the marker
+                    // The popup window above the marker is created and adress (translate coordinates) populates it.
                     const infoWindow = new google.maps.InfoWindow({
                          content: `<div class="custom-infowindow">
                              <span>Your position:</br></br>${address}</span>
                          </div>`,
                     });
-                    // Add a mouseover listener to the marker
+
                     marker.addListener("mouseover", () => {
                          infoWindow.open(map2, marker);
                     });
 
-                    // Add a mouseout listener to the marker
                     marker.addListener("mouseout", () => {
                          infoWindow.close();
                     });
 
-                    // Set the center of the map to the user's current location
+                    // Set the center of the map to the users current location
                     map2.setCenter(pos);
                },
                () => {
@@ -88,7 +89,6 @@ async function initMap() {
                }
           );
      } else {
-          // Browser doesn't support Geolocation
           handleLocationError(false, map2);
      }
 }
@@ -118,7 +118,7 @@ function geocodeLatLng(lat, lng) {
 }
 // Here stops translation from coordinates to steet and city name
 
-// his function takes the data object (which is the result of fetching your JSON data) as an argument.
+// This function takes the data object (which is the result of fetching your JSON data) as an argument.
 // It loops through each order in the data, and for each order, it extracts the sender and recipient coordinates
 // (latitude and longitude) and pushes them to an array coordinates. Finally, it returns the coordinates array.
 function extractCoordinatesFromData(data) {
@@ -136,14 +136,10 @@ function extractCoordinatesFromData(data) {
      return coordinates;
 }
 
-// This function takes the coordinates array and a map object as arguments.
-// It loops through each coordinate in the coordinates array, and for each coordinate,
-// it creates a new marker on the given map at the position specified by the coordinate.
-
 let markers = [];
 
 // The fetchData function now does the following:
-// Fetches data from your API.
+// Fetches data from API.
 // Extracts coordinates from the data using extractCoordinatesFromData().
 // Initializes map2.
 // Adds markers to map2 for each coordinate using addMarkers().
@@ -175,7 +171,7 @@ async function fetchData() {
                ).catch((err) =>
                     console.error("Error in calculating distance:", err)
                );
-
+               // Buttons are created, populated and inserted thorugh this for-loop.
                const buttonContent = `
    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn delivery1-accepted-container" data-order-number="${
         order.order_number
@@ -219,10 +215,12 @@ async function fetchData() {
                });
           });
 
-          // Setup event listener for modal's 'shown' event
           let map1;
 
           //|||||||||||||||||||||| Here starts inilazation of modal content|||||||||||||||||||||||||||||||
+          // This section had to be included later on, because of running issues related to bootstrap modal, google maps api and general JS.
+          // The section only rund the JS it contains when the modal is "shown". Troubleshooting and implementation of the section done with the
+          // help of ChatGPT.
           $("#exampleModalCenter").on("shown.bs.modal", function () {
                if (!map1) {
                     map1 = new google.maps.Map(
@@ -230,17 +228,15 @@ async function fetchData() {
                          mapOptions
                     );
 
-                    // Trigger resize event and set center after initializing map1
                     google.maps.event.trigger(map1, "resize");
                     map1.setCenter(mapOptions.center);
                }
 
-               // Find the corresponding order using currentOrderNumber
                const order = data.orders.find(
                     (order) => order.order_number === currentOrderNumber
                );
 
-               // Add event listeners to checkboxes
+               // This adds event listeners to checkboxes inside the modal
                document
                     .getElementById("pickedUpCheckbox")
                     .addEventListener("change", function () {
@@ -293,7 +289,7 @@ async function fetchData() {
                          }
                     });
 
-               // Here starts bootstrap Dropdown item selection event
+               // Here starts bootstrap Dropdown button for selecting delaytime
                document
                     .querySelectorAll(".dropdown-item")
                     .forEach(function (dropdownItem) {
@@ -314,7 +310,7 @@ async function fetchData() {
                                              "delivery2-modal-delayed-lastUpdate"
                                         );
 
-                                   // 1. Append the chosen time to the span
+                                   // Here the chosen time is appended to the span
                                    const currentDelayHours = delaySpan.innerText
                                         ? parseInt(delaySpan.innerText)
                                         : 0;
@@ -324,7 +320,7 @@ async function fetchData() {
                                    delaySpan.innerText =
                                         totalDelayHours + " Hours";
 
-                                   // 2. Change the class to 'form-check-input-delay-red'
+                                   // This changes the class to 'form-check-input-delay-red'
                                    delayContainer.classList.remove(
                                         "form-check-input-delay"
                                    );
@@ -332,7 +328,7 @@ async function fetchData() {
                                         "form-check-input-delay-red"
                                    );
 
-                                   // 3. Append time and date to the span
+                                   // Time and date added to the span
                                    const currentTime = new Date();
                                    const formattedTime =
                                         currentTime.toDateString() +
@@ -343,16 +339,13 @@ async function fetchData() {
                                         ":" +
                                         currentTime.getSeconds();
                                    lastUpdateSpan.innerText = formattedTime;
-                                   // 4. Change the icon in the span with id "iconSpan"
+                                   // This changes the google icon for delaytime
                                    document.getElementById(
                                         "iconSpan"
                                    ).innerText = "priority_high";
                               }
                          );
                     });
-               // Here stops bootstrap Dropdown item selection event
-
-               // Inside the 'shown.bs.modal' event callback, after finding the corresponding order...
 
                // Here starts the populate modal with order.data
                document.getElementById("order-number").innerText =
@@ -381,7 +374,7 @@ async function fetchData() {
                          "confirmedCheckbox"
                     ).checked = false;
 
-                    // Reset time display
+                    // Resets time display
                     document.getElementById(
                          "delivery2-modal-pickedUp-lastUpdate"
                     ).innerText = "";
@@ -395,13 +388,13 @@ async function fetchData() {
                          "delivery2-modal-confirmed-lastUpdate"
                     ).innerText = "";
 
-                    // Reset dropdown selection
+                    // Resets dropdown selection
                     const delaySpan = document.getElementById(
                          "delivery2-modal-delay-selected"
                     );
                     delaySpan.innerText = "";
 
-                    // Reset Delay container class
+                    // Resets Delay container class
                     const delayContainer = document.querySelector(
                          ".form-check-input-delay-red"
                     );
@@ -412,14 +405,14 @@ async function fetchData() {
                          delayContainer.classList.add("form-check-input-delay");
                     }
 
-                    // Reset the last update time for delay
+                    // Resets the last update time for delay
                     document.getElementById(
                          "delivery2-modal-delayed-lastUpdate"
                     ).innerText = "";
 
-                    // Reset the icon in the span with id "iconSpan"
+                    // Resets the icon in the span with id "iconSpan"
                     document.getElementById("iconSpan").innerText = "check";
-                    //|||||||||||||||||||||||||| Here stops reset of modal when hidden|||||||||||||||||||||||||||
+                    //||||||||||||||||||||| Here stops reset of modal when hidden||||||||||||||||||||||||
                });
 
                if (!order) {
@@ -429,10 +422,10 @@ async function fetchData() {
                     return;
                }
 
-               // Call addMarkersToMap1() with the corresponding order
+               // Adds markers to map1, corrosponding with the chosen order.
                addMarkersToMap1(order, map1);
 
-               // Add current position marker
+               // Adds current position marker
                if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
                          async (position) => {
@@ -456,9 +449,7 @@ async function fetchData() {
                          }
                     );
                } else {
-                    console.log(
-                         "Geolocation is not supported by this browser."
-                    );
+                    console.log("Geolocation is not supported.");
                }
           });
      } catch (error) {
@@ -466,7 +457,8 @@ async function fetchData() {
      }
 }
 
-let currentInfoWindow = null; // Global variable to store the current open infoWindow
+// Global variable to store the current open infoWindow
+let currentInfoWindow = null;
 
 function addMarkers(orders, map2) {
      orders.forEach((order) => {
@@ -490,11 +482,10 @@ function addMarkers(orders, map2) {
           const infoWindow = new google.maps.InfoWindow({
                content: infoWindowContent,
           });
-          // Instantiate the Directions Service
+
           var directionsService = new google.maps.DirectionsService();
           var directionsRenderer = new google.maps.DirectionsRenderer();
 
-          // Add to mouseover listener
           marker.addListener("mouseover", () => {
                if (currentInfoWindow) {
                     currentInfoWindow.close();
@@ -503,12 +494,12 @@ function addMarkers(orders, map2) {
                infoWindow.open(map2, marker);
                currentInfoWindow = infoWindow;
 
-               // Check if userLocation is already set
+               // Checks if userLocation is already set
                if (userLocation) {
-                    // Set the map
+                    // Sets the map
                     directionsRenderer.setMap(map2);
 
-                    // Set the directions
+                    // Sets the directions
                     directionsService.route(
                          {
                               origin: userLocation,
@@ -531,39 +522,41 @@ function addMarkers(orders, map2) {
                }
           });
 
-          // Add to mouseout listener
           marker.addListener("mouseout", () => {
                infoWindow.close();
 
-               // Remove the directions from the map
+               // Removes the directions from the map
                directionsRenderer.setMap(null);
           });
      });
 }
 
-let markerMap1 = []; // Declare markerMap1 array globally
-let directionsRenderer = null; // Declare it globally
+let markerMap1 = [];
+let directionsRenderer = null;
 
 function addMarkersToMap1(order, map) {
-     // Clear out old markers
+     // This clears out old markers
      for (let marker of markerMap1) {
           marker.setMap(null);
      }
-     markerMap1 = []; // Reset the markers array
-     // Create the DirectionsRenderer if it doesn't exist yet
+
+     // Resetting of the markers array
+     markerMap1 = [];
+
      if (directionsRenderer == null) {
           directionsRenderer = new google.maps.DirectionsRenderer({
                suppressMarkers: true,
-          }); // Add this line
+          });
      } else {
-          // Clear out the old route
+          // This clears out the old route
           directionsRenderer.setMap(null);
           directionsRenderer.setPanel(null);
           directionsRenderer = new google.maps.DirectionsRenderer({
                suppressMarkers: true,
-          }); // Add this line
+          });
      }
 
+     // Popup window for sender
      const senderInfoWindowContent = `
                <div class="custom-infowindow">
                SENDER:</br></br>${order.sender.name},</br> ${order.sender.address}, ${order.sender.postal_code}
@@ -592,6 +585,7 @@ function addMarkersToMap1(order, map) {
           senderInfoWindow.close();
      });
 
+     // Popup window for recipient
      const recipientInfoWindowContent = `
                <div class="custom-infowindow">
                RECIPIENT:</br></br>${order.recipient.name},</br> ${order.recipient.address}, ${order.recipient.postal_code},</br></br> ${order.comment}
@@ -619,10 +613,10 @@ function addMarkersToMap1(order, map) {
           recipientInfoWindow.close();
      });
 
-     // Add new markers to markerMap1 array
+     // This adds new markers to markerMap1 array
      markerMap1.push(senderMarker, recipientMarker);
 
-     // Get current position and display route
+     // This gets the current position and display the fastestroute
      if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
                (position) => {
@@ -649,12 +643,11 @@ function addMarkersToMap1(order, map) {
                }
           );
      } else {
-          // Browser doesn't support Geolocation
           handleLocationError(false, map);
      }
 }
 
-// Function to calculate driving distance starts here
+// This function calculates the driving distance which is added to the inserted HTML
 async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {
      return new Promise((resolve, reject) => {
           let service = new google.maps.DistanceMatrixService();
@@ -668,7 +661,7 @@ async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {
                     if (status == google.maps.DistanceMatrixStatus.OK) {
                          const distance =
                               response.rows[0].elements[0].distance.value /
-                              1000; // Distance in km
+                              1000;
                          resolve(distance);
                     } else {
                          reject("Error calculating distance");
@@ -678,6 +671,7 @@ async function calculateDrivingDistance(lat1, lng1, lat2, lng2) {
      });
 }
 
+// This function creates the route dispaly on map1
 async function calculateAndDisplayRoute(
      directionsService,
      directionsRenderer,
@@ -705,16 +699,7 @@ async function calculateAndDisplayRoute(
      );
 }
 
-// Then, when you call the function:
-// calculateAndDisplayRoute(
-//      directionsService,
-//      directionsRenderer,
-//      currentPosition, // Origin
-//      { lat: order.sender.lat, lng: order.sender.lng }, // Waypoint
-//      { lat: order.recipient.lat, lng: order.recipient.lng }, // Destination
-//      map
-// );
-
+// Assigns pictures to names
 function getOrderImage(order) {
      switch (order.sender.name) {
           case "Oliver Hansen":
@@ -729,9 +714,9 @@ function getOrderImage(order) {
                return "./images/Stranded.png";
           case "Sofie Jensen":
                return "./images/Yellow cat.png";
-          // add more cases as needed...
+
           default:
-               return "./images/profilepicture.png"; // default image
+               return "./images/profilepicture.png";
      }
 }
 
@@ -750,6 +735,6 @@ function getOrderImageRecipient(order) {
           case "Jonas Berg":
                return "./images/Person 6.png";
           default:
-               return "./images/profilepicture.png"; // Default image for recipient
+               return "./images/profilepicture.png";
      }
 }

@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                const data = await response.json();
                ordersData = data.orders;
 
-               // Here, a for-loop runs through each "orders" og the JSON data.
+               // Here, a for-loop runs through each "orders" in the JSON data.
                for (let index = 0; index < data.orders.length; index++) {
                     const order = data.orders[index];
                     console.log("Data", order);
