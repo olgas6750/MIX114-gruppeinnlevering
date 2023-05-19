@@ -1,0 +1,615 @@
+NAMES:
+Ole: olgas6750
+Arne: ArneBHuset
+Johanne: Johannegul
+Tuva: Tuvasofie
+Joel: Ponstermenis185
+
+[START commit][author=olgas6750][time=1684429317][message=Merge branch 'main' of https://github.com/olgas6750/MIX114-gruppeinnlevering][hash=8504e93de8e1e597ac3ee71759688f13186dca6b]
+[START commit][author=olgas6750][time=1684429314][message=added comments][hash=b0861575c7dbb8559aeb67b48e55db91a3e84ce1]
+ 1 file changed, 34 insertions(+), 7 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684419575][message=Code commenting etc][hash=82f9954f9bcb0c9a58950454c82baa921855a6fe]
+ 4 files changed, 53 insertions(+), 88 deletions(-)
+
+[START commit][author=Tuvasofie][time=1684245575][message=Merge branch 'main' of https://github.com/olgas6750/MIX114-gruppeinnlevering][hash=d4aba97c7dbd0bb7302fc8adaa98e80e009556c6]
+[START commit][author=Tuvasofie][time=1684245553][message=Fixed footer and made a hover effect][hash=4d239c20070edbc15503735fb0558fe4365a10e7]
+ 5 files changed, 153 insertions(+), 72 deletions(-)
+
+[START commit][author=Johannegul][time=1684244349][message=Update packageRegistered.css][hash=3676294469ac8ba78fcc32c74db197a2beca2c94]
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+[START commit][author=Johannegul][time=1684244014][message=fjernet tuva sin fb][hash=30dcebaa45b33f47ec6dc5d0175ca8c3faa412d7]
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+[START commit][author=Johannegul][time=1684243867][message=liten ting][hash=4f7d297ec2a8b61eb5aed2637cac02a9631d12de]
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1684240309][message=fikksa knapp][hash=6fdbaab674622ce07ec9aa0456aaf0210aaed7b8]
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+[START commit][author=ArneBHuset][time=1684222950][message=Merge branch 'main' of https://github.com/olgas6750/MIX114-gruppeinnlevering][hash=96a8391e1557526215323e89d602ac1bead16e36]
+[START commit][author=ArneBHuset][time=1684222844][message=Minifixes css][hash=46fdd09de077c90e5c54e3b6b15096aa0637845c]
+ 7 files changed, 28 insertions(+), 21 deletions(-)
+
+[START commit][author=olgas6750][time=1684180748][message=Merge branch 'main' of https://github.com/olgas6750/MIX114-gruppeinnlevering][hash=bd08e47df0282831888162ccc9b74e7ce216d0ce]
+[START commit][author=olgas6750][time=1684180746][message=addded rating :) :) HAHA][hash=9462c80819135ac82266e02c16929c28809b8d78]
+ 2 files changed, 431 insertions(+), 316 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684180491][message=link fix and gradient setting][hash=898af37e777919a76d2521fe2fa57aa6e13d9939]
+ 5 files changed, 1556 insertions(+), 1470 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684179413][message=link fixes][hash=386956aa4bc3e0eb88738a3bdfaf56a7e9586cc0]
+ 4 files changed, 737 insertions(+), 591 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684178775][message=Merge branch 'Add-order'][hash=f4a4feac5beaf8569bc10cefb11b59981648c63f]
+[START commit][author=ArneBHuset][time=1684178677][message=link fixes][hash=2fda4cc79221feb83a02e679eb2f1e0f98e37252]
+ 3 files changed, 9 insertions(+), 21 deletions(-)
+
+[START commit][author=olgas6750][time=1684178641][message=minor html and css changes to ready for merge][hash=95b38d8d4bda0be6e458fceb2de3f3457c631f9d]
+ 7 files changed, 220 insertions(+), 632 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684178209][message=namechange][hash=a52fe09224daf82d51bc0851db3c18833453d7c1]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684178161][message=Merge branch 'HomeFrontPage'][hash=223da7ef3abf6d0955733551616a2166a0c78283]
+[START commit][author=ArneBHuset][time=1684178019][message=hover change][hash=2964656e48cdc43c055bbf50f459eb563dad4788]
+ 1 file changed, 516 insertions(+), 527 deletions(-)
+
+[START commit][author=olgas6750][time=1684177807][message=Merge branch 'overveiw' into Add-order][hash=47ea2ad15f58425d65749f5476aad956c651f47a]
+[START commit][author=olgas6750][time=1684177785][message=css tweaks yo][hash=1cd8eb1257b1333d3fdb0cb83d79f4a1341d686d]
+ 8 files changed, 512 insertions(+), 25 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684177458][message=Merge branch 'Delivery---page-1'][hash=4ff395b830ba43e73e488f6819d23b3297db8d80]
+[START commit][author=ArneBHuset][time=1684177261][message=DONZO 1 UTKAST !! :)][hash=94436df735cf50ac1af7f7f2922c85758aef1371]
+ 3 files changed, 37 insertions(+), 41 deletions(-)
+
+[START commit][author=olgas6750][time=1684173402][message=minor css changes][hash=c8e57c9d31cc688b638a5496e17e92843aa552ac]
+ 3 files changed, 19 insertions(+), 12 deletions(-)
+
+[START commit][author=PonsterMenis185][time=1684173327][message=added hover on foward/manage/employee][hash=5f9d7d54ff04651bac342bcd88f6f0bd2f328706]
+ 2 files changed, 13 insertions(+), 3 deletions(-)
+
+[START commit][author=olgas6750][time=1684171567][message=trying to fix css but it doesnt work i am going to][hash=9f07bf0e44c608bb4152556e4890a36a3171f923]
+ 3 files changed, 25 insertions(+), 8 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684171535][message=calendar work][hash=fbe123ac1b2e5d12737a452ccd27835ece8c8ba7]
+ 3 files changed, 324 insertions(+), 273 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684168762][message=Revert "pushy"][hash=18e7369f3d6982bb0def82f3fcfc95e0cc232dd2]
+ 2 files changed, 12 insertions(+), 27 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684165755][message=pushy][hash=41dac5ccefe71b14c93b98dbce36836bafda4c01]
+ 2 files changed, 27 insertions(+), 12 deletions(-)
+
+[START commit][author=olgas6750][time=1684165435][message=push push så får du en sush][hash=816cfcf5782c9d14a41c2e772b5e246c26266c08]
+ 3 files changed, 89 insertions(+), 82 deletions(-)
+
+[START commit][author=olgas6750][time=1684160942][message=Merge branch 'Delivery---page-1' of https://github.com/olgas6750/MIX114-gruppeinnlevering into Delivery---page-1][hash=f913b39c2f6a2cf42ad7dd2835b833c0a3813176]
+[START commit][author=olgas6750][time=1684160939][message=added a working fullCalendar][hash=384a705b893bc82a5b1b8326a738db0928ab7868]
+ 3 files changed, 267 insertions(+), 460 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684159877][message=ff][hash=96671b9ba82bc864caaf76966155377fdf9a9552]
+ 1 file changed, 305 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684159852][message=mostly done except calendar][hash=f8b63e7c0362e58524b65e96f1bccb0e5dc99e84]
+ 3 files changed, 177 insertions(+), 99 deletions(-)
+
+[START commit][author=olgas6750][time=1684159382][message=i am pushing hahaha push push][hash=8e920912c10d14ac56829c20bcd6fd11fdf62c41]
+ 1 file changed, 1 insertion(+)
+
+[START commit][author=olgas6750][time=1684156226][message=DIRECTIONS WORKS JUHUUUUU][hash=fbbd27fd4224aa342f794b3dca0f7184b78ee633]
+ 2 files changed, 27 insertions(+), 22 deletions(-)
+
+[START commit][author=olgas6750][time=1684147591][message=working layout for overview with markers on map between sender and recipient][hash=2f54ab1516b536a3efaeb9b240503e05fdb5e860]
+ 3 files changed, 87 insertions(+), 12 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684143500][message=Functionality more or less finished for del 2][hash=5235e4e0dd918be30b342314c18af220c4e58df0]
+ 4 files changed, 117 insertions(+), 172 deletions(-)
+
+[START commit][author=Tuvasofie][time=1684085490][message=Fixed footer and about us][hash=66070d64ef7b98ea7af7f0781c400ef9630be7b0]
+ 3 files changed, 91 insertions(+), 47 deletions(-)
+
+[START commit][author=Tuvasofie][time=1684083803][message=Json and css update for del1 and 2][hash=e2b40226f816f5c49d055416317f5bcbba3ff5f4]
+ 9 files changed, 408 insertions(+), 166 deletions(-)
+
+[START commit][author=olgas6750][time=1684083497][message=updates][hash=f4cc05f5020fae497019e49b297f24065243c7a5]
+ 3 files changed, 473 insertions(+), 686 deletions(-)
+
+[START commit][author=olgas6750][time=1684078648][message=Revert "lost the map, will try to revert"][hash=a15f2503563fd7a4eb5e787e04f438f230e5eae3]
+ 2 files changed, 684 insertions(+), 417 deletions(-)
+
+[START commit][author=olgas6750][time=1684078640][message=lost the map, will try to revert][hash=df42471b031ca9be9c29b58d3607b9f28ab221a2]
+ 2 files changed, 417 insertions(+), 684 deletions(-)
+
+[START commit][author=ArneBHuset][time=1684077329][message=maps API launch][hash=337feb992f9eef181c2ad7a5054eab6047807fbc]
+ 3 files changed, 558 insertions(+), 525 deletions(-)
+
+[START commit][author=olgas6750][time=1684076844][message=tried making event modal wider][hash=528e49df287e952c29d798ecfd4d4629c364ede6]
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+[START commit][author=olgas6750][time=1684068237][message=events are now added to the calendar via an API. Clicking on one console.logs the contents of that order][hash=a37f8e4d4256a3903c1dff969db9e8f62b0658fc]
+ 1 file changed, 58 insertions(+), 23 deletions(-)
+
+[START commit][author=olgas6750][time=1683997667][message=working on getting the modal to show the right info][hash=70c5e752fe7e92883da4cc5811acdb14a33b1424]
+ 3 files changed, 81 insertions(+), 232 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683997112][message=saturday, last commit][hash=9d3d6b0e6b56c1346b16154b14b0f4b4976ba49f]
+ 4 files changed, 83 insertions(+), 16 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683994708][message=delivery 1 and 2 json and css][hash=aeb0181180e32fdc84a2e42da2774c88e107f6c3]
+ 11 files changed, 513 insertions(+), 155 deletions(-)
+
+[START commit][author=olgas6750][time=1683927595][message=Sending an order now works! party emoji wuhu letsgo][hash=fc69b852663f67ff85fc24de0f154dbc565ce211]
+ 9 files changed, 158 insertions(+), 72 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683890692][message=Json integration del2][hash=36a3766df9bb606f15750c7674cb4af165d7e18f]
+ 5 files changed, 431 insertions(+), 403 deletions(-)
+
+[START commit][author=olgas6750][time=1683888926][message=Had to add these files manually because of a failed merge, it should be noted that Tuva and Johanne did most of the work on these][hash=830852ab7f93fe583fce74f991607dbbd123bb94]
+ 3 files changed, 589 insertions(+)
+
+[START commit][author=olgas6750][time=1683886607][message=Revert "Merge branch 'send-order-4' into Add-order"][hash=df6a4208f50067a7889734dffdc98a73b0c1d6fa]
+ 6 files changed, 45 insertions(+), 828 deletions(-)
+
+[START commit][author=olgas6750][time=1683886530][message=Merge branch 'send-order-4' into Add-order][hash=8d17294618e1801fe810e3a65d240963fd4e4bf1]
+[START commit][author=olgas6750][time=1683886462][message=renamed files to prepare for merge with send order 4][hash=b34990e019629f9871ce4783e9c5d1691aef251e]
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=olgas6750][time=1683886068][message=renamed the files and made some changes to prepare for merge into add order branch][hash=fc37d262abff746eddd8a2f12ce023ae35435199]
+ 3 files changed, 14 insertions(+), 10 deletions(-)
+
+[START commit][author=olgas6750][time=1683885289][message=added date and time selector page][hash=c8a995dafc40a74ffe14079c97e63773e33710f7]
+ 3 files changed, 313 insertions(+)
+
+[START commit][author=ArneBHuset][time=1683882219][message=JSON almost finished del1][hash=ca721c6a801d3cd506bda094509add5e3cff6e95]
+ 7 files changed, 205 insertions(+), 344 deletions(-)
+
+[START commit][author=olgas6750][time=1683874771][message=trying to get sendOrder2 to save sender info and failing][hash=766734654f6f40d8f5196efd994a3bf01f384551]
+ 4 files changed, 25 insertions(+), 13 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683822751][message=JSon integration into del1][hash=4173ee0d3bf40464e6841a79ea7ade05a8590def]
+ 3 files changed, 309 insertions(+), 208 deletions(-)
+
+[START commit][author=Johannegul][time=1683799595][message=Update overview.js][hash=b0a8f63c6430b3a6ddd7611e80b4a4cb80aa2e77]
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+[START commit][author=Johannegul][time=1683798490][message=forandre farge][hash=4e0090ff543feda59b306eacf39c95a064d227f6]
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683797804][message=Update overviewStyle.css][hash=d910051512c2476aa944c25feac9c2220ecd45e5]
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+[START commit][author=PonsterMenis185][time=1683795800][message=Added temporary links for send/manage/employee][hash=42db8cd7051a0ef7118738889a9612178cf195f9]
+ 1 file changed, 33 insertions(+), 27 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683734750][message=Integration of JSON into deliv2][hash=08daef3ca991b78bec573ffcd2e64215c8bdbf9d]
+ 3 files changed, 158 insertions(+), 47 deletions(-)
+
+[START commit][author=Tuvasofie][time=1683729393][message=fixed footer][hash=31d9bcb3fd24a847479c1932047edd138c31254f]
+ 2 files changed, 58 insertions(+), 18 deletions(-)
+
+[START commit][author=Tuvasofie][time=1683726379][message=Fixed sidebar, footer and profile][hash=36d70af92e29d9a5e9e12c12de0083cace70f6c3]
+ 2 files changed, 136 insertions(+), 49 deletions(-)
+
+[START commit][author=Johannegul][time=1683724626][message=nytt navn][hash=d5406d1451781e4b10244f423bf67f773f349fe3]
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683723601][message=Update overviewStyle.css][hash=537af6f850d7fe7bfae4e4092e4a6ef33bab6596]
+ 1 file changed, 6 deletions(-)
+
+[START commit][author=Johannegul][time=1683723568][message=Update Overview.html][hash=64c5ed8a896f4db4a46da9de9d037c1feeacc643]
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+[START commit][author=Johannegul][time=1683722668][message=Update overviewStyle.css][hash=73c14d90ec5cded0028645b4e68012c42af507d7]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683722435][message=små ting][hash=7218de18a92e6867c8c953d690feaddaab56538f]
+ 2 files changed, 23 insertions(+), 62 deletions(-)
+
+[START commit][author=Tuvasofie][time=1683721612][message=Fixed css in about us][hash=c8811a98c75d336037daef02b4c1e6ca38f72348]
+ 1 file changed, 3 deletions(-)
+
+[START commit][author=Johannegul][time=1683721360][message=linken][hash=2270a9e771688c3bf830321061177ef8037ead4c]
+ 2 files changed, 17 insertions(+), 6 deletions(-)
+
+[START commit][author=Tuvasofie][time=1683721314][message=.][hash=cd8e57484f32f6103cf203ea4547414556297786]
+[START commit][author=Tuvasofie][time=1683721150][message=Added hoverfunction, changed profile dropdown][hash=ce072142324a9ea5abc5171a262b56496563f500]
+ 2 files changed, 65 insertions(+), 16 deletions(-)
+
+[START commit][author=Johannegul][time=1683720111][message=begynnelsen på oversikt][hash=c4a7e5a870bc0c929f09215e4a52859e5ab40ddd]
+ 2 files changed, 408 insertions(+), 13 deletions(-)
+
+[START commit][author=olgas6750][time=1683717697][message=Merge branch 'Add-order' of https://github.com/olgas6750/MIX114-gruppeinnlevering into Add-order][hash=1544ce9a5e265c6c634c092147f1a04629a783b6]
+[START commit][author=olgas6750][time=1683717689][message=attempts to carry data from one page to another][hash=8d2e8feb53a7762e09d22626eeb29d45a2108cab]
+ 5 files changed, 73 insertions(+), 43 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683711882][message=updates to del2 js][hash=a79acbf6eeb3d267dab08656160fd4a629c16392]
+ 6 files changed, 112 insertions(+), 11 deletions(-)
+
+[START commit][author=Tuvasofie][time=1683710390][message=Made the logo a button][hash=599787704f18e3ff366fd46a95de8aca1d6f98c9]
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+[START commit][author=Tuvasofie][time=1683710170][message=Removed sidebar, and made the logo a button][hash=af6b595cfeafb02a15e8700d8cdf50009c3e46d4]
+ 1 file changed, 4 insertions(+), 75 deletions(-)
+
+[START commit][author=Johannegul][time=1683708784][message=nytt navn][hash=9b4e96b9560f4a9de19ce3a17d11a445630165ef]
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683708491][message=tekst][hash=45a13b937f3ee9974554b198a9d5781a636f9819]
+ 2 files changed, 14 insertions(+), 4 deletions(-)
+
+[START commit][author=Johannegul][time=1683642846][message=størrelsen][hash=dce5dccc7fdfcf5c83a1551270749c2b41c20faa]
+ 2 files changed, 12 insertions(+), 9 deletions(-)
+
+[START commit][author=Johannegul][time=1683641870][message=Update style.css][hash=ee675e2bae7e2e0f89261c4194edfc84a0310b60]
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+[START commit][author=Johannegul][time=1683641668][message=overlay][hash=36698bf70a209efe4127d5e3f8286745c9ccc1de]
+ 3 files changed, 59 insertions(+), 12 deletions(-)
+
+[START commit][author=Johannegul][time=1683640896][message=link][hash=69a29adc52bb2e25eec37c54933f34a1f4b2f2a3]
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+
+[START commit][author=ArneBHuset][time=1683639539][message=update 09.05][hash=34998826dee0e67261874d5ed3f07992391722bc]
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683639491][message=Update style.css][hash=4704ceff96c9a91c24c4dbbd7c09f6717adb1292]
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683638328][message=yup][hash=ebd46be622d21e71133406be86604944f2e75656]
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+[START commit][author=Johannegul][time=1683553260][message=Update style.css][hash=cfaecfb78c8e12af22091c2edabf0f29e7cacc4d]
+ 1 file changed, 4 insertions(+)
+
+[START commit][author=Tuvasofie][time=1683552700][message=Merge branch 'overveiw' of https://github.com/olgas6750/MIX114-gruppeinnlevering into overveiw][hash=a688808e47079386a1abc860d0f0e4eddb76f5fe]
+[START commit][author=Tuvasofie][time=1683551986][message=Correct sidebar][hash=6210d6a29d17a09498e9807d0503255a4ef18be3]
+ 2 files changed, 87 insertions(+), 76 deletions(-)
+
+[START commit][author=olgas6750][time=1683551650][message=Merge branch 'send-order-2' into Add-order][hash=7f750dcdf699ec07c42576623544c11ccb0dd4c3]
+[START commit][author=olgas6750][time=1683551604][message=removed unused js reference][hash=9d90e7013ca983eb8242144c2e5da431d8bf35f7]
+ 1 file changed, 1 deletion(-)
+
+[START commit][author=olgas6750][time=1683551469][message=reverted the final changes to sidebar because it fucked up the whole thing and fixed the issues][hash=1cc2e3338f2849470fca90d8e1b0866f87f961b5]
+ 2 files changed, 41 insertions(+), 7 deletions(-)
+
+[START commit][author=olgas6750][time=1683551237][message=Revert "final changes to sidebar"][hash=c701d53048ce967a4c78efd043afb7623b4420a2]
+ 2 files changed, 26 insertions(+), 88 deletions(-)
+
+[START commit][author=olgas6750][time=1683551196][message=final changes to sidebar][hash=b1545ee809fa715f872d3ebef01c0e67c8759401]
+ 2 files changed, 88 insertions(+), 26 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683551095][message=Update to del2 maps][hash=444baa9cc1e361470de1b41d0e34b36a260e68ed]
+ 2 files changed, 123 insertions(+), 37 deletions(-)
+
+[START commit][author=Johannegul][time=1683550817][message=Update template.html][hash=05a618c3e45bea3263016cb302ae1b2bf8637512]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683550166][message=ja][hash=3090d6ce1ba224d7b11611f1adf50016a27ba4f7]
+ 2 files changed, 2 insertions(+), 5 deletions(-)
+
+[START commit][author=Johannegul][time=1683549112][message=ikke ferdig med den][hash=547c9a53d2b2281f972361f38e6bd2e3d0cc54e4]
+ 2 files changed, 9 insertions(+)
+
+[START commit][author=olgas6750][time=1683548344][message=made some changes to ready the page for merge with send order 1][hash=4401524cf55087dec4f2c18bc0a7bbb585c5bb7e]
+ 3 files changed, 69 insertions(+), 62 deletions(-)
+
+[START commit][author=Johannegul][time=1683547951][message=Update style.css][hash=0088a49da3fee12d65685bd3021085876a383b7a]
+ 1 file changed, 1 insertion(+)
+
+[START commit][author=olgas6750][time=1683547080][message=packages are now added to an array that can be carried over to other pages][hash=6a2fd28ae4ad07686e2abcd5676c563715302a44]
+ 2 files changed, 25 insertions(+), 14 deletions(-)
+
+[START commit][author=Johannegul][time=1683546457][message=punkter][hash=a96ca7d7abb905667e6dfcc48ad094eb975761d9]
+ 2 files changed, 13 insertions(+), 4 deletions(-)
+
+[START commit][author=Johannegul][time=1683544997][message=Update style.css][hash=e6bcd8529f9b96ba3ef5d77e447c6f23cc4b7c7c]
+ 1 file changed, 4 insertions(+)
+
+[START commit][author=Johannegul][time=1683544249][message=Update style.css][hash=b2877a1cab9f0a8d88a763e7545be26435a59f1d]
+ 1 file changed, 5 insertions(+)
+
+[START commit][author=Johannegul][time=1683543673][message=Update style.css][hash=93c459bb4985f15a10433674abf2fc36ad5c9297]
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683543524][message=overskriften][hash=779b84bb1d808af2459947ebc326e2264f5c0ffd]
+ 2 files changed, 11 insertions(+)
+
+[START commit][author=Johannegul][time=1683543308][message=Update style.css][hash=76b95fe8c11176fcabefba9f04168d4d2abac822]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1683543101][message=ny kalender][hash=938dfc7418ce9727c9840fe7fdd196b21f9b00c5]
+ 2 files changed, 7 insertions(+), 71 deletions(-)
+
+[START commit][author=Johannegul][time=1683542903][message=prøvde][hash=7869b6b58dc849874a047796d847f4496cbc3988]
+ 3 files changed, 80 insertions(+), 1 deletion(-)
+
+[START commit][author=olgas6750][time=1683541714][message=new sidebar styles, as well as a continue button in the sidebar][hash=ba9bf9f12d03b94345391a3c14c37a16dcb35707]
+ 4 files changed, 105 insertions(+), 27 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683540880][message=Sidebar and some more][hash=008817656baa86b804ca962de0b3fe5b2a25beff]
+ 4 files changed, 135 insertions(+), 714 deletions(-)
+
+[START commit][author=Johannegul][time=1683540688][message=Update .DS_Store][hash=e82fd14a19d90400e799092db3e879e2f0e99133]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=olgas6750][time=1683537831][message=packages now have unique input fields][hash=86d37f12a49fe082ab1262cec861e0c02bed3784]
+ 3 files changed, 83 insertions(+), 12 deletions(-)
+
+[START commit][author=olgas6750][time=1683533744][message=added packages now show up in the main container][hash=42c518774cfe94fbe8c36da5de8afe387bda8a6c]
+ 3 files changed, 51 insertions(+), 23 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683470807][message=TOTALFIKS ETTER MERGE FUCKUP][hash=7773622ba32f97a48c1802861d1956fce3c3b917]
+ 4 files changed, 2031 insertions(+), 122 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683469649][message=Merge branch 'Delivery---page-2' into Delivery---page-1][hash=130b947bdb601f4ec3724afdc9ae246646630189]
+[START commit][author=ArneBHuset][time=1683469416][message=css name change][hash=45d31b990cbea1feda28058b3969266accb00ac7]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683468744][message=Modal and main finished][hash=c828fc4f55e2243c0875190593494ab04a854c59]
+ 3 files changed, 181 insertions(+), 166 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683461874][message=Updates to delivery2-modal][hash=498a24d6d4cdb20bcbde22061bc39ab16897ff02]
+ 3 files changed, 439 insertions(+), 85 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683386033][message=Work on delivery 2 pop-up][hash=7cd948bc5f5605418fec138e6f6cbfccbd9c35aa]
+ 2 files changed, 97 insertions(+), 101 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683383217][message=Work on modal with maps][hash=bffbebebd5431cb5768f096cea6db161384b1113]
+ 3 files changed, 334 insertions(+), 23 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683377683][message=Mostly JS update (accept, decline, toggle)][hash=fa7dcccce42d4ffb73b431e7de900e302965f377]
+ 3 files changed, 141 insertions(+), 242 deletions(-)
+
+[START commit][author=olgas6750][time=1683298694][message=add package button now displays the package in sidebar][hash=3cb73c5db37bef5722624835a091e7d8ac42209e]
+ 4 files changed, 50 insertions(+), 38 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683215177][message=delivery2 update 04.05][hash=b8121382ad791f124e0b947d7753dcb8dff3f1dc]
+ 2 files changed, 86 insertions(+), 186 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683212803][message=Heigh adjustment finished and identical to del1][hash=0ef8dbc13ab10d4a0d4d1bc2c41ef90eeffc4454]
+ 2 files changed, 168 insertions(+), 8 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683212632][message=height adjust][hash=46e6d3ec4b3d60d077d3b2af20523db035d9436c]
+ 2 files changed, 53 insertions(+), 8 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683211808][message=height work][hash=75182417ed1deb8cba45a7fa50117ee143d1479e]
+ 2 files changed, 51 insertions(+), 54 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683210049][message=100%][hash=293d7a12612dfa9be849cdf2e350100c08cbbb5a]
+ 1 file changed, 2 insertions(+)
+
+[START commit][author=ArneBHuset][time=1683208495][message=Usikker height sjekk][hash=f9d3ea0b061a7ed8b09732af2a85b28cefc1dfe2]
+ 2 files changed, 51 insertions(+), 14 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683207984][message=fiks og tjafs][hash=2eda0549a7c908a1f155abb8e6f659f13812bb60]
+ 2 files changed, 13 insertions(+), 577 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683206034][message=Filename change][hash=2f2308aefe2260975d2ffca97775b9d5eb62fe18]
+ 3 files changed, 152 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683205885][message=Delivery2-test][hash=8ba586d6a47d0888d4d254b51664f3965296f635]
+ 2 files changed, 5 insertions(+)
+
+[START commit][author=ArneBHuset][time=1683205393][message=Delivery 1 update 04.05][hash=90021c6d58009edf8b9def3fe173a3cd75ccc89a]
+ 2 files changed, 13 insertions(+), 5 deletions(-)
+
+[START commit][author=Johannegul][time=1683199285][message=nytt navn][hash=41ace4f4c8ea827b2c874eaf59490e0ed4ede96d]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Johannegul][time=1683123117][message=nesten ferdig][hash=a8663aa545c87727e6328eb42162db507cd76b63]
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+
+[START commit][author=Johannegul][time=1683120734][message=bilde][hash=1d8f7ace96c622a22b39cecdb1859b0a5db73a2c]
+ 5 files changed, 16 insertions(+), 1 deletion(-)
+
+[START commit][author=Tuvasofie][time=1683120574][message=Add order ferdig][hash=03d440f040b6cd5fcea9a3945d202ade0a1cb440]
+[START commit][author=Johannegul][time=1683119936][message=mer][hash=f757fc4d38c373045164dc7002fdb8489d059a09]
+ 2 files changed, 51 insertions(+), 10 deletions(-)
+
+[START commit][author=Johannegul][time=1683118798][message=fiksa feil][hash=e078cb3019940cc26ba526b3aa853b10f940075a]
+ 2 files changed, 28 insertions(+), 31 deletions(-)
+
+[START commit][author=Johannegul][time=1683118382][message=liten update][hash=0e54b158fadbb9be3463df915db3fac6c01426c6]
+ 2 files changed, 106 insertions(+), 3 deletions(-)
+
+[START commit][author=Johannegul][time=1683118175][message=riktig][hash=bbbd4db410f97827567f76d51c3ebfd6c5a82415]
+ 2 files changed, 4 insertions(+), 123 deletions(-)
+
+[START commit][author=Johannegul][time=1683118000][message=la til progress][hash=f139a2f1aa1ee47b1916f15365cd9387ea069bed]
+ 2 files changed, 100 insertions(+)
+
+[START commit][author=Johannegul][time=1683117684][message=Update sendOrder2.html][hash=e596715f798c4dc9b70ed1b5c39bd040b4c0ce32]
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+[START commit][author=Tuvasofie][time=1683116626][message=Nesten ferdig][hash=8ee1b330a8d764ecf3ac0dc125f09716dc24aae7]
+ 3 files changed, 152 insertions(+), 5 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683113971][message=Update 03.05][hash=98dd31835f9015f7908833f1b5001d7b213d253b]
+ 2 files changed, 584 insertions(+), 102 deletions(-)
+
+[START commit][author=olgas6750][time=1683113028][message=added add order page and corresponsing css][hash=6ba2576210bf172df74e52c7f68666649796d949]
+ 4 files changed, 75 insertions(+), 4 deletions(-)
+
+[START commit][author=olgas6750][time=1683109232][message=deleted empty file][hash=dce7b8925039649cbefc1d9eab77625045abd187]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=PonsterMenis185][time=1683107544][message=Merge branch 'frontpage' of https://github.com/PonsterMenis185/MIX114-gruppeinnlevering into frontpage][hash=276e7073761142a4b3c9be3b5165bba33acfb87d]
+[START commit][author=PonsterMenis185][time=1683107528][message=Homepage - first version][hash=14fcd924df9ad21ecd01b18f5a9708b9e3ad753f]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=olgas6750][time=1683104096][message=removed sample text from the bottom of the page][hash=4bad4274bb92afdeb2137752ec2171401d57d8b6]
+ 1 file changed, 99 insertions(+), 18 deletions(-)
+
+[START commit][author=olgas6750][time=1683102135][message=removed template text][hash=4b25bbd856d131e61b01a015d04da11b5e5779c9]
+ 1 file changed, 2 deletions(-)
+
+[START commit][author=PonsterMenis185][time=1683057516][message=v1 of the homepage][hash=67ce5b3aad5edb6d35dd86ec02854045ed5d5e12]
+ 13 files changed, 942 insertions(+), 8 deletions(-)
+
+[START commit][author=ArneBHuset][time=1683039570][message=Delivery update 02.05][hash=94ce9c0c667d99e341efd408c404baa1a7a5788c]
+ 2 files changed, 271 insertions(+), 32 deletions(-)
+
+[START commit][author=Johannegul][time=1683038140][message=små ting][hash=25e74fd3e558d3060964be2b29356adadadcd8b3]
+ 2 files changed, 8 insertions(+), 6 deletions(-)
+
+[START commit][author=Johannegul][time=1683037911][message=Update style.css][hash=bfafd355a3d5af34a24f2711b369b1603a0d348f]
+ 1 file changed, 21 insertions(+), 3 deletions(-)
+
+[START commit][author=Johannegul][time=1683036866][message=nytt navn][hash=37d1fce5671fb3d9e33b9528189b677a87bda905]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Johannegul][time=1683036666][message=Update style.css][hash=c18d5274147a61960f6fe9ae999632d196aac31f]
+ 1 file changed, 2 insertions(+)
+
+[START commit][author=Johannegul][time=1683036183][message=dottene ferdig][hash=592d501902f03fb58e8ae5ebd3bef85988be92c1]
+ 2 files changed, 54 insertions(+), 4 deletions(-)
+
+[START commit][author=Johannegul][time=1683033949][message=fikksa][hash=4e6412cda2502f5d39a05e397baed3dc5f3cdd05]
+ 2 files changed, 8 insertions(+), 9 deletions(-)
+
+[START commit][author=Johannegul][time=1683032591][message=høyre side][hash=c27fc8a036e7518835f72bd7c3c507ac89387655]
+ 2 files changed, 68 insertions(+), 13 deletions(-)
+
+[START commit][author=Johannegul][time=1683032075][message=gjorde om pc til alt annet][hash=886a7d86d7f61350ea12b364fc4cadda5ba55f4f]
+ 2 files changed, 52 insertions(+), 39 deletions(-)
+
+[START commit][author=Johannegul][time=1683030068][message=Update style.css][hash=5496c5decaf8391adf7e890d609b6060c327606e]
+ 1 file changed, 6 insertions(+)
+
+[START commit][author=Tuvasofie][time=1683027955][message=Create index.html][hash=c4c51863277b6539e4443f29d32c2b00c0aa6bcb]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Johannegul][time=1683027291][message=forandring][hash=affc569c9d290be00b183db8a8495e668760595e]
+ 2 files changed, 7 insertions(+), 9 deletions(-)
+
+[START commit][author=Johannegul][time=1683026796][message=Update style.css][hash=deec62cf33ccfbffa688d67f8196d9159fc9845e]
+ 1 file changed, 5 insertions(+)
+
+[START commit][author=Johannegul][time=1683026768][message=Update style.css][hash=c07ecff95b20fbd39b308b93ac02a90b2817a874]
+ 1 file changed, 39 insertions(+), 11 deletions(-)
+
+[START commit][author=Johannegul][time=1683026693][message=mer nytt][hash=6bbc7f45edb2d790fee023a245ba5bc6e7aa8538]
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+[START commit][author=Johannegul][time=1683026593][message=ny][hash=1673a4af92d8d08eeb8f41ec40feb5db6925165c]
+ 1 file changed, 84 insertions(+), 15 deletions(-)
+
+[START commit][author=Johannegul][time=1683023147][message=litt mer][hash=c1822d73cc415a12ea88918c1c704251b5832d04]
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+[START commit][author=Johannegul][time=1683017462][message=Update style.css][hash=9c5348111df9119e777799c0ee0d90822d120d04]
+ 1 file changed, 2 insertions(+)
+
+[START commit][author=Johannegul][time=1683016766][message=Update style.css][hash=900116f162f6a2c81644a5582fcee655c9ff643d]
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+[START commit][author=ArneBHuset][time=1682960039][message=delivery1 01.05][hash=daa1c714ad68b50591749fd476b4f4af272f0762]
+ 2 files changed, 265 insertions(+), 58 deletions(-)
+
+[START commit][author=olgas6750][time=1682948624][message=added icons to sidebar][hash=bc602b7ac40885408456d439fe333061cbd011e8]
+ 2 files changed, 67 insertions(+), 5 deletions(-)
+
+[START commit][author=ArneBHuset][time=1682946485][message=Update 01.05][hash=6df03f23d59f2c3c03ca5536db30abb0ed47bd6d]
+ 2 files changed, 76 insertions(+), 2 deletions(-)
+
+[START commit][author=olgas6750][time=1682946303][message=fixed some overlap issues][hash=ba496f91f697185add9494c67d13f9a550679ff5]
+ 2 files changed, 17 insertions(+), 10 deletions(-)
+
+[START commit][author=Johannegul][time=1682945884][message=Update style.css][hash=7d62d7a11161627690a3c605244e737284cffe4f]
+ 1 file changed, 4 insertions(+)
+
+[START commit][author=Johannegul][time=1682945473][message=prøvde meg på progress baren][hash=adee574bc44b4995b327ea4ab5fa5444bf164cef]
+ 2 files changed, 55 insertions(+), 2 deletions(-)
+
+[START commit][author=olgas6750][time=1682943545][message=defined h1-h6, and fixed responsivity in the sidebar][hash=d09d64e033712d0320664e6d16a844c11e5cc71f]
+ 2 files changed, 45 insertions(+), 8 deletions(-)
+
+[START commit][author=olgas6750][time=1682939532][message=fixed header positioning and gave the sidebar a min-width][hash=a9fba6ed8a267c6a444830a77775548693635646]
+ 1 file changed, 10 insertions(+), 9 deletions(-)
+
+[START commit][author=Johannegul][time=1682938358][message=Update style.css][hash=68e5da4bea366309639fbc63383b2bb878e551fe]
+ 1 file changed, 13 insertions(+)
+
+[START commit][author=Johannegul][time=1682937640][message=lagd den ene siden av formen][hash=57248bd0ddbd03180b1def90e3d5c64cfa64a765]
+ 2 files changed, 54 insertions(+)
+
+[START commit][author=Johannegul][time=1682934458][message=startet litt][hash=6a3c64553d163a46c4815d41d5f2310a84232490]
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+[START commit][author=ArneBHuset][time=1682865263][message=30.04 delivery 1 update(ARNE)][hash=ac10385da372d6f11b5d20452319a43aa7dc451d]
+ 2 files changed, 173 insertions(+), 5 deletions(-)
+
+[START commit][author=ArneBHuset][time=1682855781][message=test][hash=e389eb3215e5341e05e4cbbf09b0ffbcd4da744e]
+ 4 files changed, 286 insertions(+), 125 deletions(-)
+
+[START commit][author=ArneBHuset][time=1682854072][message=Test][hash=1f32deefa1ba732a80b6b626e2e3e43a47ad1885]
+ 1 file changed, 68 insertions(+), 68 deletions(-)
+
+[START commit][author=olgas6750][time=1682790120][message=added the sidebar and footer to the page][hash=8c40e2ad41f0f1aca1389e169b2024caedfa242d]
+ 3 files changed, 142 insertions(+), 6 deletions(-)
+
+[START commit][author=olgas6750][time=1682783401][message=working layout for the template][hash=4769e6d65d7c4ccc7dd276100b0f40114ebc18fe]
+ 2 files changed, 29 insertions(+), 1 deletion(-)
+
+[START commit][author=olgas6750][time=1682782569][message=added header][hash=664fc3fffc17626157e60a35cb7cfbf0d2104f75]
+ 4 files changed, 92 insertions(+), 1 deletion(-)
+
+[START commit][author=olgas6750][time=1682777687][message=various updates][hash=2ceecf1d231694dd36b642cef06e8ab02f52f516]
+ 2 files changed, 28 insertions(+), 6 deletions(-)
+
+[START commit][author=olgas6750][time=1682777013][message=removed the test pictures from images folder. I now understand how merging works][hash=da58d860b3e41cb57201e1ef656c0dc6fd652d20]
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=olgas6750][time=1682776661][message=added another monkey pic to test branch][hash=a09e5009b2547be640dbfc363a5c2902d568b5ec]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=olgas6750][time=1682776569][message=added monkey pic to main branch in images folder][hash=de99438346d7cf2e8b7f63aa90342e5ee8a6f068]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Tuvasofie][time=1682682491][message=Update index.html][hash=04d3e88c54666307de082e9069e764d7f636e933]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=olgas6750][time=1682682316][message=SLETTA ALT PÅ MAIN!!!][hash=0e2e592172b6cd1b8011f5199ab9960078e7b31c]
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+[START commit][author=Tuvasofie][time=1682681887][message=Merge branch 'main' of https://github.com/olgas6750/MIX114-gruppeinnlevering][hash=1954540693b3348d3e52a549d3b49b00fbd7ba30]
+[START commit][author=Johannegul][time=1682681620][message=gjorde om yo][hash=fa105884dc03aa09bfb518aa3494338191c01a3e]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Tuvasofie][time=1682681576][message=Update index.html][hash=bf8083cecbbde7276b16e5f6b471180843f5faae]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Johannegul][time=1682681568][message=Merge branch 'main' of https://github.com/olgas6750/MIX114-gruppeinnlevering][hash=c9971226b0d2b83109182545bf4aed856a82d4ee]
+[START commit][author=Johannegul][time=1682681558][message=johanne][hash=2b3246934d498c06861390ed574fec57738f9b1f]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Tuvasofie][time=1682681515][message=Merge branch 'main' of https://github.com/olgas6750/MIX114-gruppeinnlevering][hash=cce46024c9e30d9ea68bd4a417dc766ae0e96f7f]
+[START commit][author=ArneBHuset][time=1682681160][message=test arne][hash=5a8aa13646028158b40acaddf2b23ea658a1e5cf]
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+[START commit][author=PonsterMenis185][time=1682681098][message=Update index.html][hash=44f89be1a85e8a36c29acd231ca36783b06d717e]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=Tuvasofie][time=1682681045][message=endra til Tuva :)][hash=57f7a98df61244fa4650812b90f927c107b99c6e]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=PonsterMenis185][time=1682681028][message=Merge branch 'main' of https://github.com/PonsterMenis185/MIX114-gruppeinnlevering][hash=0c7656178aefdd4cef4c7e8de742776d5cd92734]
+[START commit][author=olgas6750][time=1682680946][message=endra isak til arne][hash=0df916044c84bb1f3048b138270d7f9aaf867085]
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+[START commit][author=olgas6750][time=1682680801][message=la til isak][hash=ae6035020f3e06c0112af6aa5ac8d9a7e8d2b086]
+ 1 file changed, 1 insertion(+)
+
+[START commit][author=PonsterMenis185][time=1682680502][message=Create .DS_Store][hash=aff678b178d6c233341249288dfbd64bc9398d73]
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Ole][time=1682335671][message=testa endå en endring][hash=a8d0810451121a4a18fe4eed5f23b9511c283b3f]
+ 1 file changed, 1 insertion(+)
+
+[START commit][author=Ole][time=1682334872][message=testa endring][hash=fd71cd69b8ce7ced631cae6a3c5bba455a77f46e]
+ 1 file changed, 6 insertions(+)
+
+[START commit][author=olgas6750][time=1682322371][message=Add files via upload][hash=cc3606c0f0d04aaeaad47da8fe02e39d0161dce7]
+ 3 files changed, 0 insertions(+), 0 deletions(-)
